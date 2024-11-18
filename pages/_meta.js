@@ -21,6 +21,14 @@ export default {
       title: 'Math 4111',
       type: 'page'
     },
+    CSE442T: {
+      title: 'CSE 442T',
+      type: 'page'
+    },
+    CSE347: {
+      title: 'CSE347',
+      type: 'page'
+    },
     about: {
         display: 'hidden'
     },
