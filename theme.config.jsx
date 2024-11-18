@@ -50,5 +50,6 @@ export default {
       url: 'https://github.com/Trance-0/NoteNextra',
       name: 'Source'
     }
-  ]
+  ],
+  docsRepositoryBase: 'https://github.com/Trance-0/NoteNextra/tree/main'
 }
