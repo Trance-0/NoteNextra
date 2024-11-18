@@ -17,6 +17,10 @@ export default {
         }
       }
     },
+    Math429: {
+      title: 'Math 429',
+      type: 'page'
+    },
     Math4111: {
       title: 'Math 4111',
       type: 'page'

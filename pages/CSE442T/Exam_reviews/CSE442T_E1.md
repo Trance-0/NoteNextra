@@ -151,10 +151,15 @@ A group $G$ is a set of elements with a binary operator $\oplus:G\times G\to G$ 
 
 $$
 \Phi(p)=p-1
-$$ if $p$ is prime
+$$ 
+
+if $p$ is prime
+
 $$
 \Phi(N)=(p-1)(q-1)
-$$ if $N=pq$ and $p,q$ are primes
+$$ 
+
+if $N=pq$ and $p,q$ are primes
 
 #### Theorem 47.10
 
