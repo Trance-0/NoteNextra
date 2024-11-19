@@ -21,9 +21,7 @@ export default {
     Math4111_L19: "Lecture 19",
     Math4111_L20: "Lecture 20",
     Math4111_L21: "Lecture 21",
-    Math4111_L22: {
-        display: 'hidden'
-    },
+    Math4111_L22: "Lecture 22",
     Math4111_L23: {
         display: 'hidden'
     },
