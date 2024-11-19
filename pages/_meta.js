@@ -15,23 +15,22 @@ export default {
           title: 'Contact Me',
           href: '/contact'
         }
+      },
+      theme:{
+        sidebar: false,
       }
     },
-    Math429: {
-      title: 'Math 429',
-      type: 'page'
+    Math429:{
+      type: 'page',
     },
     Math4111: {
-      title: 'Math 4111',
-      type: 'page'
+      type: 'page',
     },
     CSE442T: {
-      title: 'CSE 442T',
-      type: 'page'
+      type: 'page',
     },
     CSE347: {
-      title: 'CSE347',
-      type: 'page'
+      type: 'page',
     },
     about: {
         display: 'hidden'

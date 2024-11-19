@@ -1,6 +1,6 @@
 export default {
     index: {
-        display: "hidden"
+        display: 'hidden'
     },
     Math429_L1: "Lecture 1",
     Math429_L2: "Lecture 2",
