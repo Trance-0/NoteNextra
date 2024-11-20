@@ -1,6 +1,7 @@
 export default {
-    index: {
-        display: 'hidden'
+    index: "Course Description",
+    "---":{
+        type: 'separator'
     },
     Exam_reviews: "Exam reviews",
     CSE442T_L1: "Lecture 1",

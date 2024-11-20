@@ -1,6 +1,7 @@
 export default {
-    index: {
-        display: 'hidden'
+    index: "Course Description",
+    "---":{
+        type: 'separator'
     },
     Math429_L1: "Lecture 1",
     Math429_L2: "Lecture 2",
