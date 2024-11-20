@@ -1,4 +1,7 @@
 export default {
+    index: {
+        display: 'hidden'
+    },
     Exam_reviews: "Exam reviews",
     Math4111_L1: "Lecture 1",
     Math4111_L2: "Lecture 2",
@@ -38,9 +41,6 @@ export default {
         display: 'hidden'
     },
     Math4111_L28: {
-        display: 'hidden'
-    },
-    index: {
         display: 'hidden'
     }
 }

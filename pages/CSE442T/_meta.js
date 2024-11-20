@@ -1,4 +1,7 @@
 export default {
+    index: {
+        display: 'hidden'
+    },
     Exam_reviews: "Exam reviews",
     CSE442T_L1: "Lecture 1",
     CSE442T_L2: "Lecture 2",
@@ -28,9 +31,6 @@ export default {
         display: 'hidden'
     },
     CSE442T_L24: {
-        display: 'hidden'
-    },
-    index: {
         display: 'hidden'
     }
 }

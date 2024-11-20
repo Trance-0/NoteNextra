@@ -1,4 +1,7 @@
 export default {
+    index: {
+        display: 'hidden'
+    },
     Exam_reviews: "Exam reviews",
     CSE347_L1: "Lecture 1",
     CSE347_L2: "Lecture 2",
@@ -21,9 +24,6 @@ export default {
         display: 'hidden'
     },
     CSE347_L15: {
-        display: 'hidden'
-    },
-    index: {
         display: 'hidden'
     }
 }
