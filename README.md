@@ -1,3 +1,3 @@
 # NoteNextra
 
-static note sharing site for minmum care
+static note sharing site with minimum care

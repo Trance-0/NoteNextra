@@ -2,20 +2,6 @@
 
 > I changed all the element in set to lowercase letters. I don't know why K is capitalized.
 
-Brian Garnett
-
-bcgarnett@wustl.edu
-
-Math Phd... Great!
-
-Proof based course and write proofs.
-
-CSE 433 for practical applications.
-
-OH: Right after class! 4-5 Mon, Urbaur Hall 227
-
-Pass and Shalat
-
 ## Alice sending information to Bob
 
 Assuming _Eve_ can always listen
