@@ -36,7 +36,7 @@ $\mu_a(n)>\frac{1}{n^c}$ for infinitely many $n$. or infinitely often.
 
 ## New materials
 
-### Week One-Way Function
+### Weak one-way function
 
 $f:\{0,1\}^n\to \{0,1\}^*$
 
