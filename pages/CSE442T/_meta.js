@@ -27,7 +27,5 @@ export default {
     CSE442T_L21: "Lecture 21",
     CSE442T_L22: "Lecture 22",
     CSE442T_L23: "Lecture 23",
-    CSE442T_L24: {
-        display: 'hidden'
-    }
+    CSE442T_L24: "Lecture 24"
 }
