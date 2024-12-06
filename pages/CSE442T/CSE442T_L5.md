@@ -2,10 +2,10 @@
 
 Proving that there are one-way functions relies on assumptions.
 
-Factoring Assumption: $\forall a, \exist \varepsilon (n)$, let $p,q\in prime,p,q<2^n$
+Factoring Assumption: $\forall a, \exist \epsilon (n)$, let $p,q\in prime,p,q<2^n$
 
 $$
-P[p\gets \Pi_n;q\gets \Pi_n;N=p\cdot q:a(N)\in \{p,q\}]<\varepsilon(n)
+P[p\gets \Pi_n;q\gets \Pi_n;N=p\cdot q:a(N)\in \{p,q\}]<\epsilon(n)
 $$
 
 Evidence: To this point, best known procedure to always factor has run time $O(2^{\sqrt{n}\sqrt{log(n)}})$

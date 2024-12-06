@@ -50,13 +50,13 @@ $P_k[Dec_k(Enc_k(m))=m]=1$
 
 ## Negligible function
 
-$\varepsilon:\mathbb{N}\to \mathbb{R}$ is a negligible function if $\forall c>0$, $\exists N\in\mathbb{N}$ such that $\forall n\geq N, \varepsilon(n)<\frac{1}{n^c}$
+$\epsilon:\mathbb{N}\to \mathbb{R}$ is a negligible function if $\forall c>0$, $\exists N\in\mathbb{N}$ such that $\forall n\geq N, \epsilon(n)<\frac{1}{n^c}$
 
-Idea: for any polynomial, even $n^{100}$, in the long run $\varepsilon(n)\leq \frac{1}{n^{100}}$
+Idea: for any polynomial, even $n^{100}$, in the long run $\epsilon(n)\leq \frac{1}{n^{100}}$
 
-Example: $\varepsilon (n)=\frac{1}{2^n}$, $\varepsilon (n)=\frac{1}{n^{\log (n)}}$
+Example: $\epsilon (n)=\frac{1}{2^n}$, $\epsilon (n)=\frac{1}{n^{\log (n)}}$
 
-Non-example: $\varepsilon (n)=O(\frac{1}{n^c})\forall c$
+Non-example: $\epsilon (n)=O(\frac{1}{n^c})\forall c$
 
 ## One-way function
 
@@ -74,10 +74,10 @@ $$
 f:\{0,1\}^n\to \{0,1\}^*(n\to \infty)
 $$
 
-There is a negligible function $\varepsilon (n)$ such that for any adversary $a$ (n.u.p.p.t)
+There is a negligible function $\epsilon (n)$ such that for any adversary $a$ (n.u.p.p.t)
 
 $$
-P[x\gets\{0,1\}^n;y=f(x):f(a(y))=y,a(y)=x']\leq\varepsilon(n)
+P[x\gets\{0,1\}^n;y=f(x):f(a(y))=y,a(y)=x']\leq\epsilon(n)
 $$
 
 _Probability of guessing correct message is negligible_
@@ -95,7 +95,7 @@ Example: Suppose $f$ is one-to-one, then $a$ must find our $x$, $P[x'=x]=\frac{1
 
 Why do we allow $a$ to get a different $x'$?
 
-> Suppose the definition is $P[x\gets\{0,1\}^n;y=f(x):a(y)=x]\neq\varepsilon(n)$, then a trivial function $f(x)=x$ would also satisfy the definition.
+> Suppose the definition is $P[x\gets\{0,1\}^n;y=f(x):a(y)=x]\neq\epsilon(n)$, then a trivial function $f(x)=x$ would also satisfy the definition.
 
 To be technically fair, $a(y)=a(y,1^n)$, size of input $\approx n$, let them use $poly(n)$ operations.
 

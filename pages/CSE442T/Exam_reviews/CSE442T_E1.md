@@ -82,7 +82,7 @@ $$
 
 #### Definition 27.2 Negligible function
 
-A function $\varepsilon(n)$ is negligible if for every $c$. there exists some $n_0$ such that for all $n>n_0$, $\epsilon (n)\leq \frac{1}{n^c}$.
+A function $\epsilon(n)$ is negligible if for every $c$. there exists some $n_0$ such that for all $n>n_0$, $\epsilon (n)\leq \frac{1}{n^c}$.
 
 #### Definition 27.3 Strong One-Way Function
 

@@ -2,16 +2,16 @@
 
 ## Recap
 
-Negligible function $\varepsilon(n)$ if $\forall c>0,\exist N$ such that $n>N$, $\varepsilon (n)<\frac{1}{n^c}$
+Negligible function $\epsilon(n)$ if $\forall c>0,\exist N$ such that $n>N$, $\epsilon (n)<\frac{1}{n^c}$
 
-Ex: $\varepsilon(n)=2^{-n},\varepsilon(n)=\frac{1}{n^{\log (\log n)}}$
+Ex: $\epsilon(n)=2^{-n},\epsilon(n)=\frac{1}{n^{\log (\log n)}}$
 
 ### Strong One-Way Function
 
 1. $\exists$ a P.P.T. that computes $f(x),\forall x\in\{0,1\}^n$
-2. $\forall a$ adversaries, $\exists \varepsilon(n),\forall n$.
+2. $\forall a$ adversaries, $\exists \epsilon(n),\forall n$.
     $$
-    P[x\gets \{0,1\}^n;y=f(x):f(a(y,1^n))=y]<\varepsilon(n)
+    P[x\gets \{0,1\}^n;y=f(x):f(a(y,1^n))=y]<\epsilon(n)
     $$
 
 _That is, the probability of success guessing should decreasing as encrypted message increase..._
@@ -28,7 +28,7 @@ Negation:
 
 $\exists a$, $P[x\gets \{0,1\}^n;y=f(x):f(a(y,1^n))=y]=\mu_a(n)$ is not  a negligible function.
 
-That is, $\exists c>0,\forall N \exists n>N \varepsilon(n)>\frac{1}{n^c}$
+That is, $\exists c>0,\forall N \exists n>N \epsilon(n)>\frac{1}{n^c}$
 
 $\mu_a(n)>\frac{1}{n^c}$ for infinitely many $n$. or infinitely often.
 
@@ -41,7 +41,7 @@ $\mu_a(n)>\frac{1}{n^c}$ for infinitely many $n$. or infinitely often.
 $f:\{0,1\}^n\to \{0,1\}^*$
 
 1. $\exists$ a P.P.T. that computes $f(x),\forall x\in\{0,1\}^n$
-2. $\forall a$ adversaries, $\exists \varepsilon(n),\forall n$.
+2. $\forall a$ adversaries, $\exists \epsilon(n),\forall n$.
     $$
     P[x\gets \{0,1\}^n;y=f(x):f(a(y,1^n))=y]<1-\frac{1}{p(n)}
     $$
@@ -116,14 +116,14 @@ The only way to efficiently factorizing the product of prime is to iterate all t
 
 In other words:
 
-$\forall a\exists \varepsilon(n)$ such that $\forall n$. $P[p_1\gets \prod n_j]$
+$\forall a\exists \epsilon(n)$ such that $\forall n$. $P[p_1\gets \prod n_j]$
 
 We'll show this is a weak one-way function under the Factoring Assumption.
 
-$\forall a,\exists \varepsilon(n)$ such that $\forall n$,
+$\forall a,\exists \epsilon(n)$ such that $\forall n$,
 
 $$
-P[p_1\gets \Pi_n;p_2\gets \Pi_n;N=p_1\cdot p_2:a(n)=\{p_1,p_2\}]<\varepsilon(n)
+P[p_1\gets \Pi_n;p_2\gets \Pi_n;N=p_1\cdot p_2:a(n)=\{p_1,p_2\}]<\epsilon(n)
 $$
 
 where $\Pi_n=\{$ all primes $p<2^n\}$

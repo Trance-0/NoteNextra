@@ -87,8 +87,8 @@ $F=\{f_i:D_i\to R_i\},i\in I$, $I$ is the index set.
 1. We can effectively choose $i\gets I$ using $Gen$.
 2. $\forall i$ we ca efficiently sample $x\gets D_i$.
 3. $\forall i\forall x\in D_i,f_i(x)$ is efficiently computable
-4. For any n.u.p.p.t $a$, $\exists$ negligible function $\varepsilon (n)$.
-    $P[i\gets Gen(1^n);x\gets D_i;y=f_i(x):f(a(y,i,1^n))=y]\leq \varepsilon(n)$
+4. For any n.u.p.p.t $a$, $\exists$ negligible function $\epsilon (n)$.
+    $P[i\gets Gen(1^n);x\gets D_i;y=f_i(x):f(a(y,i,1^n))=y]\leq \epsilon(n)$
 
 #### Theorem
 
@@ -107,7 +107,7 @@ Algorithm for sampling a random prime $p\gets \Pi_n$
    - Deterministic poly-time procedure
    - In practice, a much faster randomized procedure (Miller-Rabin) used
 
-        $P[x\cancel{\in} prime|test\ said\ x\ prime]<\varepsilon(n)$
+        $P[x\cancel{\in} prime|test\ said\ x\ prime]<\epsilon(n)$
 
 3. If not, repeat. Do this for polynomial number of times
 

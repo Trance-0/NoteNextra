@@ -108,7 +108,7 @@ Denote safe prime as $\tilde{\Pi}_n=\{p\in \Pi_n:q=\frac{p-1}{2}\in \Pi_{n-1}\}$
 Then
 
 $$
-P\left[p\gets \tilde{\Pi_n};a\gets\mathbb{Z}_p^*;g=a^2\neq 1;x\gets \mathbb{Z}_q;y=g^x\mod p:\mathcal{A}(y)=x\right]\leq \varepsilon(n)
+P\left[p\gets \tilde{\Pi_n};a\gets\mathbb{Z}_p^*;g=a^2\neq 1;x\gets \mathbb{Z}_q;y=g^x\mod p:\mathcal{A}(y)=x\right]\leq \epsilon(n)
 $$
 
 $p\gets \tilde{\Pi_n};a\gets\mathbb{Z}_p^*;g=a^2\neq 1$ is the function condition when we do the encryption on cyclic groups.
