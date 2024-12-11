@@ -31,11 +31,12 @@ export default {
     const { asPath, defaultLocale, locale } = useRouter()
     const { frontMatter } = useConfig()
     const url =
-      'https://vercel.com/notenextra' +
+      'https://notenextra.trance-0.com' +
       (defaultLocale === locale ? asPath : `/${locale}${asPath}`)
  
     return (
       <>
+        <title>{frontMatter.title || 'NoteNextra'}</title>
         <meta property="og:url" content={url} />
         <meta property="og:title" content={frontMatter.title || 'NoteNextra'} />
         <meta
