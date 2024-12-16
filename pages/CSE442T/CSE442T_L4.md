@@ -4,52 +4,59 @@
 
 Negligible function $\epsilon(n)$ if $\forall c>0,\exist N$ such that $n>N$, $\epsilon (n)<\frac{1}{n^c}$
 
-Ex: $\epsilon(n)=2^{-n},\epsilon(n)=\frac{1}{n^{\log (\log n)}}$
+Example:
 
-### Strong One-Way Function
+$\epsilon(n)=2^{-n},\epsilon(n)=\frac{1}{n^{\log (\log n)}}$
+
+## Chapter 2: Computational Hardness
+
+### One-way function
+
+#### Strong One-Way Function
 
 1. $\exists$ a P.P.T. that computes $f(x),\forall x\in\{0,1\}^n$
-2. $\forall a$ adversaries, $\exists \epsilon(n),\forall n$.
-    $$
-    P[x\gets \{0,1\}^n;y=f(x):f(a(y,1^n))=y]<\epsilon(n)
-    $$
+2. $\forall \mathcal{A}$ adversaries, $\exists \epsilon(n),\forall n$.
 
-_That is, the probability of success guessing should decreasing as encrypted message increase..._
+$$
+P[x\gets \{0,1\}^n;y=f(x):f(\mathcal{A}(y,1^n))=y]<\epsilon(n)
+$$
+
+_That is, the probability of success guessing should decreasing (exponentially) as encrypted message increase (linearly)..._
 
 To negate statement 2:
 
 $$
-P[x\gets \{0,1\}^n;y=f(x):f(a(y,1^n))=y]=\mu_a(n)
+P[x\gets \{0,1\}^n;y=f(x):f(\mathcal{A}(y,1^n))=y]=\mu(n)
 $$
 
 is a negligible function.
 
 Negation:
 
-$\exists a$, $P[x\gets \{0,1\}^n;y=f(x):f(a(y,1^n))=y]=\mu_a(n)$ is not  a negligible function.
+$\exists \mathcal{A}$, $P[x\gets \{0,1\}^n;y=f(x):f(\mathcal{A}(y,1^n))=y]=\mu(n)$ is not a negligible function.
 
 That is, $\exists c>0,\forall N \exists n>N \epsilon(n)>\frac{1}{n^c}$
 
-$\mu_a(n)>\frac{1}{n^c}$ for infinitely many $n$. or infinitely often.
+$\mu(n)>\frac{1}{n^c}$ for infinitely many $n$. or infinitely often.
 
 > Keep in mind: $P[success]=\frac{1}{n^c}$, it can try $O(n^c)$ times and have a good chance of succeeding at least once.
 
-## New materials
-
-### Weak one-way function
+#### Definition 28.4 (Weak one-way function)
 
 $f:\{0,1\}^n\to \{0,1\}^*$
 
 1. $\exists$ a P.P.T. that computes $f(x),\forall x\in\{0,1\}^n$
-2. $\forall a$ adversaries, $\exists \epsilon(n),\forall n$.
-    $$
-    P[x\gets \{0,1\}^n;y=f(x):f(a(y,1^n))=y]<1-\frac{1}{p(n)}
-    $$
-    _The probability of success should not be too close to 1_
+2. $\forall \mathcal{A}$ adversaries, $\exists \epsilon(n),\forall n$.
+
+$$
+P[x\gets \{0,1\}^n;y=f(x):f(\mathcal{A}(y,1^n))=y]<1-\frac{1}{p(n)}
+$$
+
+_The probability of success should not be too close to 1_
 
 ### Probability
 
-### Useful bound $0<p<1$
+#### Useful bound $0<p<1$
 
 $1-p<e^{-p}$
 
@@ -59,9 +66,11 @@ For an experiment has probability $p$ of failure and $1-p$ of success.
 
 We run experiment $n$ times independently.
 
-$P[$success all n times$]=(1-p)^n<(e^{-p})^n=e^{-np}$
+$P[\text{success all n times}]=(1-p)^n<(e^{-p})^n=e^{-np}$
 
-Theorem: If there exists a weak one-way function, there there exists a strong one-way function
+#### Theorem 35.1 (Strong one-way function from weak one-way function)
+
+If there exists a weak one-way function, there there exists a strong one-way function
 
 In particular, if $f:\{0,1\}^n\to \{0,1\}^*$ is weak one-way function.
 
@@ -99,14 +108,16 @@ Example: $(1-\frac{1}{n^2})^{n^3}<e^{-n}$
 
 #### Multiplication
 
-$Mult(m_1,m_2)=\begin{cases}
+$$
+Mult(m_1,m_2)=\begin{cases}
     1,m_1=1 | m_2=1\\
     m_1\cdot m_2
-\end{cases}$
+\end{cases}
+$$
 
 But we don't want trivial answers like (1,1000000007)
 
-Idea: Our "secret" is 373 and 481, Eve cna see the product 179413.
+Idea: Our "secret" is 373 and 481, Eve can see the product 179413.
 
 Not strong one-way for all integer inputs because there are trivial answer for $\frac{3}{4}$ of all outputs. `Mult(2,y/2)`
 
@@ -126,4 +137,4 @@ $$
 P[p_1\gets \Pi_n;p_2\gets \Pi_n;N=p_1\cdot p_2:a(n)=\{p_1,p_2\}]<\epsilon(n)
 $$
 
-where $\Pi_n=\{$ all primes $p<2^n\}$
+where $\Pi_n=\{p\text{ all primes }p<2^n\}$

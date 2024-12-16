@@ -1,6 +1,8 @@
 # Lecture 8
 
-## Computational number theory/arithmetic
+## Chapter 2: Computational Hardness
+
+### Computational number theory/arithmetic
 
 We want to have a easy-to-use one-way functions for cryptography.
 
@@ -29,16 +31,16 @@ _looks like fast exponentiation right?_
 
 Goal: $f_{g,p}(x)=g^x\mod p$ is a one-way function, for certain choice of $p,g$ (and assumptions)
 
-### A group (Nice day one for MODERN ALGEBRA)
+#### A group (Nice day one for MODERN ALGEBRA)
 
 A group $G$ is a set with, a binary operation $\oplus$. and $\forall a,b\in G$, $a \oplus b\to c$
 
-1. $a,b\in G,a\oplus b\in G$
-2. $(a\oplus b)\oplus c=a\oplus(b\oplus c)$
-3. $\exists e$ such that $\forall a\in G, e\oplus g=g=g\oplus e$
-4. $\exists g^{-1}\in G$ such that $g\oplus g^{-1}=e$
+1. $a,b\in G,a\oplus b\in G$ (closure)
+2. $(a\oplus b)\oplus c=a\oplus(b\oplus c)$ (associativity)
+3. $\exists e$ such that $\forall a\in G, e\oplus g=g=g\oplus e$ (identity element)
+4. $\exists g^{-1}\in G$ such that $g\oplus g^{-1}=e$ (inverse element)
 
-Example: 
+Example:
 
 - $\mathbb{Z}_N=\{0,1,2,3,...,N-1\}$ with addition $\mod N$, with identity element $0$. $a\in \mathbb{Z}_N, a^{-1}=N-a$.
 - A even simpler group is $\Z$ with addition.
@@ -49,13 +51,13 @@ Example:
     - Let $a\in \mathbb{Z}_N^*$, by Euclidean algorithm, $gcd(a,N)=1$,$\exists x,y \in Z$ such that $ax+Ny=1,ax\equiv 1\mod N,x=a^{-1}$
     - $a,b\in \mathbb{Z}_N^*$. Want to show $gcd(ab,N)=1$. If $gcd(ab,N)=d>1$, then some prime $p|d$. so $p|(a,b)$, which means $p|a$ or $p|b$. In either case, $gcd(a,N)>d$ or $gcd(b,N)>d$, which contradicts that $a,b\in \mathbb{C}_N^*$
 
-### Euler's totient function
+#### Euler's totient function
 
 $\phi:\mathbb{Z}^+\to \mathbb{Z}^+,\phi(N)=|\mathbb{Z}_N^*|=|\{1\leq x\leq N:gcd(x,N)=1\}|$
 
 Example: $\phi(1)=1$, $\phi(24)=8$, $\phi (p)=p-1$, $\phi(p\cdot q)=(p-1)(q-1)$
 
-### Euler's Theorem
+#### Euler's Theorem
 
 For any $a\in \mathbb{Z}_N^*$, $a^{\phi(N)}\equiv 1\mod N$
 

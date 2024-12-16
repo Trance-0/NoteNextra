@@ -1,6 +1,8 @@
 # Lecture 9
 
-## Continue on Cyclic groups
+## Chapter 2: Computational Hardness
+
+### Continue on Cyclic groups
 
 $$
 \begin{aligned}
@@ -99,7 +101,7 @@ def get_generator(p):
     return g
 ```
 
-### Diffie-Hellman assumption
+### (Computational) Diffie-Hellman assumption
 
 If $p$ is a randomly sampled safe prime.
 
@@ -114,5 +116,3 @@ $$
 $p\gets \tilde{\Pi_n};a\gets\mathbb{Z}_p^*;g=a^2\neq 1$ is the function condition when we do the encryption on cyclic groups.
 
 Notes: $f:\Z_q\to \mathbb{Z}_p^*$ is one-to-one, so $f(\mathcal{A}(y))\iff \mathcal{A}(y)=x$
-
-
