@@ -26,13 +26,16 @@ export default {
     Math4111: {
       type: 'page',
     },
+    Math4121: {
+      type: 'page',
+    },
+    CSE332S: {
+      type: 'page',
+    },
     CSE442T: {
       type: 'page',
     },
     CSE347: {
-      type: 'page',
-    },
-    Math4121: {
       type: 'page',
     },
     about: {
