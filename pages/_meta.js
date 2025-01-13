@@ -32,6 +32,9 @@ export default {
     CSE347: {
       type: 'page',
     },
+    Math4121: {
+      type: 'page',
+    },
     about: {
         display: 'hidden'
     },
