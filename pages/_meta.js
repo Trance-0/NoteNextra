@@ -29,13 +29,19 @@ export default {
     Math4121: {
       type: 'page',
     },
+    Math4351: {
+      type: 'page',
+    },
     CSE332S: {
+      type: 'page',
+    },
+    CSE347: {
       type: 'page',
     },
     CSE442T: {
       type: 'page',
     },
-    CSE347: {
+    CSE559A: {
       type: 'page',
     },
     about: {

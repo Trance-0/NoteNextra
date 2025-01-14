@@ -3,13 +3,7 @@ export default {
     "---":{
         type: 'separator'
     },
-    Math401_L1: {
-        display: 'hidden'
-    },
-    Math401_L2: {
-        display: 'hidden'
-    },
-    Math401_L3: {
+    CSE559A_L1: {
         display: 'hidden'
     },
 }
