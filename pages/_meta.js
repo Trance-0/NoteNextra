@@ -29,7 +29,7 @@ export default {
     Math4121: {
       type: 'page',
     },
-    Math4351: {
+    Math416: {
       type: 'page',
     },
     CSE332S: {
@@ -43,6 +43,9 @@ export default {
     },
     CSE559A: {
       type: 'page',
+    },
+    Math4351: {
+      display: 'hidden'
     },
     about: {
         display: 'hidden'

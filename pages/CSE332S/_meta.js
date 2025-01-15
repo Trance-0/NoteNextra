@@ -4,12 +4,8 @@ export default {
         type: 'separator'
     },
     CSE332S_L1: "Object-Oriented Programming Lab (Lecture 1)",
-    CSE332S_L2: {
-        display: "hidden"
-    },
-    CSE332S_L3: {
-        display: "hidden"
-    },
+    CSE332S_L2: "Object-Oriented Programming Lab (Lecture 2)",
+    CSE332S_L3: "Object-Oriented Programming Lab (Lecture 3)",
     CSE332S_L4: {
         display: "hidden"
     },
