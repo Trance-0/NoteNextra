@@ -21,3 +21,10 @@ A radical Approach to Lebesgue's Theory of Integration by David
 
 Due every Monday.
 
+## Office Hour
+
+Monday 1pm-2pm
+
+Wednesday 12pm-1pm
+
+Friday 11:30am-12:30pm

@@ -4,9 +4,7 @@ export default {
         type: 'separator'
     },
     Math4121_L1: "Introduction to Lebesgue Integration (Lecture 1)",
-    Math4121_L2: {
-        display: 'hidden'
-    },
+    Math4121_L2: "Introduction to Lebesgue Integration (Lecture 2)",
     Math4121_L3: {
         display: 'hidden'
     },
