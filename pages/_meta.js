@@ -44,7 +44,7 @@ export default {
     CSE559A: {
       type: 'page',
     },
-    Math4351: {
+    Swap: {
       display: 'hidden'
     },
     about: {
