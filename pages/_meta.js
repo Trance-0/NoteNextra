@@ -20,6 +20,9 @@ export default {
         sidebar: false,
       }
     },
+    Math3200: {
+      type: 'page',
+    },
     Math429:{
       type: 'page',
     },
