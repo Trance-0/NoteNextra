@@ -48,5 +48,5 @@ def parse_html_file(file_name):
 
 for i in range(1, 41):
     with open(os.path.join(BASE_DIR, f"Lecture_{i}.mdx"), "w", encoding="utf-8") as f:
-        f.write("<div style={{ width: '100%', height: '25px'}}></div><iframe src=\"/Math3200/Lecture_"+str(i)+".html\" title=\"Math 3200 Lecture "+str(i)+"\" style={{ width: '100%', height: '100vh', border: 'none' }}/>")
+        f.write("<div style={{ width: '100%', height: '25px'}}></div><iframe src=\"https://static.notenextra.trance-0.com/Math3200/Lecture_"+str(i)+".html\" title=\"Math 3200 Lecture "+str(i)+"\" style={{ width: '100%', height: '100vh', border: 'none' }}/>")
 
