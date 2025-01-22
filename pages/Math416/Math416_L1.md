@@ -109,7 +109,7 @@ $$
 
 (Define $\text{cis}(\theta)=\cos\theta+i\sin\theta$)
 
-### De Howtes' Formula
+### De Moivre's Formula
 
 Let $z=r\text{cis}(\theta)$, then
 
