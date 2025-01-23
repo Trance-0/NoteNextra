@@ -71,7 +71,7 @@ And $u$ and $v$ have continuous partial derivatives at $(x_0,y_0)$.
 
 And let $c=\frac{\partial u}{\partial x}(x_0,y_0)$ and $d=\frac{\partial v}{\partial x}(x_0,y_0)$.
 
-Then $f'(\zeta_0)=c+id$.
+**Then $f'(\zeta_0)=c+id$, is holomorphic at $\zeta_0$.**
 
 ### Holomorphic Functions
 
