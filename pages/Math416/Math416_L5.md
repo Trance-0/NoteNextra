@@ -4,20 +4,24 @@
 
 Let $f$ be a complex function. that maps $\mathbb{R}^2$ to $\mathbb{R}^2$. $f(x+iy)=u(x,y)+iv(x,y)$.
 
-$Df(x+iy)=\begin{pmatrix}
+$$
+Df(x+iy)=\begin{pmatrix}
 \frac{\partial u}{\partial x} & \frac{\partial u}{\partial y}\\
 \frac{\partial v}{\partial x} & \frac{\partial v}{\partial y}
 \end{pmatrix}=\begin{pmatrix}
 \alpha & \beta\\
 \sigma & \delta
-\end{pmatrix}$
+\end{pmatrix}
+$$
 
 So 
 
-$$\begin{aligned}
+$$
+\begin{aligned}
 \frac{\partial f}{\partial \zeta}&=\frac{1}{2}\left(u_x+v_y\right)-i\frac{1}{2}\left(v_x+u_y\right)\\
 &=\frac{1}{2}\left(\alpha+\delta\right)-i\frac{1}{2}\left(\beta-\sigma\right)\\
-\end{aligned}$$
+\end{aligned}
+$$
 
 $$
 \begin{aligned}
@@ -26,18 +30,29 @@ $$
 \end{aligned}
 $$
 
-When $f$ is conformal, $Df(x+iy)=\begin{pmatrix}
+When $f$ is conformal, 
+
+$$
+Df(x+iy)=\begin{pmatrix}
 \alpha & \beta\\
 -\beta & \alpha
-\end{pmatrix}$.
+\end{pmatrix}
+$$
 
-So $\frac{\partial f}{\partial \zeta}=\frac{1}{2}(\alpha+\alpha)+i\frac{1}{2}(\beta+\beta)=a$
+So,
 
-$\frac{\partial f}{\partial \overline{\zeta}}=\frac{1}{2}(\alpha-\alpha)+i\frac{1}{2}(\beta-\beta)=0$
+$$
+\frac{\partial f}{\partial \zeta}=\frac{1}{2}(\alpha+\alpha)+i\frac{1}{2}(\beta+\beta)=a
+$$
+
+$$
+\frac{\partial f}{\partial \overline{\zeta}}=\frac{1}{2}(\alpha-\alpha)+i\frac{1}{2}(\beta-\beta)=0
+$$
 
 > Less pain to represent a complex function using four real numbers.
 
 ## Chapter 3: Linear fractional Transformations
+
 
 Let $a,b,c,d$ be complex numbers. such that $ad-bc\neq 0$.
 
