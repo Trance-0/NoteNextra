@@ -118,7 +118,7 @@ BRDF dataset:
 
 #### Digital Camera block diagram
 
-![Digital Camera block diagram](https://static.notenextra.trance-0.com/images/CSE559A/DigitalCameraBlockDiagram.png)
+![Digital Camera block diagram](https://static.notenextra.trance-0.com/CSE559A/DigitalCameraBlockDiagram.png)
 
 Scanning protocols:
 
@@ -126,3 +126,88 @@ Scanning protocols:
 - Interlaced: odd and even lines are exposed at different times
 - Rolling shutter: each line is exposed as it is read out
 
+#### Eye
+
+- Pupil
+- Iris
+- Retina
+- Rods and cones
+- ...
+
+#### Eye Movements
+
+- Saccade
+  - Can be consciously controlled. Related to perceptual attention.
+  - 200ms to initiation, 20 to 200ms to carry out. Large amplitude.
+- Smooth pursuit
+  - Tracking an object
+  - Difficult w/o an object to track!
+- Microsaccade and Ocular microtremor (OMT)
+  - Involuntary. Smaller amplitude. Especially evident during prolonged
+    fixation.
+
+#### Contrast Sensitivity
+
+- Uniform contrast image content, with increasing frequency
+- Why not uniform across the top?
+- Low frequencies: harder to see because of slower intensity changes
+- Higher frequencies: harder to see because of ability of our visual system to resolve fine features
+
+### Color Perception
+
+Visible light spectrum: 380 to 780 nm
+
+- 400 to 500 nm: blue
+- 500 to 600 nm: green
+- 600 to 700 nm: red
+
+#### HSV model
+
+We use Gaussian functions to model the sensitivity of the human eye to different wavelengths.
+
+- Hue: color (the wavelength of the highest peak of the sensitivity curve)
+- Saturation: color purity (the variance of the sensitivity curve)
+- Value: color brightness (the highest peak of the sensitivity curve)
+
+#### Color Sensing in Camera (RGB)
+
+- 3-chip vs. 1-chip: quality vs. cost
+
+Bayer filter:
+
+- Why more green?
+  - Human eye is more sensitive to green light.
+
+#### Color spaces
+
+Images in python:
+
+As matrix.
+
+```python
+import matplotlib.pyplot as plt
+
+from mpl_toolkits.mplot3d import Axes3D
+from skimage import io
+
+def plot_rgb_3d(image_path):
+    image = io.imread(image_path)
+    r, g, b = image[:,:,0], image[:,:,1], image[:,:,2]
+    fig = plt.figure()
+    ax = fig.add_subplot(111, projection='3d')
+    ax.scatter(r.flatten(), g.flatten(), b.flatten(), c=image.reshape(-1, 3)/255.0, marker='.')
+    ax.set_xlabel('Red')
+    ax.set_ylabel('Green')
+    ax.set_zlabel('Blue')
+    plt.show()
+
+plot_rgb_3d('image.jpg')
+```
+
+Other color spaces:
+
+- YCbCr (fast to compute, usually used in TV)
+- HSV
+- L\*a\*b\* (CIELAB, perceptually uniform color space)
+
+Most information is in the intensity channel.
