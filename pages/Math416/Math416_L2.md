@@ -204,7 +204,7 @@ Line $(tx,ty,1-t)$ intersects $\zeta^2$ at $t^2x^2+t^2y^2+(1-t)^2=1$
 So $t=\frac{2}{1+x^2+y^2}$
 
 $$
-\zeta=x+iy\mapsto \frac{1}{1-|\zeta|}^2(2Re(\zeta),2Im(\zeta),|\zeta|^2-1)
+\zeta=x+iy\mapsto \frac{1}{1+|\zeta|^2}(2Re(\zeta),2Im(\zeta),|\zeta|^2-1)
 $$
 
 $$
