@@ -50,7 +50,7 @@ Which is in the form of circle equation.
 
 EOP
 
-## Chapter 4 Elements of functions
+## Chapter 4 Elementary functions
 
 > $e^t=\sum_{n=0}^{\infty}\frac{t^n}{n!}$
 
