@@ -59,9 +59,7 @@ $$
 > A function $g(h)$ is $o(h)$ if $\lim_{h\to 0}\frac{g(h)}{h}=0$.
 > 
 > <!---TODO: check after lecture-->
-> $f$ is differentiable if and only if $f(z+h)=f(z)+f'(z)h+\frac{1}{2}h^2f''(z)+o(h^3)$ as $h\to 0$. 
-
-
+> $f$ is differentiable if and only if $f(z+h)=f(z)+f'(z)h+\frac{1}{2}h^2f''(z)+o(h^3)$ as $h\to 0$.
 
 Since $f$ is holomorphic at $\gamma(t_0)=\zeta_0$, we have
 
