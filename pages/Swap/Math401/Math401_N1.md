@@ -62,6 +62,3 @@ The multiplication table of $S_3$ is:
 
 ### Symmetric Generating Set
 
-
-
-
