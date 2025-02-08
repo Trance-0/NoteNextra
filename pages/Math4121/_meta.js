@@ -11,21 +11,11 @@ export default {
     Math4121_L6: "Introduction to Lebesgue Integration (Lecture 6)",
     Math4121_L7: "Introduction to Lebesgue Integration (Lecture 7)",
     Math4121_L8: "Introduction to Lebesgue Integration (Lecture 8)",
-    Math4121_L9: {
-        display: 'hidden'
-    },
-    Math4121_L10: {
-        display: 'hidden'
-    },
-    Math4121_L11: {
-        display: 'hidden'
-    },
-    Math4121_L12: {
-        display: 'hidden'
-    },
-    Math4121_L13: {
-        display: 'hidden'
-    },
+    Math4121_L9: "Introduction to Lebesgue Integration (Lecture 9)",
+    Math4121_L10: "Introduction to Lebesgue Integration (Lecture 10)",
+    Math4121_L11: "Introduction to Lebesgue Integration (Lecture 11)",
+    Math4121_L12: "Introduction to Lebesgue Integration (Lecture 12)",
+    Math4121_L13: "Introduction to Lebesgue Integration (Lecture 13)",
     Math4121_L14: {
         display: 'hidden'
     },
