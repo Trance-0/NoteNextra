@@ -130,21 +130,23 @@ We know $c_n r^ne^{in\theta}\to 0$ as $n\to\infty$.
 
 So there exists $M\geq|c_n r^ne^{in\theta}|$ for all $n\in\mathbb{N}$.
 
-So $\forall \zeta\in\overline{B(0,r)}$, $|c_n\zeta^n|\leq |c_n|e^n\leq M(\frac{e}{r})^n$.
+So $\forall \zeta\in\overline{B(0,r)}$, $|c_n\zeta^n|\leq |c_n| |\zeta|^n \leq M \left(\frac{|\zeta|}{r}\right)^n$.
 
 So $\sum_{n=0}^{\infty}|c_n\zeta^n|$ converges absolutely.
 
 So the series converges absolutely and uniformly on $\overline{B(0,r)}$.
 
-_Some steps are omitted._
+If $|\zeta| > r$, then $|c_n \zeta^n|$ does not tend to zero, and the series diverges.
 
 EOP
 
-There are few cases for the convergence of the power series.
+#### Possible Cases for the Convergence of Power Series
 
-Let $E=\{\zeta\in\mathbb{C}: \sum_{n=0}^{\infty}c_n(\zeta-\zeta_0)^n\text{ converges}\}$.
+1. **Convergence Only at $\zeta = 0$**:
+   - **Proof**: If the power series $\sum_{n=0}^{\infty} c_n (\zeta - \zeta_0)^n$ converges only at $\zeta = 0$, it means that the radius of convergence $R = 0$. This occurs when the terms $c_n (\zeta - \zeta_0)^n$ do not tend to zero for any $\zeta \neq 0$. The series diverges for all $\zeta \neq 0$ because the terms grow without bound.
 
-1. It cloud only converge at $\zeta=0$.
-2. It could converge everywhere.
+2. **Convergence Everywhere**:
+   - **Proof**: If the power series converges for all $\zeta \in \mathbb{C}$, the radius of convergence $R = \infty$. This implies that the terms $c_n (\zeta - \zeta_0)^n$ tend to zero for all $\zeta$. This can happen if the coefficients $c_n$ decrease rapidly enough, such as in the exponential series.
 
-Continue next time.
+3. **Convergence Within a Finite Radius**:
+   - **Proof**: For a power series with a finite radius of convergence $R$, the series converges absolutely and uniformly for $|\zeta - \zeta_0| < R$ and diverges for $|\zeta - \zeta_0| > R$. On the boundary $|\zeta - \zeta_0| = R$, the series may converge or diverge depending on the specific series. This is determined by the behavior of the terms on the boundary.
