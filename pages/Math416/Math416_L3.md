@@ -6,12 +6,12 @@
 
 #### Definition of differentiability in complex variables
 
-Suppose $G$ is an open subset of $\mathbb{C}$.
+**Suppose $G$ is an open subset of $\mathbb{C}$**.
 
 A function $f:G\to \mathbb{C}$ is differentiable at $\zeta_0\in G$ if
 
 $$
-\lim_{\zeta\to \zeta_0}\frac{f(\zeta)-f(\zeta_0)}{\zeta-\zeta_0}
+f'(\zeta_0)=\lim_{\zeta\to \zeta_0}\frac{f(\zeta)-f(\zeta_0)}{\zeta-\zeta_0}
 $$
 
 exists.
@@ -31,6 +31,8 @@ satisfies
 $$
 \lim_{(x,y)\to (x_0,y_0)}\frac{|R(x,y)|}{|(x,y)-(x_0,y_0)|}=\lim_{(x,y)\to (x_0,y_0)}\frac{|R(x,y)|}{\sqrt{(x-x_0)^2+(y-y_0)^2}}=0.
 $$
+
+_$R(x,y)$ is the immediate result of mean value theorem applied to $u$ at $(x_0,y_0)$_.
 
 > Theorem from 4111?
 > 
@@ -55,17 +57,37 @@ $$
 
 So $\lim_{(x,y)\to (x_0,y_0)}\frac{|R(x,y)|}{\sqrt{(x-x_0)^2+(y-y_0)^2}}=0$ if and only if $\lim_{(x,y)\to (x_0,y_0)}\frac{a(x-x_0)}{\sqrt{(x-x_0)^2+(y-y_0)^2}}=0$ and $\lim_{(x,y)\to (x_0,y_0)}\frac{b(y-y_0)}{\sqrt{(x-x_0)^2+(y-y_0)^2}}=0$.
 
-On the imaginary part, we have
+On the imaginary part, we proceed similarly. Define
+$$
+S(x,y)=v(x,y)-v(x_0,y_0)-\frac{\partial v}{\partial x}(x_0,y_0)(x-x_0)-\frac{\partial v}{\partial y}(x_0,y_0)(y-y_0).
+$$
+Then the differentiability of $v$ at $(x_0,y_0)$ guarantees that
+$$
+\lim_{(x,y)\to (x_0,y_0)}\frac{|S(x,y)|}{\sqrt{(x-x_0)^2+(y-y_0)^2}}=0.
+$$
+Moreover, considering the definition of the complex derivative of $f=u+iv$, if we approach $\zeta_0=x_0+iy_0$ along different directions we obtain
+$$
+f'(\zeta_0)=\frac{\partial u}{\partial x}(x_0,y_0)+i\frac{\partial v}{\partial x}(x_0,y_0)
+=\frac{\partial v}{\partial y}(x_0,y_0)-i\frac{\partial u}{\partial y}(x_0,y_0).
+$$
+Equating the real and imaginary parts of these two expressions forces
+$$
+\frac{\partial u}{\partial x}(x_0,y_0)=\frac{\partial v}{\partial y}(x_0,y_0),\quad \frac{\partial u}{\partial y}(x_0,y_0)=-\frac{\partial v}{\partial x}(x_0,y_0).
+$$
 
-...
-
-Conclusion (The Cauchy-Riemann equations):
+#### Theorem 2.6 (The Cauchy-Riemann equations):
 
 If $f=u+iv$ is complex differentiable at $\zeta_0\in G$, then $u$ and $v$ are real differentiable at $(x_0,y_0)$ and
 
 $$
 \frac{\partial u}{\partial x}(x_0,y_0)=\frac{\partial v}{\partial y}(x_0,y_0),\quad \frac{\partial u}{\partial y}(x_0,y_0)=-\frac{\partial v}{\partial x}(x_0,y_0).
 $$
+
+> Some missing details:
+>
+> The Cauchy-Riemann equations are necessary and sufficient for the differentiability of $f$ at $\zeta_0$.
+>
+> This states that a function $f$ is **complex differentiable** at $\zeta_0$ if and only if $u$ and $v$ are real differentiable at $(x_0,y_0)$ and the Cauchy-Riemann equations hold at $(x_0,y_0)$. That is $f'(\zeta_0)=\frac{\partial u}{\partial x}(x_0,y_0)+i\frac{\partial v}{\partial x}(x_0,y_0)=\frac{\partial v}{\partial y}(x_0,y_0)-i\frac{\partial u}{\partial y}(x_0,y_0)$.
 
 And $u$ and $v$ have continuous partial derivatives at $(x_0,y_0)$.
 
@@ -75,7 +97,7 @@ And let $c=\frac{\partial u}{\partial x}(x_0,y_0)$ and $d=\frac{\partial v}{\par
 
 ### Holomorphic Functions
 
-#### Definition of holomorphic functions
+#### Definition 2.8 (Holomorphic functions)
 
 A function $f:G\to \mathbb{C}$ is holomorphic (or analytic) at $\zeta_0\in G$ if it is complex differentiable at $\zeta_0$.
 
@@ -97,9 +119,31 @@ So polynomials are holomorphic on $\mathbb{C}$.
 
 So rational functions $p/q$ are holomorphic on $\mathbb{C}\setminus\{z\in \mathbb{C}:q(z)=0\}$.
 
+#### Definition 2.9 (Complex partial differential operators)
+
+Let $f:G\to \mathbb{C}$, $f=u+iv$, be a function defined on an open set $G\subset \mathbb{C}$.
+
+Define:
+
+$$
+\frac{\partial}{\partial x}f=\frac{\partial u}{\partial x}+i\frac{\partial v}{\partial x},\quad \frac{\partial}{\partial y}f=\frac{\partial u}{\partial y}+i\frac{\partial v}{\partial y}.
+$$
+
+And
+
+$$
+\frac{\partial}{\partial \zeta}f=\frac{1}{2}\left(\frac{\partial}{\partial x}-i\frac{\partial}{\partial y}\right)f,\quad \frac{\partial}{\partial \bar{\zeta}}f=\frac{1}{2}\left(\frac{\partial}{\partial x}+i\frac{\partial}{\partial y}\right)f.
+$$
+
+This definition of partial differential operators on complex functions is consistent with the definition of partial differential operators on real functions.
+
+$$
+\frac{\partial}{\partial x}f=\frac{\partial}{\partial \zeta}f+\frac{\partial}{\partial \bar{\zeta}}f,\quad \frac{\partial}{\partial y}f=i\left(\frac{\partial}{\partial \zeta}f-\frac{\partial}{\partial \bar{\zeta}}f\right).
+$$
+
 ### Curves in $\mathbb{C}$
 
-#### Definition of curves in $\mathbb{C}$
+#### Definition 2.11 (Curves in $\mathbb{C}$)
 
 A curve $\gamma$ in $G\subset \mathbb{C}$ is a continuous map of an interval $I$ into $G$. We say $\gamma$ is differentiable if $\forall t_0\in I$, $\gamma'(t_0)=\lim_{t\to t_0}\frac{\gamma(t)-\gamma(t_0)}{t-t_0}$ exists.
 

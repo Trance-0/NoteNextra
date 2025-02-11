@@ -58,8 +58,7 @@ $$
 >
 > A function $g(h)$ is $o(h)$ if $\lim_{h\to 0}\frac{g(h)}{h}=0$.
 > 
-> <!---TODO: check after lecture-->
-> $f$ is differentiable if and only if $f(z+h)=f(z)+f'(z)h+\frac{1}{2}h^2f''(z)+o(h^3)$ as $h\to 0$.
+> $f$ is differentiable if and only if $f(z+h)=f(z)+f'(z)h+\frac{1}{2}h^2f''(z)+o(h^3)$ as $h\to 0$. (By Taylor expansion)
 
 Since $f$ is holomorphic at $\gamma(t_0)=\zeta_0$, we have
 
@@ -88,13 +87,13 @@ $$
 
 EOP
 
-#### Definition of conformal function
+#### Definition 2.12 (Conformal function)
 
 A function $f:G\to \mathbb{C}$ is called conformal if it preserves the angle between two curves.
 
-#### Theorem of conformal function
+#### Theorem 2.13 (Conformal function)
 
-If $f:G\to \mathbb{C}$ is holomorphic function on open set $G\subset \mathbb{C}$ and $\gamma_1,\gamma_2$ are regular curves in $G$ with $\gamma_1(t_0)=\gamma_2(t_0)=\zeta_0$ for some $t_0\in I_1\cap I_2$, and $f'(\zeta_0)\neq 0$, then $f$ is conformal at $\zeta_0$.
+If $f:G\to \mathbb{C}$ is conformal at $\zeta_0\in G$, then $f$ is holomorphic at $\zeta_0$ and $f'(\zeta_0)\neq 0$.
 
 Example:
 
@@ -103,8 +102,6 @@ f(z)=z^2
 $$
 
 is not conformal at $z=0$ because $f'(0)=0$.
-
-
 
 #### Lemma of conformal function
 
