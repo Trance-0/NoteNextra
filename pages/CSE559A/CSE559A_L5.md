@@ -1,4 +1,4 @@
-# Lecture 5
+# CSE559A Lecture 5
 
 ## Continue on linear interpolation
 

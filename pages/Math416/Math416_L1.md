@@ -1,4 +1,4 @@
-# Lecture 1
+# Math416 Lecture 1
 
 ## Chapter 1: Complex Numbers
 

@@ -1,4 +1,4 @@
-# Lecture 4
+# CSE559A Lecture 4
 
 ## Practical issues with filtering
 

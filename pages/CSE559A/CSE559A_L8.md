@@ -1,4 +1,4 @@
-# Lecture 8
+# CSE559A Lecture 8
 
 Paper review sharing.
 
@@ -78,10 +78,3 @@ $$
 $$
 
 #### General backpropagation algorithm
-
-
-
-
-
-
-

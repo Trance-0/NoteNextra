@@ -1,4 +1,4 @@
-# Lecture 1
+# CSE559A Lecture 1
 
 ## Introducing the syllabus
 

@@ -1,4 +1,4 @@
-# Lecture 7
+# CSE559A Lecture 7
 
 ## Computer Vision (In Artificial Neural Networks for Image Understanding)
 

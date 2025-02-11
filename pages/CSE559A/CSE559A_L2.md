@@ -1,4 +1,4 @@
-# Lecture 2
+# CSE559A Lecture 2
 
 ## The Geometry of Image Formation
 

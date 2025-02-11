@@ -1,4 +1,4 @@
-# Lecture 3
+# CSE559A Lecture 3
 
 ## Image formation
 

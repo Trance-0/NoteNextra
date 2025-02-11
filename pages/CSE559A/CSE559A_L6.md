@@ -1,4 +1,4 @@
-# Lecture 6
+# CSE559A Lecture 6
 
 ## Continue on Light, eye/camera, and color
 
