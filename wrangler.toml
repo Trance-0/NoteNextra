@@ -4,4 +4,3 @@ main = ".open-next/worker.js"
 name = "notenextra"
 compatibility_date = "2025-02-13"
 compatibility_flags = ["nodejs_compat"]
-assets = { directory = ".open-next/assets", binding = "ASSETS" }
