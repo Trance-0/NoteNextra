@@ -129,7 +129,7 @@ Intensity image and Fourier image
 
 Signals can be composed.
 
-![jpeg basis](https://static.notenextra.trance-0.com/CSE559A/8x8_DCT_basis.png)
+![jpeg basis](https://notenextra.trance-0.com/CSE559A/8x8_DCT_basis.png)
 
 Note: frequency domain is often visualized using a log of the absolute value of the Fourier transform
 

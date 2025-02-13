@@ -52,7 +52,7 @@ The adding layer is the gradient distributor layer.
 The multiplying layer is the gradient switcher layer.
 The max operation is the gradient router layer.
 
-![Images of propagation](https://static.notenextra.trance-0.com/CSE559A/General_computation_graphs_for_MLP.png)
+![Images of propagation](https://notenextra.trance-0.com/CSE559A/General_computation_graphs_for_MLP.png)
 
 Simple example: Element-wise operation (ReLU)
 
@@ -83,7 +83,7 @@ Fully connected layer, operate on vectorized image.
 
 With the multi-layer perceptron, the neural network trying to fit the templates.
 
-![Flatten layer](https://static.notenextra.trance-0.com/CSE559A/Flatten_layer.png)
+![Flatten layer](https://notenextra.trance-0.com/CSE559A/Flatten_layer.png)
 
 #### Convolutional layer
 
@@ -91,7 +91,7 @@ Limit the receptive fields of units, tiles them over the input image, and share 
 
 Equivalent to sliding the learned filter over the image , computing dot products at each location.
 
-![Convolutional layer](https://static.notenextra.trance-0.com/CSE559A/Convolutional_layer.png)
+![Convolutional layer](https://notenextra.trance-0.com/CSE559A/Convolutional_layer.png)
 
 Padding: Add a border of zeros around the image. (higher padding, larger output size)
 

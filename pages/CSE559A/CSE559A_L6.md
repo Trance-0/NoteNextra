@@ -118,7 +118,7 @@ BRDF dataset:
 
 #### Digital Camera block diagram
 
-![Digital Camera block diagram](https://static.notenextra.trance-0.com/CSE559A/DigitalCameraBlockDiagram.png)
+![Digital Camera block diagram](https://notenextra.trance-0.com/CSE559A/DigitalCameraBlockDiagram.png)
 
 Scanning protocols:
 
