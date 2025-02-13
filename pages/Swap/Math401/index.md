@@ -2,4 +2,4 @@
 
 This is a course about symmetrical group and bunch of applications in other fields of math.
 
-Prof. Fere is teaching this course.
+Prof. Renado Fere is teaching this course.
