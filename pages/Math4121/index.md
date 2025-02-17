@@ -1,6 +1,6 @@
 # Math 4121
 
-Riemann integration; measurable functions; measures; the Lebesgue integral; integrable functions; $L^p$ spaces.
+Riemann integration; measurable functions; Measures; the Lebesgue integral; integrable functions; $L^p$ spaces.
 
 ## Textbook
 
