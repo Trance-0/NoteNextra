@@ -1,5 +1,4 @@
-# Lecture 1
-
+# CSE332S Lecture 1
 
 ## Today:
 

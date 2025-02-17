@@ -1,4 +1,4 @@
-# Lecture 7
+# CSE332S Lecture 7
 
 ## Debugging
 

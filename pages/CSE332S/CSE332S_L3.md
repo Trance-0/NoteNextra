@@ -1,4 +1,4 @@
-# Lecture 3
+# CSE332S Lecture 3
 
 ## C++ basic data types
 

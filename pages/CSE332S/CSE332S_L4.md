@@ -1,4 +1,4 @@
-# Lecture 4
+# CSE332S Lecture 4
 
 ## Namespace details
 

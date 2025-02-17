@@ -1,4 +1,4 @@
-# Lecture 6
+# CSE332S Lecture 6
 
 ## Expressions
 
