@@ -1,4 +1,4 @@
-# Lecture 7
+# Math416 Lecture 7
 
 ## Review
 
