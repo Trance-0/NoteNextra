@@ -5,15 +5,20 @@ const withNextra = nextra({
   themeConfig: './theme.config.jsx',
   latex: {
     renderer: 'katex',
-    // options: {
-    //   macros: {
-    //     '\\RR': '\\mathbb{R}'
-    //   }
-    // }
+    options: {
+      // suppress warnings from katex for `\\`
+      strict: false,
+      // macros: {
+      //   '\\RR': '\\mathbb{R}'
+      // }
+    }
   }
 })
 
 export default withNextra({
+  eslint: {
+    ignoreDuringBuilds: true,
+  },
   experimental: {
     // optimize memory usage: https://nextjs.org/docs/app/building-your-application/optimizing/memory-usage
     webpackMemoryOptimizations: true,
