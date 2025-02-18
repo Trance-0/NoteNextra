@@ -16,6 +16,7 @@ const withNextra = nextra({
 })
 
 export default withNextra({
+  output: 'standalone',
   eslint: {
     ignoreDuringBuilds: true,
   },
