@@ -1,7 +1,7 @@
 {
     "scripts": {
         "dev": "next",
-        "build": "export NODE_OPTIONS=--max-old-space-size=8192 && export VERCEL_DEEP_CLONE=true && next build",
+        "build": "export NODE_OPTIONS=--max-old-space-size=8192 && next build",
         "start": "next start"
     },
     "dependencies": {
