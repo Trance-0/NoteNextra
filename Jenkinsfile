@@ -1,20 +1,30 @@
 pipeline {
-    agent any
+    
+    environment {
+        registry = "trance0/notenextra"
+        version = "1.0"
+    }
+      
+    agent { dockerfile true }
 
     stages {
-        stage('Build') {
-            steps {
-                echo 'Building..'
-            }
-        }
         stage('Test') {
             steps {
                 echo 'Testing..'
+                sh 'npm install'
+                sh 'npm run build'
+            }
+        }
+        stage('Build') {
+            steps {
+                echo "Building docker image ${registry}:${version}.${env.BUILD_ID}"
+                customImage = docker.build("${registry}:${version}.${env.BUILD_ID}")
             }
         }
         stage('Deploy') {
             steps {
-                echo 'Deploying....'
+                echo "Deploying docker image ${registry}:${version}.${env.BUILD_ID}"
+                customImage.push()
             }
         }
     }
