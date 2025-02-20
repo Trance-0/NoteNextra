@@ -1,6 +1,6 @@
 pipeline {
     environment {
-        registry = "trance0/notenextra"
+        registry = "trance0/NoteNextra"
         version = "1.0"
     }
     
