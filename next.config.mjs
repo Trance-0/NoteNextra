@@ -7,7 +7,7 @@ const withNextra = nextra({
     renderer: 'katex',
     options: {
       // suppress warnings from katex for `\\`
-      strict: false,
+      // strict: false,
       // macros: {
       //   '\\RR': '\\mathbb{R}'
       // }
@@ -17,9 +17,9 @@ const withNextra = nextra({
 
 export default withNextra({
   output: 'standalone',
-  eslint: {
-    ignoreDuringBuilds: true,
-  },
+  // eslint: {
+  //   ignoreDuringBuilds: true,
+  // },
   experimental: {
     // optimize memory usage: https://nextjs.org/docs/app/building-your-application/optimizing/memory-usage
     webpackMemoryOptimizations: true,
