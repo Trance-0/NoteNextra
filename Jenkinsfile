@@ -1,6 +1,6 @@
 pipeline {
     environment {
-        registry = "trance0/notenextra"
+        registry = "trance0/NoteNextra"
         version = "1.0"
     }
     
@@ -9,9 +9,10 @@ pipeline {
     stages {
         stage('Test') {
             steps {
-                echo 'Testing..'
-                sh 'npm install'
-                sh 'npm run build'
+                nodejs(nodeJSInstallationName: 'NodeJS') {
+                    sh 'npm install'
+                    sh 'npm run build'
+                }
             }
         }
         stage('Build') {
