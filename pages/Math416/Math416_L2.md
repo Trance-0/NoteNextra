@@ -24,6 +24,7 @@ $$
 \forall n\in \mathbb{Z}, z^n=r^n\text{cis}(n\theta)
 $$
 
+
 ## New Fancy stuff
 
 Claim:
@@ -54,7 +55,7 @@ When $k=1$, we get $\text{cis}\left(\frac{2\pi}{3}\right)=-\frac{1}{2}+i\frac{\s
 
 When $k=2$, we get $\text{cis}\left(\frac{4\pi}{3}\right)=-\frac{1}{2}-i\frac{\sqrt{3}}{2}$
 
-#### Strange example
+Strange example
 
 Let $p(x)=a_3x^3+a_2x^2+a_1x+a_0$ be a polynomial with real coefficients.
 
@@ -197,18 +198,18 @@ So all the point on the north pole is mapped to outside of the unit circle in $\
 
 all the point on the south pole is mapped to inside of the unit circle in $\mathbb{R}^2$.
 
-The line through $(0,0,1)$ and $(\xi,\eta,\zeta)$ intersects the unit sphere at $(x,y,0)$
+The line through $(0,0,1)$ and $(\xi,\eta,z)$ intersects the unit sphere at $(x,y,0)$
 
-Line $(tx,ty,1-t)$ intersects $\zeta^2$ at $t^2x^2+t^2y^2+(1-t)^2=1$
+Line $(tx,ty,1-t)$ intersects $z^2$ at $t^2x^2+t^2y^2+(1-t)^2=1$
 
 So $t=\frac{2}{1+x^2+y^2}$
 
 $$
-\zeta=x+iy\mapsto \frac{1}{1+|\zeta|^2}(2Re(\zeta),2Im(\zeta),|\zeta|^2-1)
+z=x+iy\mapsto \frac{1}{1+|z|^2}(2Re(z),2Im(z),|z|^2-1)
 $$
 
 $$
-(\xi,\eta,\zeta)\mapsto \frac{\xi+i\eta}{1-\zeta}
+(\xi,\eta,z)\mapsto \frac{\xi+i\eta}{1-z}
 $$
 
 This is a homeomorphism. $\mathbb{C}\setminus\{\infty\}\simeq S^2$
@@ -220,7 +221,7 @@ Suppose $\Omega$ is an open subset of $\mathbb{C}$.
 A function $f:\Omega\to \mathbb{C}$'s derivative is defined as
 
 $$
-f'(\zeta_0)=\lim_{\zeta\to \zeta_0}\frac{f(\zeta)-f(\zeta_0)}{\zeta-\zeta_0}
+f'(z_0)=\lim_{z\to z_0}\frac{f(z)-f(z_0)}{z-z_0}
 $$
 
 $f=u+iv$, $u,v:\Omega\to \mathbb{R}$
@@ -232,11 +233,11 @@ How are $f'$ and derivatives of $u$ and $v$ related?
 Chain rule applies
 
 $$
-\frac{d}{d\zeta}(f(g(\zeta)))=f'(g(\zeta))g'(\zeta)
+\frac{d}{dz}(f(g(z)))=f'(g(z))g'(z)
 $$
 
 Polynomials
 
 $$
-\frac{d}{d\zeta}\zeta^n=n\zeta^{n-1}
+\frac{d}{dz}z^n=nz^{n-1}
 $$

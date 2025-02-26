@@ -18,14 +18,14 @@ So
 
 $$
 \begin{aligned}
-\frac{\partial f}{\partial \zeta}&=\frac{1}{2}\left(u_x+v_y\right)-i\frac{1}{2}\left(v_x+u_y\right)\\
+\frac{\partial f}{\partial z}&=\frac{1}{2}\left(u_x+v_y\right)-i\frac{1}{2}\left(v_x+u_y\right)\\
 &=\frac{1}{2}\left(\alpha+\delta\right)-i\frac{1}{2}\left(\beta-\sigma\right)\\
 \end{aligned}
 $$
 
 $$
 \begin{aligned}
-\frac{\partial f}{\partial \overline{\zeta}}&=\frac{1}{2}\left(u_x+v_y\right)+i\frac{1}{2}\left(v_x+u_y\right)\\
+\frac{\partial f}{\partial \overline{z}}&=\frac{1}{2}\left(u_x+v_y\right)+i\frac{1}{2}\left(v_x+u_y\right)\\
 &=\frac{1}{2}\left(\alpha-\delta\right)+i\frac{1}{2}\left(\beta+\sigma\right)\\
 \end{aligned}
 $$
@@ -42,11 +42,11 @@ $$
 So,
 
 $$
-\frac{\partial f}{\partial \zeta}=\frac{1}{2}(\alpha+\alpha)+i\frac{1}{2}(\beta+\beta)=a
+\frac{\partial f}{\partial z}=\frac{1}{2}(\alpha+\alpha)+i\frac{1}{2}(\beta+\beta)=a
 $$
 
 $$
-\frac{\partial f}{\partial \overline{\zeta}}=\frac{1}{2}(\alpha-\alpha)+i\frac{1}{2}(\beta-\beta)=0
+\frac{\partial f}{\partial \overline{z}}=\frac{1}{2}(\alpha-\alpha)+i\frac{1}{2}(\beta-\beta)=0
 $$
 
 > Less pain to represent a complex function using four real numbers.
@@ -59,10 +59,10 @@ Let $a,b,c,d$ be complex numbers. such that $ad-bc\neq 0$.
 The linear fractional transformation is defined as
 
 $$
-\phi(\zeta)=\frac{a\zeta+b}{c\zeta+d}
+\phi(z)=\frac{az+b}{cz+d}
 $$
 
-If we let $\psi(\zeta)=\frac{e\zeta-f}{-g\zeta+h}$ also be a linear fractional transformation, then $\phi\circ\psi$ is also a linear fractional transformation.
+If we let $\psi(z)=\frac{ez-f}{-gz+h}$ also be a linear fractional transformation, then $\phi\circ\psi$ is also a linear fractional transformation.
 
 New coefficients can be solved by
 
@@ -82,7 +82,7 @@ m&n
 \end{pmatrix}
 $$
 
-So $\phi\circ\psi(\zeta)=\frac{k\zeta+l}{m\zeta+n}$
+So $\phi\circ\psi(z)=\frac{kz+l}{mz+n}$
 
 ### Complex projective space
 
@@ -98,7 +98,7 @@ $\mathbb{C}P^1$ is the set of lines through the origin in $\mathbb{C}$.
 
 We defined $(a,b)\sim(c,d),(a,b),(c,d)\in\mathbb{C}\setminus\{(0,0)\}$ if $\exists t\neq 0,t\in\mathbb{C}\setminus\{0\}$ such that $(a,b)=(tc,td)$.
 
-So, $\forall \zeta\in\mathbb{C}\setminus\{0\}$:
+So, $\forall z\in\mathbb{C}\setminus\{0\}$:
 
 If $a\neq 0$, then $(a,b)\sim(1,\frac{b}{a})$.
 
@@ -116,33 +116,33 @@ c & d
 Suppose $M$ is non-singular. Then $ad-bc\neq 0$.
 
 If $M\begin{pmatrix}
-\zeta_1\\
-\zeta_2
+z_1\\
+z_2
 \end{pmatrix}=\begin{pmatrix}
 \omega_1\\
 \omega_2
 \end{pmatrix}$, then $M\begin{pmatrix}
-t\zeta_1\\
-t\zeta_2
+tz_1\\
+tz_2
 \end{pmatrix}=\begin{pmatrix}
 t\omega_1\\
 t\omega_2
 \end{pmatrix}$.
 
 So, $M$ induces a map $\phi_M:\mathbb{C}P^1\to\mathbb{C}P^1$ defined by $M\begin{pmatrix}
-\zeta\\
+z\\
 1
 \end{pmatrix}=\begin{pmatrix}
-\frac{a\zeta+b}{c\zeta+d}\\
+\frac{az+b}{cz+d}\\
 1
 \end{pmatrix}$.
 
-$\phi_M(\zeta)=\frac{a\zeta+b}{c\zeta+d}$.
+$\phi_M(z)=\frac{az+b}{cz+d}$.
 
 If we let $M_2=\begin{pmatrix}
 e &f\\
 g &h
-\end{pmatrix}$, where $ad-bc\neq 0$ and $eh-fg\neq 0$, then $\phi_{M_2}(\zeta)=\frac{e\zeta+f}{g\zeta+h}$.
+\end{pmatrix}$, where $ad-bc\neq 0$ and $eh-fg\neq 0$, then $\phi_{M_2}(z)=\frac{ez+f}{gz+h}$.
 
 So, $M_2M_1=\begin{pmatrix}
 a&b\\
@@ -151,15 +151,15 @@ c&d
 e&f\\
 g&h
 \end{pmatrix}=\begin{pmatrix}
-\zeta\\
+z\\
 1
 \end{pmatrix}$.
 
 This also gives $\begin{pmatrix}
-k\zeta+l\\
-m\zeta+n
+kz+l\\
+mz+n
 \end{pmatrix}\sim\begin{pmatrix}
-\frac{k\zeta+l}{m\zeta+n}\\
+\frac{kz+l}{mz+n}\\
 1
 \end{pmatrix}$.
 
@@ -187,17 +187,17 @@ If $\phi$ is a non-constant linear fractional transformation, then $\phi$ is con
 
 Proof:
 
-Know that $\phi_0\circ\phi(\zeta)=\zeta$,
+Know that $\phi_0\circ\phi(z)=z$,
 
-Then $\phi(\zeta)=\phi_0^{-1}\circ\phi\circ\phi_0(\zeta)$.
+Then $\phi(z)=\phi_0^{-1}\circ\phi\circ\phi_0(z)$.
 
-So $\phi(\zeta)=\frac{a\zeta+b}{c\zeta+d}$.
+So $\phi(z)=\frac{az+b}{cz+d}$.
 
 $\phi:\mathbb{C}\cup\{\infty\}\to\mathbb{C}\cup\{\infty\}$ which gives $\phi(\infty)=\frac{a}{c}$ and $\phi(-\frac{d}{c})=\infty$.
 
 So, $\phi$ is conformal.
 
-EOP
+QED
 
 #### Proposition 3.4 of Fixed points
 
@@ -205,7 +205,7 @@ Any non-constant linear fractional transformation except the identity transforma
 
 Proof:
 
-Let $\phi(\zeta)=\frac{a\zeta+b}{c\zeta+d}$.
+Let $\phi(z)=\frac{az+b}{cz+d}$.
 
 Case 1: $c=0$
 
@@ -213,19 +213,19 @@ Then $\infty$ is a fixed point.
 
 Case 2: $c\neq 0$
 
-Then $\phi(\zeta)=\frac{a\zeta+b}{c\zeta+d}$.
+Then $\phi(z)=\frac{az+b}{cz+d}$.
 
-The solution of $\phi(\zeta)=\zeta$ is $c\zeta^2+(d-a)\zeta-b=0$.
+The solution of $\phi(z)=z$ is $cz^2+(d-a)z-b=0$.
 
-Such solutions are $\zeta=\frac{-(d-a)\pm\sqrt{(d-a)^2+4bc}}{2c}$.
+Such solutions are $z=\frac{-(d-a)\pm\sqrt{(d-a)^2+4bc}}{2c}$.
 
 So, $\phi$ has 1 or 2 fixed points.
 
-EOP
+QED
 
 #### Proposition 3.5 of triple transitivity
 
-If $\zeta_1,\zeta_2,\zeta_3\in\mathbb{C}P^1$ are distinct, then there exists a non-constant linear fractional transformation $\phi$ such that $\phi(\zeta_1)=\zeta_2$ and $\phi(\zeta_3)=\infty$.
+If $z_1,z_2,z_3\in\mathbb{C}P^1$ are distinct, then there exists a non-constant linear fractional transformation $\phi$ such that $\phi(z_1)=z_2$ and $\phi(z_3)=\infty$.
 
 Proof as homework.
 
@@ -235,6 +235,4 @@ We defined clircle to be a circle or a line.
 
 If $\phi$ is a non-constant linear fractional transformation, then $\phi$ maps clircles to clircles.
 
-Proof:
-
-Continue on next lecture.
+Proof continue on next lecture.

@@ -4,14 +4,14 @@
 
 ### Differentiability
 
-#### Definition of differentiability in complex variables
+#### Definition 2.1 of differentiability in complex variables
 
-**Suppose $G$ is an open subset of $\mathbb{C}$**.
+**Suppose $G$ is an open subset of $\mathbb{C}$**. (very important, $f'(z_0)$ cannot be define unless $z_0$ belongs to an open set in which $f$ is defined.)
 
-A function $f:G\to \mathbb{C}$ is differentiable at $\zeta_0\in G$ if
+A function $f:G\to \mathbb{C}$ is differentiable at $z_0\in G$ if
 
 $$
-f'(\zeta_0)=\lim_{\zeta\to \zeta_0}\frac{f(\zeta)-f(\zeta_0)}{\zeta-\zeta_0}
+f'(z_0)=\lim_{z\to z_0}\frac{f(z)-f(z_0)}{z-z_0}
 $$
 
 exists.
@@ -20,7 +20,7 @@ Or equivalently,
 
 We can also express the $f$ as $f=u+iv$, where $u,v:G\to \mathbb{R}$ are real-valued functions.
 
-Recall that $u:G\to \mathbb{R}$ is differentiable at $\zeta_0\in G$ if and only if there exists a complex number $(x,y)\in \mathbb{C}$ such that a function
+Recall that $u:G\to \mathbb{R}$ is differentiable at $z_0\in G$ if and only if there exists a complex number $(x,y)\in \mathbb{C}$ such that a function
 
 $$
 R(x,y)=u(x,y)-\left(u(x_0,y_0)+\frac{\partial u}{\partial x}(x_0,y_0)(x-x_0)+\frac{\partial u}{\partial y}(x_0,y_0)(y-y_0)\right)
@@ -65,9 +65,9 @@ Then the differentiability of $v$ at $(x_0,y_0)$ guarantees that
 $$
 \lim_{(x,y)\to (x_0,y_0)}\frac{|S(x,y)|}{\sqrt{(x-x_0)^2+(y-y_0)^2}}=0.
 $$
-Moreover, considering the definition of the complex derivative of $f=u+iv$, if we approach $\zeta_0=x_0+iy_0$ along different directions we obtain
+Moreover, considering the definition of the complex derivative of $f=u+iv$, if we approach $z_0=x_0+iy_0$ along different directions we obtain
 $$
-f'(\zeta_0)=\frac{\partial u}{\partial x}(x_0,y_0)+i\frac{\partial v}{\partial x}(x_0,y_0)
+f'(z_0)=\frac{\partial u}{\partial x}(x_0,y_0)+i\frac{\partial v}{\partial x}(x_0,y_0)
 =\frac{\partial v}{\partial y}(x_0,y_0)-i\frac{\partial u}{\partial y}(x_0,y_0).
 $$
 Equating the real and imaginary parts of these two expressions forces
@@ -77,7 +77,7 @@ $$
 
 #### Theorem 2.6 (The Cauchy-Riemann equations):
 
-If $f=u+iv$ is complex differentiable at $\zeta_0\in G$, then $u$ and $v$ are real differentiable at $(x_0,y_0)$ and
+If $f=u+iv$ is complex differentiable at $z_0\in G$, then $u$ and $v$ are real differentiable at $(x_0,y_0)$ and
 
 $$
 \frac{\partial u}{\partial x}(x_0,y_0)=\frac{\partial v}{\partial y}(x_0,y_0),\quad \frac{\partial u}{\partial y}(x_0,y_0)=-\frac{\partial v}{\partial x}(x_0,y_0).
@@ -85,35 +85,37 @@ $$
 
 > Some missing details:
 >
-> The Cauchy-Riemann equations are necessary and sufficient for the differentiability of $f$ at $\zeta_0$.
+> The Cauchy-Riemann equations are necessary and sufficient for the differentiability of $f$ at $z_0$.
 >
-> This states that a function $f$ is **complex differentiable** at $\zeta_0$ if and only if $u$ and $v$ are real differentiable at $(x_0,y_0)$ and the Cauchy-Riemann equations hold at $(x_0,y_0)$. That is $f'(\zeta_0)=\frac{\partial u}{\partial x}(x_0,y_0)+i\frac{\partial v}{\partial x}(x_0,y_0)=\frac{\partial v}{\partial y}(x_0,y_0)-i\frac{\partial u}{\partial y}(x_0,y_0)$.
+> This states that a function $f$ is **complex differentiable** at $z_0$ if and only if $u$ and $v$ are real differentiable at $(x_0,y_0)$ and the Cauchy-Riemann equations hold at $(x_0,y_0)$. That is $f'(z_0)=\frac{\partial u}{\partial x}(x_0,y_0)+i\frac{\partial v}{\partial x}(x_0,y_0)=\frac{\partial v}{\partial y}(x_0,y_0)-i\frac{\partial u}{\partial y}(x_0,y_0)$.
 
 And $u$ and $v$ have continuous partial derivatives at $(x_0,y_0)$.
 
 And let $c=\frac{\partial u}{\partial x}(x_0,y_0)$ and $d=\frac{\partial v}{\partial x}(x_0,y_0)$.
 
-**Then $f'(\zeta_0)=c+id$, is holomorphic at $\zeta_0$.**
+**Then $f'(z_0)=c+id$, is holomorphic at $z_0$.**
 
 ### Holomorphic Functions
 
 #### Definition 2.8 (Holomorphic functions)
 
-A function $f:G\to \mathbb{C}$ is holomorphic (or analytic) at $\zeta_0\in G$ if it is complex differentiable at $\zeta_0$.
+A function $f:G\to \mathbb{C}$ is holomorphic (or analytic) at $z_0\in G$ if it is complex differentiable at $z_0$.
+
+> Note that the true definition of analytic function is that can be written as a convergent power series in a neighborhood of each point in its domain. We will prove that these two definitions are equivalent to each other in later sections.
 
 Example:
 
 Suppose $f:G\to \mathbb{C}$ where $f=u+iv$ and $\frac{\partial f}{\partial x}=\frac{\partial u}{\partial x}+i\frac{\partial v}{\partial x}$, $\frac{\partial f}{\partial y}=\frac{\partial u}{\partial y}+i\frac{\partial v}{\partial y}$.
 
-Define $\frac{\partial}{\partial \zeta}=\frac{1}{2}\left(\frac{\partial}{\partial x}-i\frac{\partial}{\partial y}\right)$ and $\frac{\partial}{\partial \bar{\zeta}}=\frac{1}{2}\left(\frac{\partial}{\partial x}+i\frac{\partial}{\partial y}\right)$.
+Define $\frac{\partial}{\partial z}=\frac{1}{2}\left(\frac{\partial}{\partial x}-i\frac{\partial}{\partial y}\right)$ and $\frac{\partial}{\partial \bar{z}}=\frac{1}{2}\left(\frac{\partial}{\partial x}+i\frac{\partial}{\partial y}\right)$.
 
-Suppose $f$ is holomorphic at $\bar{\zeta}_0\in G$ (Cauchy-Riemann equations hold at $\bar{\zeta}_0$).
+Suppose $f$ is holomorphic at $\bar{z}_0\in G$ (Cauchy-Riemann equations hold at $\bar{z}_0$).
 
-Then $\frac{\partial f}{\partial \bar{\zeta}}(\bar{\zeta}_0)=0$.
+Then $\frac{\partial f}{\partial \bar{z}}(\bar{z}_0)=0$.
 
-Note that $\forall m\in \mathbb{Z}$, $\zeta^m$ is holomorphic on $\mathbb{C}$.
+Note that $\forall m\in \mathbb{Z}$, $z^m$ is holomorphic on $\mathbb{C}$.
 
-i.e. $\forall a\in \mathbb{C}$, $\lim_{\zeta\to a}\frac{\zeta^m-a^m}{\zeta-a}=\frac{(\zeta-a)(\zeta^{m-1}+\zeta^{m-2}a+\cdots+a^{m-1})}{\zeta-a}=ma^{m-1}$.
+i.e. $\forall a\in \mathbb{C}$, $\lim_{z\to a}\frac{z^m-a^m}{z-a}=\frac{(z-a)(z^{m-1}+z^{m-2}a+\cdots+a^{m-1})}{z-a}=ma^{m-1}$.
 
 So polynomials are holomorphic on $\mathbb{C}$.
 
@@ -132,20 +134,20 @@ $$
 And
 
 $$
-\frac{\partial}{\partial \zeta}f=\frac{1}{2}\left(\frac{\partial}{\partial x}-i\frac{\partial}{\partial y}\right)f,\quad \frac{\partial}{\partial \bar{\zeta}}f=\frac{1}{2}\left(\frac{\partial}{\partial x}+i\frac{\partial}{\partial y}\right)f.
+\frac{\partial}{\partial z}f=\frac{1}{2}\left(\frac{\partial}{\partial x}-i\frac{\partial}{\partial y}\right)f,\quad \frac{\partial}{\partial \bar{z}}f=\frac{1}{2}\left(\frac{\partial}{\partial x}+i\frac{\partial}{\partial y}\right)f.
 $$
 
 This definition of partial differential operators on complex functions is consistent with the definition of partial differential operators on real functions.
 
 $$
-\frac{\partial}{\partial x}f=\frac{\partial}{\partial \zeta}f+\frac{\partial}{\partial \bar{\zeta}}f,\quad \frac{\partial}{\partial y}f=i\left(\frac{\partial}{\partial \zeta}f-\frac{\partial}{\partial \bar{\zeta}}f\right).
+\frac{\partial}{\partial x}f=\frac{\partial}{\partial z}f+\frac{\partial}{\partial \bar{z}}f,\quad \frac{\partial}{\partial y}f=i\left(\frac{\partial}{\partial z}f-\frac{\partial}{\partial \bar{z}}f\right).
 $$
 
 ### Curves in $\mathbb{C}$
 
 #### Definition 2.11 (Curves in $\mathbb{C}$)
 
-A curve $\gamma$ in $G\subset \mathbb{C}$ is a continuous map of an interval $I$ into $G$. We say $\gamma$ is differentiable if $\forall t_0\in I$, $\gamma'(t_0)=\lim_{t\to t_0}\frac{\gamma(t)-\gamma(t_0)}{t-t_0}$ exists.
+A curve $\gamma$ in $G\subset \mathbb{C}$ is a continuous map of an interval $I\in \mathbb{R}$ into $G$. We say $\gamma$ is differentiable if $\forall t_0\in I$, $\gamma'(t_0)=\lim_{t\to t_0}\frac{\gamma(t)-\gamma(t_0)}{t-t_0}$ exists.
 
 If $\gamma'(t_0)$ is a point in $\mathbb{C}$, then $\gamma'(t_0)$ is called the tangent vector to $\gamma$ at $t_0$.
 
@@ -155,19 +157,19 @@ A curve $\gamma$ is regular if $\gamma'(t)\neq 0$ for all $t\in I$.
 
 #### Definition of angle between two curves
 
-Let $\gamma_1,\gamma_2$ be two curves in $G\subset \mathbb{C}$ with $\gamma_1(t_0)=\gamma_2(t_0)=\zeta_0$ for some $t_0\in I_1\cap I_2$.
+Let $\gamma_1,\gamma_2$ be two curves in $G\subset \mathbb{C}$ with $\gamma_1(t_0)=\gamma_2(t_0)=z_0$ for some $t_0\in I_1\cap I_2$.
 
-The angle between $\gamma_1$ and $\gamma_2$ at $\zeta_0$ is the angle between the vectors $\gamma_1'(t_0)$ and $\gamma_2'(t_0)$. Denote as $\arg(\gamma_2'(t_0))-\arg(\gamma_1'(t_0))=\arg(\gamma_2'(t_0)\gamma_1'(t_0))$.
+The angle between $\gamma_1$ and $\gamma_2$ at $z_0$ is the angle between the vectors $\gamma_1'(t_0)$ and $\gamma_2'(t_0)$. Denote as $\arg(\gamma_2'(t_0))-\arg(\gamma_1'(t_0))=\arg(\gamma_2'(t_0)\gamma_1'(t_0))$.
 
-#### Theorem of conformality
+#### Theorem 2.12 of conformality
 
-Suppose $f:G\to \mathbb{C}$ is holomorphic function on open set $G\subset \mathbb{C}$ and $\gamma_1,\gamma_2$ are regular curves in $G$ with $\gamma_1(t_0)=\gamma_2(t_0)=\zeta_0$ for some $t_0\in I_1\cap I_2$.
+Suppose $f:G\to \mathbb{C}$ is holomorphic function on open set $G\subset \mathbb{C}$ and $\gamma_1,\gamma_2$ are regular curves in $G$ with $\gamma_1(t_0)=\gamma_2(t_0)=z_0$ for some $t_0\in I_1\cap I_2$.
 
-If $f'(\zeta_0)\neq 0$, then the angle between $\gamma_1$ and $\gamma_2$ at $\zeta_0$ is the same as the angle between the vectors $f'(\zeta_0)\gamma_1'(t_0)$ and $f'(\zeta_0)\gamma_2'(t_0)$.
+If $f'(z_0)\neq 0$, then the angle between $\gamma_1$ and $\gamma_2$ at $z_0$ is the same as the angle between the vectors $f'(z_0)\gamma_1'(t_0)$ and $f'(z_0)\gamma_2'(t_0)$.
 
 #### Lemma of function of a curve and angle
 
-If $f:G\to \mathbb{C}$ is holomorphic function on open set $G\subset \mathbb{C}$ and $\gamma$ is differentiable curve in $G$ with $\gamma(t_0)=\zeta_0$ for some $t_0\in I$.
+If $f:G\to \mathbb{C}$ is holomorphic function on open set $G\subset \mathbb{C}$ and $\gamma$ is differentiable curve in $G$ with $\gamma(t_0)=z_0$ for some $t_0\in I$.
 
 Then,
 
@@ -175,7 +177,7 @@ $$
 (f\circ \gamma)'(t_0)=f'(\gamma(t_0))\gamma'(t_0).
 $$
 
-If Lemma of function of a curve and angle holds, then the angle between $f\circ \gamma_1$ and $f\circ \gamma_2$ at $\zeta_0$ is
+If Lemma of function of a curve and angle holds, then the angle between $f\circ \gamma_1$ and $f\circ \gamma_2$ at $z_0$ is
 
 $$
 \begin{aligned}

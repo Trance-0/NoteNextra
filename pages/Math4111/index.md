@@ -10,7 +10,7 @@ Topics include:
 4. Convergence of Series and Sequences
 5. Limits and Continuity
 
-The course is taught by [Alan Chang](https://math.wustl.edu/people/alan-chang).
+The course is taught by [Alan Chang](https://math.wustl.edu/pQEDle/alan-chang).
 
 It is easy in my semester perhaps, it is the first course I got 3 perfect scores in exams. (Unfortunately, I did not get the extra credit for the third midterm exam.)
 

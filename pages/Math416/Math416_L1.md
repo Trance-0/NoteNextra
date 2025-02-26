@@ -109,7 +109,31 @@ $$
 
 (Define $\text{cis}(\theta)=\cos\theta+i\sin\theta$)
 
+#### Theorem 1.6 Parallelogram Equality
+
+The sum of the squares of the lengths of the diagonals of a parallelogram equals the sum of the squares of the lengths of the sides.
+
+Proof:
+
+Let $z_1,z_2$ be two complex numbers representing the two sides of the parallelogram, then the sum of the squares of the lengths of the diagonals of the parallelogram is $|z_1-z_2|^2+|z_1+z_2|^2$, and the sum of the squares of the lengths of the sides is $2|z_1|^2+2|z_2|^2$.
+
+$$
+\begin{aligned}
+|z_1-z_2|^2+|z_1+z_2|^2 &= (x_1-x_2)^2+(y_1-y_2)^2+(x_1+x_2)^2+(y_1+y_2)^2 \\
+&= 2x_1^2+2x_2^2+2y_1^2+2y_2^2 \\
+&= 2(|z_1|^2+|z_2|^2)
+\end{aligned}
+$$
+
+QED
+
+#### Definition 1.9
+
+The argument of a complex number $z$ is defined as the angle $\theta$ between the positive real axis and the ray from the origin through $z$.
+
 ### De Moivre's Formula
+
+#### Theorem 1.10 De Moivre's Formula
 
 Let $z=r\text{cis}(\theta)$, then
 

@@ -98,7 +98,7 @@ Proof:
 
     Then $P[a$ inverting $g]\sim P[a$ inverts $f$ all $q(n)]$ times. $<(1-\frac{1}{p(n)})^{q(n)}=(1-\frac{1}{p(n)})^{np(n)}<(e^{-\frac{1}{p(n)}})^{np(n)}=e^{-n}$ which is negligible function.
 
-EOP
+QED
 
 _we can always force the adversary to invert the weak one-way function for polynomial time to reach the property of strong one-way function_
 
