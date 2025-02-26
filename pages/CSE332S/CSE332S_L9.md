@@ -164,7 +164,7 @@ Example using `std::sort()`
   - http://www.cplusplus.com/reference/algorithm/sort/
 
 - Requires random access iterators.
-- Requires elements being sorted implement operator `<` (less than)
+- Requires elements being sorted implement `operator<` (less than)
 
 ```cpp
 #include <algorithm>

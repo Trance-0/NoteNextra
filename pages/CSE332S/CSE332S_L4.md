@@ -39,7 +39,7 @@ Declared/(re)opend with `namespace` keyword.
 - `namespace name { ... }`
 - `namespace name = namespace existing_name { ... };`
 
-Access members using scoping operator `::`
+Access members using scoping `operator::`
 
 - `std::cout << "Hello, World!" << std::endl;`
 
