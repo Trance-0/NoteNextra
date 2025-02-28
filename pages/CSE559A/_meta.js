@@ -15,4 +15,5 @@ export default {
     CSE559A_L10: "Computer Vision (Lecture 10)",
     CSE559A_L11: "Computer Vision (Lecture 11)",
     CSE559A_L12: "Computer Vision (Lecture 12)",
+    CSE559A_L13: "Computer Vision (Lecture 13)",
 }
