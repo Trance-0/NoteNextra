@@ -4,6 +4,8 @@ This was originated from another project [NoteChondria](https://github.com/Tranc
 
 I'm not sure if I'll be able to finish it at any time soon. And I've got a lot of materials to share with you guys.
 
+The primary audience of this project is for those challenge takers who are taking courses in Washington University in St. Louis and love Math and Computer Science and want to find something to facilitate their learning.
+
 So here it is. A lite server for you to read my notes.
 
 **Remember, I take notes don't means that I like them and paying attention to the lecture.**
