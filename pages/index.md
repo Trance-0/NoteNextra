@@ -10,7 +10,7 @@ So here it is. A lite server for you to read my notes.
 
 <p style="color: red; font-weight: bold">It's because I'm too easy to fall asleep if I stop doing something on my hand when my mind is wandering.</p>
 
-So I'm not responsible for any wrong notes or facts recorded in my notes since I rarely check them and use them as a reference. I'd like to read the book which have been proof read by many pQEDle.
+So I'm not responsible for any wrong notes or facts recorded in my notes since I rarely check them and use them as a reference. I'd like to read the book which have been proof read by many people.
 
 If you find any mistakes, please let me know by submitting an issue in the [GitHub repository](https://github.com/Trance-0/NoteNextra). Or click the `Edit this page` button at the side of the page to fix it yourself with appropriate push request. I really appreciate and willing to accept any valuable contribution in this project.
 
