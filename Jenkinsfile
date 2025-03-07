@@ -2,6 +2,7 @@ pipeline {
     environment {
         registry = "trance0/notenextra"
         version = "1.0"
+        NODE_OPTIONS = "--max-old-space-size=8192"
     }
     
     agent any
