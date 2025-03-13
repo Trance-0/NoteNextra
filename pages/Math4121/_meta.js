@@ -22,15 +22,9 @@ export default {
     Math4121_L17: "Introduction to Lebesgue Integration (Lecture 17)",
     Math4121_L18: "Introduction to Lebesgue Integration (Lecture 18)",
     Math4121_L19: "Introduction to Lebesgue Integration (Lecture 19)",
-    Math4121_L20: {
-        display: 'hidden'
-    },
-    Math4121_L21: {
-        display: 'hidden'
-    },
-    Math4121_L22: {
-        display: 'hidden'
-    },
+    Math4121_L20: "Introduction to Lebesgue Integration (Lecture 20)",
+    Math4121_L21: "Introduction to Lebesgue Integration (Lecture 21)",
+    Math4121_L22: "Introduction to Lebesgue Integration (Lecture 22)",
     Math4121_L23: {
         display: 'hidden'
     },

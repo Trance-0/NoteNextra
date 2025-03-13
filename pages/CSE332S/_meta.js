@@ -16,4 +16,5 @@ export default {
     CSE332S_L11: "Object-Oriented Programming Lab (Lecture 11)",
     CSE332S_L12: "Object-Oriented Programming Lab (Lecture 12)",
     CSE332S_L13: "Object-Oriented Programming Lab (Lecture 13)",
+    CSE332S_L14: "Object-Oriented Programming Lab (Lecture 14)",
 }

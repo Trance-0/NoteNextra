@@ -1,11 +1,12 @@
 {
     "scripts": {
         "dev": "next",
-        "build": "export NODE_OPTIONS=--max-old-space-size=8192 && next build",
+        "build": "next build",
         "start": "next start"
     },
     "dependencies": {
         "@cloudflare/next-on-pages": "^1.13.7",
+        "@napi-rs/simple-git": "^0.1.19",
         "@vercel/analytics": "^1.4.1",
         "@vercel/speed-insights": "^1.1.0",
         "next": "^15.0.3",
