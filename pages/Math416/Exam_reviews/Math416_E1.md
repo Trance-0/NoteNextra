@@ -2,6 +2,213 @@
 
 So everything we have learned so far is to extend the real line to the complex plane.
 
+## Chapter 0 Calculus on Real values
+
+### Differentiation
+
+Let $f,g$ be function on real line and $c$ be a real number.
+
+$$
+\frac{d}{dx}(f+g)=f'+g'
+$$
+
+$$
+\frac{d}{dx}(cf)=cf'
+$$
+
+$$
+\frac{d}{dx}(fg)=f'g+fg'
+$$
+
+$$
+\frac{d}{dx}(f/g)=(f'g-fg')/g^2
+$$
+
+$$
+\frac{d}{dx}(f\circ g)=(f'\circ g)\frac{d}{dx}g
+$$
+
+$$
+\frac{d}{dx}x^n=nx^{n-1}
+$$
+
+$$
+\frac{d}{dx}e^x=e^x
+$$
+
+$$
+\frac{d}{dx}\ln x=\frac{1}{x}
+$$
+
+$$
+\frac{d}{dx}\sin x=\cos x
+$$
+
+$$
+\frac{d}{dx}\cos x=-\sin x
+$$
+
+$$
+\frac{d}{dx}\tan x=\sec^2 x
+$$
+
+$$
+\frac{d}{dx}\sec x=\sec x\tan x
+$$
+
+$$
+\frac{d}{dx}\csc x=-\csc x\cot x
+$$
+
+$$
+\frac{d}{dx}\sinh x=\cosh x
+$$
+
+$$
+\frac{d}{dx}\cosh x=\sinh x
+$$
+
+$$
+\frac{d}{dx}\tanh x=\operatorname{sech}^2 x
+$$
+
+$$
+\frac{d}{dx}\operatorname{sech} x=-\operatorname{sech}x\tanh x
+$$
+
+$$
+\frac{d}{dx}\operatorname{csch} x=-\operatorname{csch}x\coth x
+$$
+
+$$
+\frac{d}{dx}\coth x=-\operatorname{csch}^2 x
+$$
+
+$$
+\frac{d}{dx}\arcsin x=\frac{1}{\sqrt{1-x^2}}
+$$
+
+$$
+\frac{d}{dx}\arccos x=-\frac{1}{\sqrt{1-x^2}}
+$$
+
+$$
+\frac{d}{dx}\arctan x=\frac{1}{1+x^2}
+$$
+
+$$
+\frac{d}{dx}\operatorname{arccot} x=-\frac{1}{1+x^2}
+$$
+
+$$
+\frac{d}{dx}\operatorname{arcsec} x=\frac{1}{x\sqrt{x^2-1}}
+$$
+
+$$
+\frac{d}{dx}\operatorname{arccsc} x=-\frac{1}{x\sqrt{x^2-1}}
+$$
+
+### Integration
+
+Let $f,g$ be function on real line and $c$ be a real number.
+
+$$
+\int (f+g)dx=\int fdx+\int gdx
+$$
+
+$$
+\int cfdx=c\int fdx
+$$
+
+$$
+\int e^x dx=e^x
+$$
+
+$$
+\int \ln x dx=x\ln x-x
+$$
+
+$$
+\int \frac{1}{x} dx=\ln|x|
+$$
+
+$$
+\int \sin x dx=-\cos x
+$$
+
+$$
+\int \cos x dx=\sin x
+$$
+
+$$
+\int \tan x dx=-\ln|\cos x|
+$$
+
+$$
+\int \cot x dx=\ln|\sin x|
+$$
+
+$$
+\int \sec x dx=\ln|\sec x+\tan x|
+$$
+
+$$
+\int \csc x dx=\ln|\csc x-\cot x|
+$$
+
+$$
+\int \sinh x dx=\cosh x
+$$
+
+$$
+\int \cosh x dx=\sinh x
+$$
+
+$$
+\int \tanh x dx=\ln|\cosh x|
+$$
+
+$$
+\int \coth x dx=\ln|\sinh x|
+$$
+
+$$
+\int \operatorname{sech} x dx=2\arctan(\tanh(x/2))
+$$
+
+$$
+\int \operatorname{csch} x dx=\ln|\coth x-\operatorname{csch} x|
+$$
+
+$$
+\int \operatorname{sech}^2 x dx=\tanh x
+$$
+
+$$
+\int \operatorname{csch}^2 x dx=-\coth x
+$$
+
+$$
+\int \frac{1}{1+x^2} dx=\arctan x
+$$
+
+$$
+\int \frac{1}{x^2+1} dx=\arctan x
+$$
+
+$$
+\int \frac{1}{x^2-1} dx=\frac{1}{2}\ln|\frac{x-1}{x+1}|
+$$
+
+$$
+\int \frac{1}{x^2-a^2} dx=\frac{1}{2a}\ln|\frac{x-a}{x+a}|
+$$
+
+$$
+\int \frac{1}{x^2+a^2} dx=\frac{1}{a}\arctan(\frac{x}{a})
+$$
+
+
 ## Chapter 1 Complex Numbers
 
 ### Definition of complex numbers
@@ -16,6 +223,14 @@ $$
 
 $$
 (x_1 + y_1i) \cdot (x_2 + y_2i) = (x_1x_2 - y_1y_2) + (x_1y_2 + x_2y_1)i
+$$
+
+#### Modulus
+
+The modulus of a complex number $z = x + yi$ is defined as
+
+$$
+|z| = \sqrt{x^2 + y^2}=|z\overline{z}|
 $$
 
 ### De Moivre's Formula
@@ -121,6 +336,12 @@ $$
 \frac{\partial u}{\partial x} = \frac{\partial v}{\partial y}, \quad \frac{\partial u}{\partial y} = -\frac{\partial v}{\partial x}
 $$
 
+On the polar form, the Cauchy-Riemann equations are
+
+$$
+r\frac{\partial u}{\partial r} = \frac{\partial v}{\partial \theta}, \quad \frac{\partial u}{\partial \theta} = -r\frac{\partial v}{\partial r}
+$$
+
 ### Holomorphic functions
 
 A function $f$ is said to be holomorphic on an open subset $G$ of $\mathbb{C}$ if $f$ is differentiable at every point of $G$.
@@ -190,6 +411,21 @@ where $a,b,c,d$ are complex numbers and $ad-bc\neq 0$.
 
 ### Properties of linear fractional transformations
 
+#### Matrix form
+
+A linear fractional transformation can be written as a matrix multiplication:
+
+$$
+\phi(z) = \begin{bmatrix}
+a & b\\
+c & d\\
+\end{bmatrix}
+\begin{bmatrix}
+z\\
+1\\
+\end{bmatrix}
+$$
+
 #### Conformality
 
 A linear fractional transformation is conformal.
@@ -215,20 +451,98 @@ $$
 
 So if $z_1,z_2,z_3$, $w_1,w_2,w_3$ are distinct points in the complex plane, then there exists a unique linear fractional transformation $\phi$ such that $\phi(z_i)=w_i$ for $i=1,2,3$.
 
-#### Inversion
-
-
 #### Factorization
 
+Every linear fractional transformation can be written as a composition of homothetic mappings, translations, inversions, and multiplications.
+
+If $\phi(z)=\frac{az+b}{cz+d}$, then
+
+$$
+\phi(z) = \frac{b-ad/c}{cz+d}+\frac{a}{c}
+$$
+
 #### Clircle
+
+A linear-fractional transformation maps circles and lines to circles and lines.
 
 ## Chapter 4 Elementary Functions
 
 ### Exponential function
 
+The exponential function is defined as
+
+$$
+e^z = \sum_{n=0}^\infty \frac{z^n}{n!}
+$$
+
+Let $z=x+iy$, then
+
+$$
+\begin{aligned}
+e^z &= e^{x+iy}\\
+&= e^x e^{iy}\\
+&= e^x\sum_{n=0}^\infty \frac{(iy)^n}{n!}\\
+&= e^x\sum_{n=0}^\infty \frac{(-1)^n y^{2n}}{(2n)!} + i \sum_{n=0}^\infty \frac{(-1)^n y^{2n+1}}{(2n+1)!}\\
+&= e^x(\cos y + i\sin y)\\
+\end{aligned}
+$$
+
+So we can rewrite the polar form of a complex number as
+
+$$
+z = r(\cos \theta + i\sin \theta) = re^{i\theta}
+$$
+
+#### $e^x$ is holomorphic
+
+Let $f(z)=e^z$, then $u(x,y)=e^x\cos y$, $v(x,y)=e^x\sin y$.
+
+$$
+\frac{\partial u}{\partial x} = e^x\cos y = \frac{\partial v}{\partial y}\\
+\frac{\partial u}{\partial y} = -e^x\sin y = -\frac{\partial v}{\partial x}
+$$
+
 ### Trigonometric functions
 
+$$
+\sin z = \frac{e^{iz}-e^{-iz}}{2i}, \quad \cos z = \frac{e^{iz}+e^{-iz}}{2}, \quad \tan z = \frac{\sin z}{\cos z}
+$$
+
+$$
+\sec z = \frac{1}{\cos z}, \quad \csc z = \frac{1}{\sin z}, \quad \cot z = \frac{1}{\tan z}
+$$
+
+#### Hyperbolic functions
+
+$$
+\sinh z = \frac{e^z-e^{-z}}{2}, \quad \cosh z = \frac{e^z+e^{-z}}{2}, \quad \tanh z = \frac{\sinh z}{\cosh z}
+$$
+
+$$
+\operatorname{sech} z = \frac{1}{\cosh z}, \quad \operatorname{csch} z = \frac{1}{\sinh z}, \quad \operatorname{coth} z = \frac{1}{\tanh z}
+$$
+
 ### Logarithmic function
+
+The logarithmic function is defined as
+
+$$
+\ln z=\{w\in\mathbb{C}: e^w=z\}
+$$
+
+#### Properties of the logarithmic function
+
+Let $z=x+iy$, then
+
+$$
+|e^z|=\sqrt{e^x(\cos y)^2+(\sin y)^2}=e^x
+$$
+
+So we have
+
+$$
+\log z = \ln |z| + i\arg z
+$$
 
 ### Power function
 
@@ -238,7 +552,20 @@ So if $z_1,z_2,z_3$, $w_1,w_2,w_3$ are distinct points in the complex plane, the
 
 ### Definition of power series
 
+A power series is a series of the form
+
+$$
+\sum_{n=0}^\infty a_n (z-z_0)^n
+$$
+
 ### Properties of power series
+
+#### Geometric series
+
+$$
+\sum_{n=0}^\infty z^n = \frac{1}{1-z}, \quad |z|<1
+$$
+
 
 ### Radius/Region of convergence
 
