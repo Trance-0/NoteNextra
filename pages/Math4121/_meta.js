@@ -3,6 +3,7 @@ export default {
     "---":{
         type: 'separator'
     },
+    Exam_reviews: "Exam reviews",
     Math4121_L1: "Introduction to Lebesgue Integration (Lecture 1)",
     Math4121_L2: "Introduction to Lebesgue Integration (Lecture 2)",
     Math4121_L3: "Introduction to Lebesgue Integration (Lecture 3)",
