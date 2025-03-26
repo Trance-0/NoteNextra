@@ -208,6 +208,13 @@ $$
 \int \frac{1}{x^2+a^2} dx=\frac{1}{a}\arctan(\frac{x}{a})
 $$
 
+$$
+\int \frac{1}{\sqrt{x^2-a^2}} dx=\ln|x+\sqrt{x^2-a^2}|
+$$
+
+$$
+\int \frac{1}{\sqrt{x^2+a^2}} dx=\ln|x+\sqrt{x^2+a^2}|
+$$
 
 ## Chapter 1 Complex Numbers
 
