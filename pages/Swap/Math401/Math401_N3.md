@@ -44,19 +44,353 @@ Since $\tilde{f}(ba)=10=\tilde{f}(c)$
 
 A code $f:A\to S(B)$ is called irreducible if for any $x,y\in A$, $f(y)\neq f(x)w$ for some $w\in S(B)$.
 
+This condition ensures that every message used in the encoding process is uniquely decipherable.
+
+Means that there is no ambiguity in the decoding process.
+
+#### Theorem 1.1.1 Sardinas and Patterson Theorem
+
+Let $A,B$ be alphabet sets of size $a,b$ respectively.
+
+Let $f:A\to S(B)$ be a code that is uniquely decipherable.
+
+Then
+
+$$
+\sum_{x\in A}b^{-l(f(x))}\leq 1
+$$
+
+where $l(f(x))$ is the length of the codeword $f(x)$. (Number of elements used in the codeword for $x$)
+
+Proof:
+
+Let $L$ denote the max length of the codeword for any $x\in A$.
+
+$L=\max\{l(f(x))|x\in A\}$
+
+Let $c_r$ be the number of codewords of length $r$.
+
+Then
+
+$$
+\begin{aligned}
+\sum_{x\in A}b^{-l(f(x))}&=\sum_{r=1}^{L}\sum_{l(f(x))=r}b^{-l(f(x))}\\
+&=\sum_{r=1}^{L}c_rb^{-r}
+\end{aligned}
+$$
+
+Note that $r$ is the length of the codeword.
+
+The max number of elements that can be represented by $r$ elements in $B$ is $b^r$, so $c_r\leq b^r$.
+
+This gives that the power series
+
+$$
+\sum_{r=1}^{\infty}b^{-r}c_r
+$$
+
+converges to $R=\frac{1}{\limsup_{r\to\infty}\sqrt[r]{c_r}}\leq 1$.
+
+So the sum of the probabilities of all the codewords must be less than or equal to 1.
+
+#### Sardinas and Patterson Algorithm
+
+Let $A=\{a_1,a_2,\cdots,a_n\}$ be the message alphabet and $B=\{b_1,b_2,\cdots,b_m\}$ be the encoded alphabet.
+
+We test whether the code $f:A\to S(B)$ is uniquely decipherable.
+
+```python
+def is_uniquely_decipherable(f):
+    contain_common_prefix = 
+    message_space=set()
+    for x in A:
+        if f(x) in message_space:
+            return False
+        message_space.add(f(x))
+        for i in range(1,len(f(x))):
+            if f(x)[:i] in message_space:
+                contain_common_prefix = True
+
+    while contain_common_prefix:
+        contain_common_prefix = False
+        for x in message_space:
+            for y in message_space:
+                code_length = min(len(x),len(y))
+                if x[:code_length] == y[:code_length]:
+                    contain_common_prefix = True
+                    if len(x) < len(y):
+                        message_space.add(y[code_length:])
+                    else:
+                        message_space.add(x[code_length:])
+                    break
+    return True
+```
+
+#### Definition 1.1.4
+
+An elementary information source is a pair $(A,\mu)$ where $A$ is an alphabet and $\mu$ is a probability distribution on $A$. $\mu$ is a function $\mu:A\to[0,1]$ such that $\sum_{a\in A}\mu(a)=1$.
+
+The **mean code word length** of an information source $(A,\mu)$ given a code $f:A\to S(B)$ is defined as
+
+$$
+\overline{l}(\mu,f)=\sum_{a\in A}\mu(a)l(f(a))
+$$
+
+The $L(\mu)$ of the mean code word length is defined as
+
+$$
+L(\mu)=\min\{\overline{l}(\mu,f)|f:A\to S(B)\text{ is uniquely decipherable}\}
+$$
+
+#### Theorem 1.1.5
+
+Shannon's source coding theorem
+
+Let $(A,\mu)$ be an elementary information source and let $b$ be the size of the encoded alphabet $B$.
+
+Then
+
+$$
+\frac{-\sum_{x\in A}\mu(x)\log\mu(x)}{\log b}\leq L(\mu)<\frac{-\sum_{x\in A}\mu(x)\log\mu(x)}{\log b}+1
+$$
+
+where $L(\mu)$ is the minimum mean code word length of all uniquely decipherable codes for $(A,\mu)$.
+
+Proof:
+
+First, we show that
+
+$$
+\sum_{a\in A}m(a)\mu(a)\geq -(\log b)^{-1}\sum_{a\in A}\mu(a)\log \mu(a)
+$$
+
+Let $m:A\to \mathbb{Z}_+$ be a map satisfying
+
+$$
+\sum_{a\in A}b^{-m(a)}\leq 1
+$$
+
+We defined the probability distribution $v$ on $A$ as
+
+$$
+v(x)=\frac{b^{-m(x)}}{\sum_{a\in A}b^{-m(a)}}=\frac{b^{-m(x)}}{T}
+$$
+
+Write $T=\sum_{a\in A}b^{-m(a)}$ so that $T\leq 1$.
+
+Since $b^{-m(a)}=T\cdot v(a)$,
+
+$-m(a)\log b=\log T+\log v(a)$, $m(a)=-\frac{\log T}{\log b}-\frac{\log v(a)}{\log b}$
+
+We have
+
+$$
+\begin{aligned}
+\sum_{a\in A}m(a)\mu(a)&=\sum_{a\in A}\left(-\frac{\log T}{\log b}-\frac{\log v(a)}{\log b}\right)\mu(a)\\
+&=-\frac{\log T}{\log b}\sum_{a\in A}\mu(a)-\frac{1}{\log b}\sum_{a\in A}\mu(a)\log v(a)\\
+&=(\log b)^{-1}\left\{-\log T - \sum_{a\in A}\mu(a)\log v(a)\right\}
+\end{aligned}
+$$
+
+Without loss of generality, we assume that $\mu(a)>0$ for all $a\in A$.
+
+$$
+\begin{aligned}
+-\sum_{a\in A}\mu(a)\log v(a)&=-\sum_{a\in A}\mu(a)(\log \mu(a)+\log v(a)-\log \mu(a))\\
+&=-\sum_{a\in A}\mu(a)\log \mu(a)-\sum_{a\in A}\mu(a)\log \frac{v(a)}{\mu(a)}\\
+&=-\sum_{a\in A}\mu(a)\log \mu(a)-\log \prod_{a\in A}\left(\frac{v(a)}{\mu(a)}\right)^{\mu(a)}
+\end{aligned}
+$$
+
+$\log \prod_{a\in A}\left(\frac{v(a)}{\mu(a)}\right)^{\mu(a)}=\sum_{a\in A}\mu(a)\log \frac{v(a)}{\mu(a)}$ is also called Kullback–Leibler divergence or relative entropy.
+
+> Jenson's inequality: Let $f$ be a convex function on the interval $(a,b)$. Then for any $x_1,x_2,\cdots,x_n\in (a,b)$ and $\lambda_1,\lambda_2,\cdots,\lambda_n\in [0,1]$ such that $\sum_{i=1}^{n}\lambda_i=1$, we have
+>
+> $$f(\sum_{i=1}^{n}\lambda_ix_i)\leq \sum_{i=1}^{n}\lambda_if(x_i)$$
+>
+> Proof:
+>
+> If $f$ is a convex function, there are three properties that useful for the proof:
+>
+> 1. $f''(x)\geq 0$ for all $x\in (a,b)$
+> 2. For any $x,y\in (a,b)$, $f(x)\geq f(y)+(x-y)f'(y)$ (Take tangent line at $y$)
+> 3. For any $x,y\in (a,b)$ and $0<\lambda<1$, we have $f(\lambda x+(1-\lambda)y)\leq \lambda f(x)+(1-\lambda)f(y)$ (Take line connecting $f(x)$ and $f(y)$)
+>
+> We use $f(x)\geq f(y)+(x-y)f'(y)$, we replace $y=\sum_{i=1}^{n}\lambda_ix_i$ and $x=x_j$, we have
+>
+> $$f(x_j)\geq f(\sum_{i=1}^{n}\lambda_ix_i)+(x_j-\sum_{i=1}^{n}\lambda_ix_i)f'(\sum_{i=1}^{n}\lambda_ix_i)$$
+>
+> We sum all the inequalities, we have
+>
+> $$
+\begin{aligned}
+\sum_{j=1}^{n}\lambda_j f(x_j)&\geq \sum_{j=1}^{n}\lambda_jf(\sum_{i=1}^{n}\lambda_ix_i)+\sum_{j=1}^{n}\lambda_j(x_j-\sum_{i=1}^{n}\lambda_ix_i)f'(\sum_{i=1}^{n}\lambda_ix_i)\\
+&\geq \sum_{j=1}^{n}\lambda_jf(\sum_{i=1}^{n}\lambda_ix_i)+0\\
+&=f(\sum_{j=1}^{n}\lambda_ix_j)
+\end{aligned}
+$$
 
 
 
+Since $\log$ is a concave function, by Jensen's inequality $f(\sum_{i=1}^{n}\lambda_ix_i)\leq \sum_{i=1}^{n}\lambda_if(x_i)$, we have
+
+$$
+\begin{aligned}
+\sum_{a\in A}\mu(a)\log \frac{v(a)}{\mu(a)}&\leq\log\left(\sum_{a\in A}\mu(a) \frac{v(a)}{\mu(a)}\right)\\
+\log\left(\prod_{a\in A}\left(\frac{v(a)}{\mu(a)}\right)^{\mu(a)}\right)&\leq \log\left(\sum_{a\in A}\mu(a) \frac{v(a)}{\mu(a)}\right)\\
+\prod_{a\in A}\left(\frac{v(a)}{\mu(a)}\right)^{\mu(a)}&\leq \sum_{a\in A}\mu(a)\frac{v(a)}{\mu(a)}=1
+\end{aligned}
+$$
+
+So
+
+$$
+-\sum_{a\in A}\mu(a)\log v(a)\geq -\sum_{a\in A}\mu(a)\log \mu(a)
+$$
+
+(This is also known as Gibbs' inequality: Put in words, the information entropy of a distribution $P$ is less than or equal to its cross entropy with any other distribution $Q$.)
+
+Since $T\leq 1$, $-\log T\geq 0$, we have
+
+$$
+\sum_{a\in A}m(a)\mu(a)\geq -(\log b)^{-1}\sum_{a\in A}\mu(a)\log \mu(a)
+$$
+
+Second, we show that
+
+$$
+\sum_{a\in A}m(a)\mu(a)\leq -(\log b)^{-1}\sum_{a\in A}\mu(a)\log \mu(a)+1
+$$
+
+By Theorem 1.1.1, there exists an irreducible code $f:A\to S(B)$ such that $l(f(a))=m(a)$ for all $a\in A$.
+
+So
+
+$$
+\begin{aligned}
+\overline{l}(\mu,f)&=\sum_{a\in A}\mu(a)m(a)\\
+&<\sum_{a\in A}\mu(a)\left(1-\frac{\log\mu(a)}{\log b}\right)\\
+&=-\sum_{a\in A}\mu(a)\log\mu(a)\cdot\frac{1}{\log b}+1\\
+&=-(\log b)^{-1}\sum_{a\in A}\mu(a)\log \mu(a)+1
+\end{aligned}
+$$
+
+QED
+
+### Entropy
+
+Let $A$ be an alphabet and let $\mathcal{P}(A)$ be the set of all probability distributions on $A$. Any element $\mu\in \mathcal{P}(A)$ is thus a map from $A$ to $[0,1]$ such that $\sum_{a\in A}\mu(a)=1$.
+
+Thus $\mathcal{P}(A)$ is a compact conves subset of real linear space $\mathbb{R}^A$.
+
+We define the map $H:\mathcal{P}(A)\to\mathbb{R}$ as
+
+$$
+H(\mu)=-\sum_{a\in A}\mu(a)\log_2\mu(a)
+$$
+
+#### Basic properties of $H$
+
+1. $H(\mu)\geq 0$
+2. $H(\mu)=0$ if and only if $\mu$ is a point mass.
+3. $H(\mu)=\log_2|A|$ if and only if $\mu$ is uniform.
+
+### Huffman's coding algorithm
+
+Huffman's coding algorithm is a greedy algorithm that constructs an optimal prefix code for a given probability distribution.
+
+The algorithm is as follows:
+
+1. Sort the symbols by their probabilities in descending order.
+2. Merge the two symbols with the smallest probabilities and assign a new codeword to the merged symbol.
+3. Repeat step 2 until there is only one symbol left.
+
+
+```python
+import heapq
+
+def huffman(frequencies):
+    class Node:
+        def __init__(self, symbol=None, freq=0, left=None, right=None):
+            self.symbol = symbol
+            self.freq = freq
+            self.left = left
+            self.right = right
+        def __lt__(self, other):  # For priority queue
+            return self.freq < other.freq
+        def is_leaf(self):
+            return self.symbol is not None
+
+    # Build the Huffman tree
+    heap = [Node(sym, freq) for sym, freq in frequencies.items()]
+    heapq.heapify(heap)
+    while len(heap) > 1:
+        left = heapq.heappop(heap)
+        right = heapq.heappop(heap)
+        merged = Node(freq=left.freq + right.freq, left=left, right=right)
+        heapq.heappush(heap, merged)
+    root = heap[0]
+
+    # Assign codes by traversing the tree
+    codebook = {}
+    def assign_codes(node, code=""):
+        if node.is_leaf():
+            codebook[node.symbol] = code
+        else:
+            assign_codes(node.left, code + "0")
+            assign_codes(node.right, code + "1")
+    assign_codes(root)
+
+    # Helper to pretty print the binary tree
+    def tree_repr(node, prefix=""):
+        if node.is_leaf():
+            return f"{prefix}→ {repr(node.symbol)} ({node.freq})\n"
+        else:
+            s = f"{prefix}• ({node.freq})\n"
+            s += tree_repr(node.left, prefix + "  0 ")
+            s += tree_repr(node.right, prefix + "  1 ")
+            return s
+
+    print("Huffman Codebook:")
+    for sym in sorted(codebook, key=lambda s: frequencies[s], reverse=True):
+        print(f"{repr(sym)}: {codebook[sym]}")
+    print("\nCoding Tree:")
+    print(tree_repr(root))
+
+    return codebook
+```
 
 
 
+#### Definition 1.2.1
 
+Let $A=\{a_1,a_2,\cdots,a_n\}$ be an alphabet and let $\mu=(\mu(a_1),\mu(a_2),\cdots,\mu(a_n))$ be a probability distribution on $A$.
 
+Proof:
 
+We use mathematical induction on the number of symbols $n$.
 
+Base Case: $n=2$
 
+Only two symbols — assign one "0", the other "1". This is clearly optimal (only possible choice).
 
+Inductive Step:
 
+Assume that Huffman's algorithm produces an optimal code for $n-1$ symbols.
+
+Now, given $n$ symbols, Huffman merges the two least probable symbols $a,b$ into $c$, and constructs an optimal code recursively for $n-1$ symbols.
+n−1 symbols.
+
+By the inductive hypothesis, the code on $A'$ is optimal.
+  is optimal.
+
+By Step 2 above, assigning the two merged symbols $a$ and $b$ codewords $w_0$ and $w_1$ (based on 
+1       
+$w_1$ (based on $c$'s codeword $w$) results in the optimal solution for $A$.
+
+Therefore, by induction, Huffman’s algorithm gives an optimal prefix code for any $n$.
+
+QED
 
 
 
