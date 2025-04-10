@@ -126,6 +126,8 @@ def is_uniquely_decipherable(f):
     return True
 ```
 
+### Shannon's source coding theorem
+
 #### Definition 1.1.4
 
 An elementary information source is a pair $(A,\mu)$ where $A$ is an alphabet and $\mu$ is a probability distribution on $A$. $\mu$ is a function $\mu:A\to[0,1]$ such that $\sum_{a\in A}\mu(a)=1$.
@@ -140,6 +142,35 @@ The $L(\mu)$ of the mean code word length is defined as
 
 $$
 L(\mu)=\min\{\overline{l}(\mu,f)|f:A\to S(B)\text{ is uniquely decipherable}\}
+$$
+
+
+#### Lemma: Jenson's inequality
+
+Let $f$ be a convex function on the interval $(a,b)$. Then for any $x_1,x_2,\cdots,x_n\in (a,b)$ and $\lambda_1,\lambda_2,\cdots,\lambda_n\in [0,1]$ such that $\sum_{i=1}^{n}\lambda_i=1$, we have
+
+$$f(\sum_{i=1}^{n}\lambda_ix_i)\leq \sum_{i=1}^{n}\lambda_if(x_i)$$
+
+Proof:
+
+If $f$ is a convex function, there are three properties that useful for the proof:
+
+1. $f''(x)\geq 0$ for all $x\in (a,b)$
+2. For any $x,y\in (a,b)$, $f(x)\geq f(y)+(x-y)f'(y)$ (Take tangent line at $y$)
+3. For any $x,y\in (a,b)$ and $0<\lambda<1$, we have $f(\lambda x+(1-\lambda)y)\leq \lambda f(x)+(1-\lambda)f(y)$ (Take line connecting $f(x)$ and $f(y)$)
+
+We use $f(x)\geq f(y)+(x-y)f'(y)$, we replace $y=\sum_{i=1}^{n}\lambda_ix_i$ and $x=x_j$, we have
+
+$$f(x_j)\geq f(\sum_{i=1}^{n}\lambda_ix_i)+(x_j-\sum_{i=1}^{n}\lambda_ix_i)f'(\sum_{i=1}^{n}\lambda_ix_i)$$
+
+We sum all the inequalities, we have
+
+$$
+\begin{aligned}
+\sum_{j=1}^{n}\lambda_j f(x_j)&\geq \sum_{j=1}^{n}\lambda_jf(\sum_{i=1}^{n}\lambda_ix_i)+\sum_{j=1}^{n}\lambda_j(x_j-\sum_{i=1}^{n}\lambda_ix_i)f'(\sum_{i=1}^{n}\lambda_ix_i)\\
+&\geq \sum_{j=1}^{n}\lambda_jf(\sum_{i=1}^{n}\lambda_ix_i)+0\\
+&=f(\sum_{j=1}^{n}\lambda_ix_j)
+\end{aligned}
 $$
 
 #### Theorem 1.1.5
@@ -203,34 +234,6 @@ $$
 $$
 
 $\log \prod_{a\in A}\left(\frac{v(a)}{\mu(a)}\right)^{\mu(a)}=\sum_{a\in A}\mu(a)\log \frac{v(a)}{\mu(a)}$ is also called Kullback–Leibler divergence or relative entropy.
-
-> Jenson's inequality: Let $f$ be a convex function on the interval $(a,b)$. Then for any $x_1,x_2,\cdots,x_n\in (a,b)$ and $\lambda_1,\lambda_2,\cdots,\lambda_n\in [0,1]$ such that $\sum_{i=1}^{n}\lambda_i=1$, we have
->
-> $$f(\sum_{i=1}^{n}\lambda_ix_i)\leq \sum_{i=1}^{n}\lambda_if(x_i)$$
->
-> Proof:
->
-> If $f$ is a convex function, there are three properties that useful for the proof:
->
-> 1. $f''(x)\geq 0$ for all $x\in (a,b)$
-> 2. For any $x,y\in (a,b)$, $f(x)\geq f(y)+(x-y)f'(y)$ (Take tangent line at $y$)
-> 3. For any $x,y\in (a,b)$ and $0<\lambda<1$, we have $f(\lambda x+(1-\lambda)y)\leq \lambda f(x)+(1-\lambda)f(y)$ (Take line connecting $f(x)$ and $f(y)$)
->
-> We use $f(x)\geq f(y)+(x-y)f'(y)$, we replace $y=\sum_{i=1}^{n}\lambda_ix_i$ and $x=x_j$, we have
->
-> $$f(x_j)\geq f(\sum_{i=1}^{n}\lambda_ix_i)+(x_j-\sum_{i=1}^{n}\lambda_ix_i)f'(\sum_{i=1}^{n}\lambda_ix_i)$$
->
-> We sum all the inequalities, we have
->
-> $$
-\begin{aligned}
-\sum_{j=1}^{n}\lambda_j f(x_j)&\geq \sum_{j=1}^{n}\lambda_jf(\sum_{i=1}^{n}\lambda_ix_i)+\sum_{j=1}^{n}\lambda_j(x_j-\sum_{i=1}^{n}\lambda_ix_i)f'(\sum_{i=1}^{n}\lambda_ix_i)\\
-&\geq \sum_{j=1}^{n}\lambda_jf(\sum_{i=1}^{n}\lambda_ix_i)+0\\
-&=f(\sum_{j=1}^{n}\lambda_ix_j)
-\end{aligned}
-$$
-
-
 
 Since $\log$ is a concave function, by Jensen's inequality $f(\sum_{i=1}^{n}\lambda_ix_i)\leq \sum_{i=1}^{n}\lambda_if(x_i)$, we have
 
