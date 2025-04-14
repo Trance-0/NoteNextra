@@ -24,4 +24,5 @@ export default {
     CSE559A_L19: "Computer Vision (Lecture 19)",
     CSE559A_L20: "Computer Vision (Lecture 20)",
     CSE559A_L21: "Computer Vision (Lecture 21)",
+    CSE559A_L22: "Computer Vision (Lecture 22)",
 }

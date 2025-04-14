@@ -36,5 +36,6 @@ export default {
     Math4121_L30: "Introduction to Lebesgue Integration (Lecture 30)",
     Math4121_L31: "Introduction to Lebesgue Integration (Lecture 31)",
     Math4121_L32: "Introduction to Lebesgue Integration (Lecture 32)",
-    Math4121_L33: "Introduction to Lebesgue Integration (Lecture 33)"
+    Math4121_L33: "Introduction to Lebesgue Integration (Lecture 33)",
+    Math4121_L34: "Introduction to Lebesgue Integration (Lecture 34)",
 }

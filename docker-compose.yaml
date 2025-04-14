@@ -3,7 +3,7 @@ services:
     build:
       context: ./
       dockerfile: ./Dockerfile
-    image: trance0/notenextra:v1.1.13
+    image: trance0/notenextra:v1.1.14
     restart: on-failure:5
     ports:
       - 13000:3000
