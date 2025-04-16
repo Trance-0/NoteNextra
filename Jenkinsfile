@@ -20,12 +20,25 @@ pipeline {
             steps {
                 script {
                     echo "Building docker image ${registry}:${version}.${env.BUILD_ID}"
-                    def customImage = docker.build("${registry}:${version}.${env.BUILD_ID}")
+                    def customImage = docker.build("${registry}:v${version}.${env.BUILD_ID}")
                     
-                    echo "Pushing docker image ${registry}:${version}.${env.BUILD_ID}"
+                    echo "Pushing docker image ${registry}:v${version}.${env.BUILD_ID}"
                     customImage.push()
                 }
             }
         }
+        stage('Deploy') {
+            steps {
+                echo "Deploying docker image ${registry}:v${version}.${env.BUILD_ID}"
+                echo "Stopping existing container"
+                sh 'docker stop notenextra'
+                echo "Removing existing container"
+                sh 'docker rm notenextra'
+                echo "Running new docker container"
+                sh 'docker run -d -p 13000:3000 --name notenextra ${registry}:v${version}.${env.BUILD_ID}'
+            }
+        }
     }
+}
+
 }
