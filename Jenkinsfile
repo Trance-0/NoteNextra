@@ -31,9 +31,9 @@ pipeline {
             steps {
                 echo "Deploying docker image ${registry}:v${version}.${env.BUILD_ID}"
                 echo "Stopping existing container"
-                sh 'docker stop notenextra'
+                sh 'docker stop notenextra || true'
                 echo "Removing existing container"
-                sh 'docker rm notenextra'
+                sh 'docker rm notenextra || true'
                 echo "Running new docker container"
                 sh 'docker run -d -p 13000:3000 --name notenextra ${registry}:v${version}.${env.BUILD_ID}'
             }
