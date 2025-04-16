@@ -29,13 +29,16 @@ pipeline {
         }
         stage('Deploy') {
             steps {
-                echo "Deploying docker image ${registry}:v${version}.${env.BUILD_ID}"
-                echo "Stopping existing container"
-                sh 'docker stop notenextra || true'
-                echo "Removing existing container"
-                sh 'docker rm notenextra || true'
-                echo "Running new docker container"
-                sh 'docker run -d -p 13000:3000 --name notenextra ${registry}:v${version}.${env.BUILD_ID}'
+                script {
+                    def imageTag = "${registry}:v${version}.${env.BUILD_ID}"
+                    echo "Deploying docker image ${imageTag}"
+                    echo "Stopping existing container"
+                    sh 'docker stop notenextra-jenkins || true'
+                    echo "Removing existing container"
+                    sh 'docker rm notenextra-jenkins || true'
+                    echo "Running new docker container"
+                    sh "docker run -d -p 13000:3000 --name notenextra-jenkins ${imageTag}"
+                }
             }
         }
     }
