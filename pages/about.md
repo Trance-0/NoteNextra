@@ -8,11 +8,13 @@ This page is built with [Nextra](https://nextra.site/).
 
 With the front end framework [Next.js](https://nextjs.org/)
 
-Deployed on [Vercel](https://vercel.com/)
+CI-CD is maintained via [Jenkins](https://www.jenkins.io/) with [Docker](https://www.docker.com/).
+
+With deployment support from [Vercel](https://vercel.com/) and [Cloudflare](https://www.cloudflare.com/)
 
 Data is stored on [GitHub](https://github.com/)
 
-Course materials are collected from [Washingtong University in St. Louis](https://wustl.edu/)
+Course materials are collected from [Washington University in St. Louis](https://wustl.edu/)
 
 Also the procrastination of project [Notechondria](https://github.com/Trance-0/Notechondria)
 
