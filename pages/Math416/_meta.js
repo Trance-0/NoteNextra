@@ -29,4 +29,6 @@ export default {
     Math416_L23: "Complex Variables (Lecture 23)",
     Math416_L24: "Complex Variables (Lecture 24)",
     Math416_L25: "Complex Variables (Lecture 25)",
+    Math416_L26: "Complex Variables (Lecture 26)",
+    Math416_L27: "Complex Variables (Lecture 27)",
 }
