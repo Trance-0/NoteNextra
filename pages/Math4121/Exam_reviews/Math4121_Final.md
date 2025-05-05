@@ -42,7 +42,15 @@ $$
 c_e(S)=c_i(S)+c_e(\partial S)
 $$
 
-Note the boundary of $S$ is defined as $\partial S=\overline{S}\setminus S$.
+Note the boundary of $S$ is defined as $\partial S=\overline{S}\setminus S^\circ$ (corrected by Nathan Zhou).
+
+> Some common notations for sets:
+> 
+> $S^\circ$ is the interior of $S$. $S^\circ=\{x\in S| \exists \epsilon>0, B(x,\epsilon)\subset S\}$ (largest open set contained in $S$)
+>
+> $S'$ is the set of limit points of $S$ (derived set of $S$). $S'=\{x\in \mathbb{R}^n|\forall \epsilon>0, B(x,\epsilon)\setminus \{x\}\cap S\neq \emptyset\}$ (Topological definition of limit point).
+>
+> $\overline{S}$ is the closure of $S$. $\overline{S}=S\cup S'$ (smallest closed set containing $S$)
 
 Equivalently, $\forall x\in \partial S$, $\forall \epsilon>0$, $\exists p\notin S$ and $q\notin S$ s.t. $d(x,p)<\epsilon$ and $d(x,q)<\epsilon$.
 
