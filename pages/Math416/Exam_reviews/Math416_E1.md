@@ -553,7 +553,18 @@ $$
 
 ### Power function
 
-### Inverse trigonometric functions
+For any two complex numbers $a,b$, we can define the power function as
+
+$$
+a^b = e^{b\log a}
+$$
+
+> Example:
+>
+> $$i^i=e^{i\ln i}=e^{i(\ln 1+i\frac{\pi}{2})}=e^{-\frac{\pi}{2}} $$
+>
+> $$e^{i\pi}=-1$$
+
 
 ## Chapter 5 Power Series
 
@@ -573,12 +584,45 @@ $$
 \sum_{n=0}^\infty z^n = \frac{1}{1-z}, \quad |z|<1
 $$
 
-
 ### Radius/Region of convergence
+
+The radius of convergence of a power series is the largest number $R$ such that the series converges for all $z$ with $|z-z_0|<R$.
+
+The region of convergence of a power series is the set of all points $z$ such that the series converges.
 
 ### Cauchy-Hadamard Theorem
 
+The radius of convergence of a power series is given by
+
+$$
+R=\frac{1}{\limsup_{n\to\infty} |a_n|^{1/n}}
+$$
+
+### Derivative of power series
+
+The derivative of a power series is given by
+
+$$
+f'(z)=\sum_{n=1}^\infty n a_n (z-z_0)^{n-1}
+$$
+
 ### Cauchy Product (of power series)
+
+Let $\sum_{n=0}^\infty a_n (z-z_0)^n$ and $\sum_{n=0}^\infty b_n (z-z_0)^n$ be two power series with radius of convergence $R_1$ and $R_2$ respectively.
+
+Then the Cauchy product of the two series is given by
+
+$$
+\sum_{n=0}^\infty c_n (z-z_0)^n
+$$
+
+where
+
+$$
+c_n = \sum_{k=0}^n a_k b_{n-k}
+$$
+
+The radius of convergence of the Cauchy product is at least $\min(R_1,R_2)$.
 
 ## Chapter 6 Complex Integration
 
@@ -616,19 +660,178 @@ $$
 \int_\gamma f(z) dz = \int_a^b f(\gamma(t))\gamma'(t) dt
 $$
 
-### Properties of complex integrals
+### Favorite estimate
 
-1. Linearity:
+Let $\gamma:[a,b]\to\mathbb{C}$ be a piecewise smooth curve, and let $f:[a,b]\to\mathbb{C}$ be a continuous complex-valued function. Let $M$ be a real number such that $|f(z)|\leq M$ for all $z\in\gamma$. Then
 
+$$
+\left|\int_\gamma f(z) dz\right| \leq M\ell(\gamma)
+$$
 
+where $\ell(\gamma)$ is the length of the curve $\gamma$.
 
 ## Chapter 7 Cauchy's Theorem
 
 ### Cauchy's Theorem
 
+Let $\gamma$ be a closed curve in $\mathbb{C}$ and $U$ be a simply connected open subset of $\mathbb{C}$ containing $\gamma$ and its interior. Let $f$ be a holomorphic function on $U$. Then
+
+$$
+\int_\gamma f(z) dz = 0
+$$
+
 ### Cauchy's Formula for a Circle
 
-### Cauchy's Product
+Let $C$ be a counterclockwise oriented circle and let $f$ be holomorphic function defined in an open set containing $C$ and its interior. Then for any $z$ in the interior of $C$,
+
+$$
+f(z)=\frac{1}{2\pi i}\int_C \frac{f(\zeta)}{\zeta-z} d\zeta
+$$
+
+### Mean Value Property
+
+Let the function $f$ be holomorphic on a disk $|z-z_0|<R$. Then for any $0<r<R$, let $C_r$ denote the circle with center $z_0$ and radius $r$. Then
+
+$$
+f(z_0)=\frac{1}{2\pi}\int_0^{2\pi} f(z_0+re^{i\theta}) d\theta
+$$
+
+The value of the function at the center of the disk is the average of the values of the function on the boundary of the disk.
+
+### Cauchy Integrals
+
+Let $\gamma$ be a piecewise smooth curve in $\mathbb{C}$ and let $\phi$ be a continuous complex-valued function on $\gamma$. Then the Cauchy integral of $\phi$ on $\gamma$ is the function $f$ defined in $C\setminus\gamma$ by
+
+$$
+f(z)=\int_\gamma \frac{\phi(\zeta)}{\zeta-z} d\zeta
+$$
+
+Cauchy Integral Formula for circle $C_r$:
+
+$$
+f(z)=\frac{1}{2\pi i}\int_{C_r} \frac{f(\zeta)}{\zeta-z} d\zeta
+$$
+
+> Example:
+>
+> Evaluate $$\int_{|z|=2} \frac{z}{z-1} dz$$
+>
+> Note that if we let $f(\zeta)=\zeta$ and $z=1$ is inside the circle, then we can use Cauchy Integral Formula for circle $C_r$ to evaluate the integral.
+>
+> So we have
+>
+> $$\int_{|z|=2} \frac{z}{z-1} dz = 2\pi i f(1) = 2\pi i$$
+
+General Cauchy Integral Formula for circle $C_r$:
+
+$$
+f^{(n)}(z)=\frac{n!}{2\pi i}\int_{C_r} \frac{f(\zeta)}{(\zeta-z)^{n+1}} d\zeta
+$$
+
+> Example:
+>
+> Evaluate $$\int_{C}\frac{\sin z}{z^{38}}dz$$
+>
+> Note that if we let $f(\zeta)=\sin \zeta$ and $z=0$ is inside the circle, then we can use General Cauchy Integral Formula for circle $C_r$ to evaluate the integral.
+>
+> So we have
+>
+> $$\int_{C}\frac{\sin z}{z^{38}}dz = \frac{2\pi i}{37!} f^{(37)}(0) = \frac{2\pi i}{37!} \sin ^{(37)}(0)$$
+>
+> Note that $\sin ^{(n)}(0)=\begin{cases} 0,& n\equiv 0 \pmod{4}\\
+1,& n\equiv 1 \pmod{4}\\
+0,& n\equiv 2 \pmod{4}\\
+-1,& n\equiv 3 \pmod{4}
+\end{cases}$
+>
+> So we have
+>
+> $$\int_{C}\frac{\sin z}{z^{38}}dz = \frac{2\pi i}{37!} \sin ^{(37)}(0) = \frac{2\pi i}{37!} \cdot 1 = \frac{2\pi i}{37!}$$
+
+_Cauchy integral is a easier way to evaluate the integral._
+
+### Liouville's Theorem
+
+If a function $f$ is entire (holomorphic on $\mathbb{C}$) and bounded, then $f$ is constant.
+
+### Finding power series of holomorphic functions
+
+If $f$ is holomorphic on a disk $|z-z_0|<R$, then $f$ can be represented as a power series on the disk.
+
+where $a_n=\frac{f^{(n)}(z_0)}{n!}$
+
+> Example:
+>
+> If $q(z)=(z-1)(z-2)(z-3)$, find the power series of $q(z)$ centered at $z=0$.
+>
+> Note that $q(z)$ is holomorphic on $\mathbb{C}$ and $q(z)=0$ at $z=1,2,3$.
+>
+> So we can use the power series of $q(z)$ centered at $z=1$.
+>
+> To solve this, we can simply expand $q(z)=(z-1)(z-2)(z-3)$ and get $q(z)=z^3-6z^2+11z-6$.
+>
+> So we have $a_0=q(1)=-6$, $a_1=q'(1)=3z^2-12z+11=11$, $a_2=\frac{q''(1)}{2!}=\frac{6z-12}{2}=-3$, $a_3=\frac{q'''(1)}{3!}=\frac{6}{6}=1$.
+>
+> So the power series of $q(z)$ centered at $z=1$ is
+>
+> $$q(z)=-6+11(z-1)-3(z-1)^2+(z-1)^3$$
+
+### Fundamental Theorem of Algebra
+
+Every non-constant polynomial with complex coefficients has a root in $\mathbb{C}$.
+
+Can be factored into linear factors:
+
+$$
+p(z)=a_n(z-z_1)(z-z_2)\cdots(z-z_n)
+$$
+
+We can treat holomorphic functions as polynomials.
+
+$f$ has zero of order $m$ at $z_0$ if and only if $f(z)=(z-z_0)^m g(z)$ for some holomorphic $g(z)$ and $g(z_0)\neq 0$.
+
+### Zeros of holomorphic functions
+
+If $f$ is holomorphic on a disk $|z-z_0|<R$ and $f$ has a zero of order $m$ at $z_0$, then $f(z_0)=0$, $f'(z_0)=0$, $f''(z_0)=0$, $\cdots$, $f^{(m-1)}(z_0)=0$ and $f^{(m)}(z_0)\neq 0$.
+
+And there exists a holomorphic function $g$ on the disk such that $f(z)=(z-z_0)^m g(z)$ and $g(z_0)\neq 0$.
+
+> Example:
+>
+> Find zeros of $f(z)=\cos(z\frac{\pi}{2})$
+>
+> Note that $f(z)=0$ if and only if $z\frac{\pi}{2}=(2k+1)\frac{\pi}{2}$ for some integer $k$.
+>
+> So the zeros of $f(z)$ are $z=(2k+1)$ for some integer $k$.
+>
+> The order of the zero is $1$ since $f'(z)=-\frac{\pi}{2}\sin(z\frac{\pi}{2})$ and $f'(z)\neq 0$ for all $z=(2k+1)$.
+
+If $f$ vanishes to infinite order at $z_0$ (that is, $f(z_0)=f'(z_0)=f''(z_0)=\cdots=0$), then $f(z)\equiv 0$ on the connected open set $U$ containing $z_0$.
+
+### Identity Theorem
+
+If $f$ and $g$ are holomorphic on a connected open set $U\subset\mathbb{C}$ and $f(z)=g(z)$ for all $z$ in a subset of $U$ that has a limit point in $U$, then $f(z)=g(z)$ for all $z\in U$.
+
+Key: consider $h(z)=f(z)-g(z)$, prove $h(z)\equiv 0$ on $U$ by applying the zero of holomorphic function.
+
+### Weierstrass Theorem
+
+Limit of a sequence of holomorphic functions is holomorphic.
+
+Let $f_n$ be a sequence of holomorphic functions on a domain $D\subset\mathbb{C}$ that converges uniformly to $f$ on every compact subset of $D$. Then $f$ is holomorphic on $D$.
+
+### Maximum Modulus Principle
+
+If $f$ is a non-constant holomorphic function on a domain $D\subset\mathbb{C}$, then $|f|$ does not attain a maximum value in $D$.
+
+#### Corollary: Minimum Modulus Principle
+
+If $f$ is a non-constant holomorphic function on a domain $D\subset\mathbb{C}$, then $\frac{1}{f}$ does not attain a minimum value in $D$.
+
+### Schwarz Lemma
+
+If $f$ is a holomorphic function on the unit disk $|z|<1$ and $|f(z)|\leq |z|$, then $|f'(0)|\leq 1$.
+
 
 
 
