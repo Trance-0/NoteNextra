@@ -35,6 +35,9 @@ export default {
     Math416: {
       type: 'page',
     },
+    Math401: {
+      type: 'page',
+    },
     CSE332S: {
       type: 'page',
     },

@@ -1,11 +1,276 @@
-# Topic 1
+# Topic 1: Probability under language of measure theory
 
-## Probability Theory under Language of Measure Theory
+## Section 1: Uniform Random Numbers
 
-### Uniform random numbers
+### Basic Definitions
 
-Define picking a random number from the interval $[0,1]$ form the uniform probability distribution.
+#### Definition of Random Variables
 
-As a function $f:[0,1]\to S$, where $S$ is the space of potential outcomes of a random phenomenon. (Note, this definition inverts the axis of "probability" and "event" so that we can apply the measure theory to probability theory. Before, we define the probability of an event as a function $P:S\to [0,1]$, where $S\in A$ and $\int_A P(x)dx=1$.)
+A random variable is a function $f:[0,1]\to S$, where $[0,1]\subset \mathbb{R}$ and $S$ is a set of potential outcomes of a random phenomenon.
 
-$\ket{1}= \begin{pmatrix} 1 \\ 0 \end{pmatrix}$ is a vector in a Hilbert space.
+#### Definition of Uniform Distribution
+
+The uniform distribution is defined by the length of function on subsets of $[0,1]$ as a measure of probability ([Lebesgue measure](https://notenextra.trance-0.com/Math4121/Math4121_L30#lebesgue-measure) by default).
+
+Let $X$ be a random number taken from $[0,1]$ and having the uniform distribution. The probability that $X$ should be the probability of the event that $X$ lies in $A$.
+
+$$
+\operatorname{Prob}(X\in A) =\lambda(A)=\text{length of }A
+$$
+
+#### Definition of Expectation
+
+Let $f:[0,1]\to \mathbb{R}$ be a random variable (with nice properties such that it is integrable). Then the expectation of $f$ is defined as
+
+$$
+\mathbb{E}[f]=\mathbb{E}[f(X)]=\int_0^1 f(x)dx
+$$
+
+#### Definition of Indicator Function
+
+The indicator function of an event $A$ is defined as
+
+$$
+\mathbb{I}_A(x)=\begin{cases}
+1 & \text{if } x\in A \\
+0 & \text{if } x\notin A
+\end{cases}
+$$
+
+#### Definition of Law of variable X
+
+The law of a random variable $X$ is the probability distribution of $X$.
+
+Let $Y$ be the outcome of $f(X)$. Then the law of $Y$ is the probability distribution of $Y$.
+
+$$
+\mu_Y(A)=\lambda(f^{-1}(A))=\lambda(\{x\in [0,1]: f(x)\in A\})
+$$
+
+### 1.1 Mathematical Coin Flip model
+
+A coin flip if a random experiment with two possible outcomes: $S=\{0,1\}$. with probability $p$ for $0$ and $1-p$ for $1$, where $p\in (0,1)\subset \mathbb{R}$.
+
+#### Definition of Independent Events
+
+Two events $A$ and $B$ are independent if
+
+$$
+\lambda(A\cap B)=\lambda(A)\lambda(B)
+$$
+
+or equivalently,
+
+$$
+\operatorname{Prob}(X\in A\cap B)=\operatorname{Prob}(X\in A)\operatorname{Prob}(X\in B)
+$$
+
+Generalization to $n$ events:
+
+$$
+\lambda(A_1\cap A_2\cap \cdots \cap A_n)=\lambda(A_1)\lambda(A_2)\cdots \lambda(A_n)
+$$
+
+#### Definition of Outcome selecting function
+
+Let the set of all possible outcomes represented by a Cartesian product $S=\{0,1\}^{\mathbb{N}}$. $(a_1,a_2,a_3,\cdots)\subset S$ is an infinite (or finite) sequence of coin flips.
+
+$\pi_i:S\to \{0,1\}$ is the $i$-th projection function defined as $\pi_i((a_1,a_2,a_3,\cdots))=a_i$.
+
+> Note, this representation is isomorphic to the dyadic rationals (i.e., numbers that can be written as a fraction whose denominator is a power of 2) in the interval $[0,1]$.
+
+## Section 2: Formal definitions
+
+> Recall, the $\sigma$-algebra (denoted as $\mathcal{A}$ in Math4121) is the collection of all subsets of a set $S$ satisfying the following properties:
+>
+> 1. $\emptyset\in \mathcal{A}$ (empty set is in the $\sigma$-algebra)
+> 2. If $A\in \mathcal{A}$, then $A^c\in \mathcal{A}$ (if a set is in the $\sigma$-algebra, then its complement is in the $\sigma$-algebra)
+> 3. If $A_1,A_2,A_3,\cdots\in \mathcal{A}$, then $\bigcup_{i=1}^{\infty}A_i\in \mathcal{A}$ (if a countable sequence of sets is in the $\sigma$-algebra, then their union is in the $\sigma$-algebra)
+
+### Event, probability, and random variable
+
+Let $\Omega$ be a non-empty set.
+
+Let $\mathscr{F}$ be a $\sigma$-algebra on $\Omega$ (Note, $\mathscr{F}$ is a collection of subsets of $\Omega$ that satisfies the properties of a $\sigma$-algebra).
+
+#### Definition of Event
+
+An event is a element of $\mathscr{F}$.
+
+#### Definition of Probability Measure
+
+A probability measure $P$ is a function $P:\mathscr{F}\to [0,1]$ satisfying the following properties:
+
+1. $P(\Omega)=1$
+2. If $A_1,A_2,A_3,\cdots\in \mathscr{F}$ are pairwise disjoint ($\forall i\neq j, A_i\cap A_j=\emptyset$), then $P(\bigcup_{i=1}^{\infty}A_i)=\sum_{i=1}^{\infty}P(A_i)$
+
+#### Definition of Probability Space
+
+A probability space is a triple $(\Omega, \mathscr{F}, P)$ defined above.
+
+An event $A$ is said to occur almost surely (a.s.) if $P(A)=1$.
+
+#### Definition of Random Variable
+
+A random variable is a function $X:\Omega\to \mathbb{R}$ that is measurable with respect to the $\sigma$-algebra $\mathscr{F}$.
+
+That is, for any Borel set $B\subset \mathbb{R}$, the preimage $f^{-1}(B)\in \mathscr{F}$.
+
+$$
+f^{-1}(B)=\{x\in \Omega: f(x)\in B\}\in \mathscr{F}
+$$
+
+#### Definition of sigma-algebra generated by a random variable
+
+Let $\{f_\alpha:\Omega\to \mathbb{R},\alpha\in I\}$ be a family of functions where $I$ is an index set which is not necessarily finite or countable. The $\sigma$-algebra generated by the family of functions $\{f_\alpha:\alpha\in I\}$, denoted as $\sigma\{f_\alpha:\alpha\in I\}$, is the smallest $\sigma$-algebra containing all the subsets of $\Omega$ of the form
+
+$$
+f_\alpha^{-1}(B)=\{\omega\in \Omega: f_\alpha(\omega)\in B\}\in \mathscr{F}
+$$
+
+for all $\alpha\in I$ and $B\in \mathscr{B}(\mathbb{R})$.
+
+Equivalently,
+
+$$
+\sigma\{f_\alpha:\alpha\in I\}=\sigma\left(\bigcup_{\alpha\in I}f_\alpha^{-1}(B)\right)
+$$
+
+the sigma-algebra generated by a random variable $X$ is the intersection of all $\sigma$-algebras on $\Omega$ containing the sets $f_\alpha^{-1}(B)$ for all $\alpha\in I$ and $B\in \mathscr{B}(\mathbb{R})$.
+
+#### Definition of distribution of random variable
+
+Let $f:\Omega\to \mathbb{R}$ be a random variable. The distribution of $f$ is the probability measure $P_f$ on $\mathbb{R}$ defined by
+
+$$
+P_f(B)=P(f^{-1}(B))=P(\{x\in \Omega: f(x)\in B\})
+$$
+
+also noted as $f_*P$.
+
+#### Definition of joint distribution of random variables
+
+Let $f_1,f_2,\cdots,f_n:\Omega\to \mathbb{R}$ be random variables. The joint distribution of $f_1,f_2,\cdots,f_n$ is the probability measure $P_{f_1,f_2,\cdots,f_n}$ on $\mathbb{R}^n$ defined by
+
+$$
+P_{f_1,f_2,\cdots,f_n}(B)=P(f_1^{-1}(B_1)\cap f_2^{-1}(B_2)\cap \cdots \cap f_n^{-1}(B_n))=P(\omega\in \Omega: (f_1(\omega),f_2(\omega),\cdots,f_n(\omega))\in B)
+$$
+
+### Expectation of a random variable
+
+Let $f:\Omega\to \mathbb{R}$ be a random variable. The expectation of $f$ is defined as
+
+$$
+\mathbb{E}[f]=\mathbb{E}[f(X)]=\int_\Omega f(x)dP
+$$
+
+Note, $P$ is the probability measure on $\Omega$.
+
+#### Definition of variance
+
+The variance of a random variable $f$ is defined as
+
+$$
+\operatorname{Var}(f)=\mathbb{E}[(f-\mathbb{E}[f])^2]=\mathbb{E}[f^2]-(\mathbb{E}[f])^2
+$$
+
+#### Definition of covariance
+
+The covariance of two random variables $f,g:\Omega\to \mathbb{R}$ is defined as
+
+$$
+\operatorname{Cov}(f,g)=\mathbb{E}[(f-\mathbb{E}[f])(g-\mathbb{E}[g])]
+$$
+
+### Point measures
+
+#### Definition of Dirac measure
+
+The Dirac measure is a probability measure on $\Omega$ defined as
+
+$$
+\delta_\omega(A)=\begin{cases}
+1 & \text{if } \omega\in A \\
+0 & \text{if } \omega\notin A
+\end{cases}
+$$
+
+Note that $\int_\Omega f(x)d\delta_\omega(x)=f(\omega)$.
+
+### Infinite sequence of independent coin flips
+
+> Side notes from basic topology:
+>
+> **Definition of product topology**:
+>
+> It is a set constructed by the Cartesian product of the sets. Suppose $X_i$ is a set for all $i\in I$. The element of the product set is a tuple $(x_i)_{i\in I}$ where $x_i\in X_i$ for all $i\in I$.
+>
+> For example, if $X_i=[0,1]$ for all $i\in \mathbb{N}$, then the product set is $[0,1]^{\mathbb{N}}$. An element of such product set is $(1,0.5,0.25,\cdots)$.
+
+The set of outcomes of such infinite sequence of coin flips is the product set of the set of outcomes of each coin flip.
+
+$$
+S=\{0,1\}^{\mathbb{N}}
+$$
+
+### Conditional probability
+
+#### Definition of conditional probability
+
+The conditional probability of an event $A$ given an event $B$ is defined as
+
+$$
+P(A|B)=\frac{P(A\cap B)}{P(B)}
+$$
+
+The law of total probability:
+
+$$
+P(A)=\sum_{i=1}^{\infty}P(A|B_i)P(B_i)
+$$
+
+Bayes' theorem:
+
+$$
+P(B_i|A)=\frac{P(A|B_i)P(B_i)}{\sum_{j=1}^{\infty}P(A|B_j)P(B_j)}
+$$
+
+#### Definition of independence of random variables
+
+Two random variables $f,g:\Omega\to \mathbb{R}$ are independent if for any Borel sets $A,B\subset \mathscr{B}(\mathbb{R})$ the events
+
+$$
+\{\omega\in \Omega: f(\omega)\in A\}\text{ and } \{\omega\in \Omega: g(\omega)\in B\}
+$$
+
+are independent.
+
+In general, a finite or infinite family of random variables $f_1,f_2,\cdots,f_n:\Omega\to \mathbb{R}$ are independent if every finite collection of random variables from this family are independent.
+
+#### Definition of independence of sigma-algebras
+
+Let $\mathscr{G}$ and $\mathscr{H}$ be two $\sigma$-algebras on $\Omega$. They are independent if for any Borel sets $A\subset \mathscr{B}(\mathbb{R})$ and $B\subset \mathscr{B}(\mathbb{R})$, the finite collection of events are independent.
+
+## Section 3: Further definitions in measure theory and integration
+
+### $L^2$ space
+
+#### Definition of $L^2$ space
+
+Let $(\Omega, \mathscr{F}, P)$ be a measure space. The $L^2$ space is the space of all square integrable, complex-valued measurable functions on $\Omega$.
+
+Denoted by $L^2(\Omega, \mathscr{F}, P)$.
+
+The square integrable functions are the functions $f:\Omega\to \mathbb{C}$ such that
+
+$$
+\int_\Omega |f(\omega)|^2 dP(\omega)<\infty
+$$
+
+With inner product defined by
+
+$$
+\langle f,g\rangle=\int_\Omega \overline{f(\omega)}g(\omega)dP(\omega)
+$$
+
+The $L^2(\Omega, \mathscr{F}, P)$ space is a Hilbert space.
