@@ -42,7 +42,7 @@ The inner product space $L^2(\mathbb{R},\lambda)$ is complete.
 
 #### Definition of general Hilbert space
 
-A Hilbert space is a complete inner product space.
+A Hilbert space is a complete inner product vector space.
 
 #### General Pythagorean theorem
 
@@ -66,6 +66,41 @@ Immediate from the general Pythagorean theorem.
 
 ### Orthonormal bases
 
+An orthonormal subset $S$ of a Hilbert space $\mathscr{H}$ is a set all of whose elements have norm 1 and are mutually orthogonal. ($\forall u,v\in S, \langle u,v\rangle=0$)
+
 #### Definition of orthonormal basis
 
-An orthonormal basis of a Hilbert space $\mathscr{H}$ is a set of orthonormal vectors that spans $\mathscr{H}$.
+An orthonormal subset of $S$ of a Hilbert space $\mathscr{H}$ is an orthonormal basis of $\mathscr{H}$ if there are no other orthonormal subsets of $\mathscr{H}$ that contain $S$ as a proper subset.
+
+#### Theorem of existence of orthonormal basis
+
+Every separable Hilbert space has an orthonormal basis.
+
+[Proof ignored here]
+
+#### Theorem of Fourier series
+
+Let $\mathscr{H}$ be a separable Hilbert space with an orthonormal basis $\{e_n\}$. Then for any $f\in \mathscr{H}$,
+
+$$
+f=\sum_{n=1}^\infty \langle f,e_n\rangle e_n
+$$
+
+The series converges to some $g\in \mathscr{H}$.
+
+[Proof ignored here]
+
+#### Fourier series in $L^2([0,2\pi],\lambda)$
+
+Let $f\in L^2([0,2\pi],\lambda)$.
+
+$$
+f_N(x)=\sum_{n:|n|\leq N} c_n\frac{e^{inx}}{\sqrt{2\pi}}
+$$
+
+where $c_n=\frac{1}{2\pi}\int_0^{2\pi} f(x)e^{-inx} dx$.
+
+The series converges to some $f\in L^2([0,2\pi],\lambda)$ as $N\to \infty$.
+
+This is the Fourier series of $f$.
+
