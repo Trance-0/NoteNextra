@@ -104,3 +104,72 @@ The series converges to some $f\in L^2([0,2\pi],\lambda)$ as $N\to \infty$.
 
 This is the Fourier series of $f$.
 
+#### Hermite polynomials
+
+The subspace spanned by polynomials is dense in $L^2(\mathbb{R},\lambda)$.
+
+An orthonormal basis of $L^2(\mathbb{R},\lambda)$ can be obtained by the Gram-Schmidt process on $\{1,x,x^2,\cdots\}$.
+
+The polynomials are called the Hermite polynomials.
+
+### Isomorphism and $\ell_2$ space
+
+#### Definition of isomorphic Hilbert spaces
+
+Let $\mathscr{H}_1$ and $\mathscr{H}_2$ be two Hilbert spaces.
+
+$\mathscr{H}_1$ and $\mathscr{H}_2$ are isomorphic if there exists a surjective linear map $U:\mathscr{H}_1\to \mathscr{H}_2$ that is bijective and preserves the inner product.
+
+$$
+\langle Uf,Ug\rangle=\langle f,g\rangle
+$$
+
+for all $f,g\in \mathscr{H}_1$.
+
+When $\mathscr{H}_1=\mathscr{H}_2$, the map $U$ is called unitary.
+
+#### $\ell_2$ space
+
+The space $\ell_2$ is the space of all square summable sequences.
+
+$$
+\ell_2=\left\{(a_n)_{n=1}^\infty: \sum_{n=1}^\infty |a_n|^2<\infty\right\}
+$$
+
+An example of element in $\ell_2$ is $(1,0,0,\cdots)$.
+
+With inner product
+
+$$
+\langle (a_n)_{n=1}^\infty, (b_n)_{n=1}^\infty\rangle=\sum_{n=1}^\infty \overline{a_n}b_n
+$$
+
+It is a Hilbert space (every Cauchy sequence in $\ell_2$ converges to some element in $\ell_2$).
+
+### Bounded operators and continuity
+
+Let $T:\mathscr{V}\to \mathscr{W}$ be a linear map between two vector spaces $\mathscr{V}$ and $\mathscr{W}$.
+
+We define the norm of $\|\cdot\|$ on $\mathscr{V}$ and $\mathscr{W}$.
+
+Then $T$ is continuous if for all $u\in \mathscr{V}$, if $u_n\to u$ in $\mathscr{V}$, then $T(u_n)\to T(u)$ in $\mathscr{W}$.
+
+Using the delta-epsilon language, we can say that $T$ is continuous if for all $\epsilon>0$, there exists a $\delta>0$ such that if $\|u-v\|<\delta$, then $\|T(u)-T(v)\|<\epsilon$.
+
+#### Definition of bounded operator
+
+A linear map $T:\mathscr{V}\to \mathscr{W}$ is bounded if
+
+$$
+\|T\|=\sup_{\|u\|=1}\|T(u)\|< \infty
+$$
+
+#### Theorem of continuity and boundedness
+
+A linear map $T:\mathscr{V}\to \mathscr{W}$ is continuous if and only if it is bounded.
+
+[Proof ignored here]
+
+#### Definition of bounded Hilbert space
+
+The set of all bounded linear operators in $\mathscr{V}$ is denoted by $\mathscr{B}(\mathscr{V})$.
