@@ -9,4 +9,5 @@ export default {
     Math401_T1: "Math 401, Topic 1: Probability under language of measure theory",
     Math401_T2: "Math 401, Topic 2: Finite-dimensional Hilbert spaces",
     Math401_T3: "Math 401, Topic 3: Separable Hilbert spaces",
+    Math401_T4: "Math 401, Topic 4: The quantum version of probabilistic concepts",
 }
