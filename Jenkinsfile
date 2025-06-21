@@ -37,7 +37,7 @@ pipeline {
                     echo "Removing existing container"
                     sh 'docker rm notenextra-jenkins || true'
                     echo "Running new docker container"
-                    sh "docker run -d -p 13000:3000 --name notenextra-jenkins ${imageTag}"
+                    sh "docker run -d -p 13000:3000 --restart=on-failure:10 --name notenextra-jenkins ${imageTag}"
                 }
             }
         }

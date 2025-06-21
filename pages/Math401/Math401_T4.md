@@ -48,7 +48,7 @@ A quantum coin can be represented mathematically by linear combination of $|0\ra
 
 #### Definition of states (classical probability)
 
-[definition of states continue here.]
+A state in classical probability is a probability distribution on the set of all possible outcomes. We can list as $(p_1,p_2,\cdots,p_n)$.
 
 To each event $A\in \Omega$, we associate the operator on $\mathscr{H}$ of multiplication by the indicator function $P_A\coloneqq M_{\mathbb{I}_A}:f\mapsto \mathbb{I}_A f$ that projects onto the subspace of $\mathscr{H}$ corresponding to the event $A$.
 
@@ -193,3 +193,166 @@ With the following properties:
     (b) $P(\bigcap_{i=1}^n A_i)=\bigwedge_{i=1}^n P(A_i)$  
     (c) $P(A^c)=I-P(A)$
     (d) If $A_j$ are mutually disjoint (that is $P(A_i)P(A_j)=P(A_j)P(A_i)=O$ for $i\neq j$), then $P(\bigcup_{j=1}^n A_j)=\sum_{j=1}^n P(A_j)$
+
+#### Definition of probability of a random variable
+
+For a system prepared in state $\rho$, the probability of the random variable by the projection-valued measure $P$ is in the Borel set $A$ is $\operatorname{Tr}(\rho P(A))$.
+
+### Expectation of an random variable and projective measurement
+
+Notice that if we set $\lambda$ is _observed_ with probability $p_\lambda=\operatorname{Tr}(\rho P_\lambda)$. $\rho'\coloneqq\sum_{\lambda\in sp(T)}P_\lambda \rho P_\lambda$ is a density operator.
+
+#### Definition of expectation of operators
+
+Let $T$ be a self-adjoint operator on $\mathscr{H}$. The expectation of $T$ relative to the density operator $\rho$ is given by
+
+$$
+\mathbb{E}_\rho(T)=\operatorname{Tr}(\rho T)=\sum_{\lambda\in sp(T)}\lambda \operatorname{Tr}(\rho P(\lambda))
+$$
+
+if we set $T=\sum_{\lambda\in sp(T)}\lambda P_\lambda$, then $\mathbb{E}_\rho(T)=\sum_{\lambda\in sp(T)}\lambda \operatorname{Tr}(\rho P(\lambda))$.
+
+### The uncertainty principle
+
+Let $A,B$ be two self-adjoint operators on $\mathscr{H}$. Then we define the following two self-adjoint operators:
+
+$$
+i[A,B]\coloneqq i(AB-BA)
+$$
+
+$$
+A\circ B\coloneqq \frac{AB+BA}{2}
+$$
+
+Note that $A\circ B$ satisfies Jordan's identity.
+
+$$
+(A\circ B)\circ (A\circ A)=A\circ (B\circ (A\circ A))
+$$
+
+#### Definition of variance
+
+Given a state $\rho$, the variance of $A$ is given by
+
+$$
+\operatorname{Var}_\rho(A)\coloneqq\mathbb{E}_\rho(A^2)-\mathbb{E}_\rho(A)^2=\operatorname{Tr}(\rho A^2)-\operatorname{Tr}(\rho A)^2
+$$
+
+#### Definition of covariance
+
+Given a state $\rho$, the covariance of $A$ and $B$ is given by the Jordan product of $A$ and $B$.
+
+$$
+\operatorname{Cov}_\rho(A,B)\coloneqq\mathbb{E}_\rho(A\circ B)-\mathbb{E}_\rho(A)\mathbb{E}_\rho(B)=\operatorname{Tr}(\rho A\circ B)-\operatorname{Tr}(\rho A)\operatorname{Tr}(\rho B)
+$$
+
+#### Robertson-Schrödinger uncertainty relation in finite dimensional Hilbert space
+
+Let $\rho$ be a state on $\mathscr{H}$, $A,B$ be two self-adjoint operators on $\mathscr{H}$. Then
+
+$$
+\operatorname{Var}_\rho(A)\operatorname{Var}_\rho(B)\geq\operatorname{Cov}_\rho(A,B)^2+\frac{1}{4}|\mathbb{E}_\rho([A,B])|^2
+$$
+
+If $\rho$ is a pure state ($\rho=|\psi\rangle\langle\psi|$ for some unit vector $|\psi\rangle\in\mathscr{H}$), and the equality holds, then $A$ and $B$ are collinear (i.e. $A=c B$ for some constant $c\in\mathbb{R}$).
+
+When $A$ and $B$ commute, the classical inequality is recovered (Cauchy-Schwarz inequality).
+
+$$
+\operatorname{Var}_\rho(A)\operatorname{Var}_\rho(B)\geq\operatorname{Cov}_\rho(A,B)^2
+$$
+
+[Proof ignored here]
+
+### The uncertainty relation for unbounded symmetric operators
+
+#### Definition of symmetric operator
+
+An operator $A$ is symmetric if for all $\phi,\psi\in\mathscr{H}$, we have
+
+$$
+\langle A\phi,\psi\rangle=\langle\phi,A\psi\rangle
+$$
+
+An example of symmetric operator is $T(\psi)=i\hbar\frac{d\psi}{dx}$. If we let $\mathscr{H}=\mathscr{D}(T)$, $\hbar$ is the Planck constant.
+
+$\mathscr{D}(T)$ be the space of all square integrable, differentiable, and it's derivative is also square integrable functions on $\mathbb{R}$.
+
+#### Definition of joint domain of two operators
+
+Let $(A,\mathscr{D}(A)),(B,\mathscr{D}(B))$ be two symmetric operators on their corresponding domains. The domain of $AB$ is defined as
+
+$$
+\mathscr{D}(AB)\coloneqq\{\psi\in\mathscr{D}(B):B\psi\in\mathscr{D}(A)\}
+$$
+
+Since $(AB)\psi=A(B\psi)$, the variance of an operator $A$ relative to a pure state $\rho=|\psi\rangle\langle\psi|$ is given by
+
+$$
+\operatorname{Var}_\rho(A)=\operatorname{Tr}(\rho A^2)-\operatorname{Tr}(\rho A)^2=\langle\psi,A^2\psi\rangle-\langle\psi,A\psi\rangle^2
+$$
+
+If $A$ is symmetric, then $\operatorname{Var}_\rho(A)=\langle A\psi,A\psi\rangle-\langle \psi, A\psi\rangle^2$.
+
+#### Robertson-Schrödinger uncertainty relation for unbounded symmetric operators
+
+Let $(A,\mathscr{D}(A)),(B,\mathscr{D}(B))$ be two symmetric operators on their corresponding domains. Then
+
+$$
+\operatorname{Var}_\rho(A)\operatorname{Var}_\rho(B)\geq\operatorname{Cov}_\rho(A,B)^2+\frac{1}{4}|\mathbb{E}_\rho([A,B])|^2
+$$
+
+If $\rho$ is a pure state ($\rho=|\psi\rangle\langle\psi|$ for some unit vector $|\psi\rangle\in\mathscr{H}$), and the equality holds, then $A\psi$ and $B\psi$ are collinear (i.e. $A\psi=c B\psi$ for some constant $c\in\mathbb{R}$).
+
+[Proof ignored here]
+
+### Summary of analog of classical probability theory and non-commutative (_quantum_) probability theory
+
+| Classical probability | Non-commutative (_Quantum_) probability |
+| --------- | ------- |
+| Sample space $\Omega$, cardinality $\vert\Omega\vert=n$, example: $\Omega=\{0,1\}$ | Complex Hilbert space $\mathscr{H}$, dimension $\dim\mathscr{H}=n$, example: $\mathscr{H}=\mathbb{C}^2$ |
+|Common algebra of $\mathbb{C}$ valued functions| Algebra of bounded operators $\mathscr{B}(\mathscr{H})$|
+|$f\mapsto \bar{f}$ complex conjugation| $P\mapsto P^*$ adjoint|
+|Events: indicator functions of sets| Projections: space of orthogonal projections $\mathscr{P}\subseteq\mathscr{B}(\mathscr{H})$|
+|functions $f$ such that $f^2=f=\overline{f}$| orthogonal projections $P$ such that $P^*=P=P^2$|
+|$\mathbb{R}$-valued functions $f=\overline{f}$| self-adjoint operators $A=A^*$|
+| $\mathbb{I}_{f^{-1}(\{\lambda\})}$ is the indicator function of the set $f^{-1}(\{\lambda\})$|  $P(\lambda)$ is the orthogonal projection to eigenspace|
+|$f=\sum_{\lambda\in \operatorname{Range}(f)}\lambda \mathbb{I}_{f^{-1}(\{\lambda\})}$|$A=\sum_{\lambda\in \operatorname{sp}(A)}\lambda P(\lambda)$|
+|Probability measure $\mu$ on $\Omega$| Density operator $\rho$ on $\mathscr{H}$|
+|Delta measure $\delta_\omega$| Pure state $\rho=\vert\psi\rangle\langle\psi\vert$|
+|$\mu$ is non-negative measure and $\sum_{i=1}^n\mu(\{i\})=1$| $\rho$ is positive semi-definite and $\operatorname{Tr}(\rho)=1$|
+|Expected value of random variable $f$ is $\mathbb{E}_{\mu}(f)=\sum_{i=1}^n f(i)\mu(\{i\})$| Expected value of operator $A$ is $\mathbb{E}_\rho(A)=\operatorname{Tr}(\rho A)$|
+|Variance of random variable $f$ is $\operatorname{Var}_\mu(f)=\sum_{i=1}^n (f(i)-\mathbb{E}_\mu(f))^2\mu(\{i\})$| Variance of operator $A$ is $\operatorname{Var}_\rho(A)=\operatorname{Tr}(\rho A^2)-\operatorname{Tr}(\rho A)^2$|
+|Covariance of random variables $f$ and $g$ is $\operatorname{Cov}_\mu(f,g)=\sum_{i=1}^n (f(i)-\mathbb{E}_\mu(f))(g(i)-\mathbb{E}_\mu(g))\mu(\{i\})$| Covariance of operators $A$ and $B$ is $\operatorname{Cov}_\rho(A,B)=\operatorname{Tr}(\rho A\circ B)-\operatorname{Tr}(\rho A)\operatorname{Tr}(\rho B)$|
+|Composite system is given by Cartesian product of the sample spaces $\Omega_1\times\Omega_2$| Composite system is given by tensor product of the Hilbert spaces $\mathscr{H}_1\otimes\mathscr{H}_2$|
+|Product measure $\mu_1\times\mu_2$ on $\Omega_1\times\Omega_2$| Tensor product of space $\rho_1\otimes\rho_2$ on $\mathscr{H}_1\otimes\mathscr{H}_2$|
+|Marginal distribution $\pi_*v$|Partial trace $\operatorname{Tr}_2(\rho)$|
+
+### States of two dimensional system and the complex projective space (_Bloch sphere_)
+
+Let $v=e^{i\theta}u$, then the space of pure states ($\rho=|u\rangle\langle u|$) is the complex projective space $\mathbb{C}P^1$. 
+
+$\alpha=x_i+iy_i,\beta=x_2+iy_2$ must satisfy $|\alpha|^2+|\beta|^2=1$, that is $x_1^2+x_2^2+y_1^2+y_2^2=1$.
+
+The set of unit vectors in $\mathbb{C}^2$ is the unit sphere in $\mathbb{R}^3$.
+
+So the space of pure states is the unit circle in $\mathbb{R}^2$.
+
+#### Mapping between the space of pure states and the complex projective space
+
+Any two dimensional pure state can be written as $e^{i\theta}u$, where $u$ is a unit vector in $\mathbb{R}^2$. There exists a bijective map $P:S^2\to\mathscr{P}_1\subseteq M_2(\mathbb{C})$ such that $P(u)=|u\rangle\langle u|$.
+
+$$
+P(\vec{x})=\frac{1}{2}(I+\vec{a}\cdot\vec{\sigma})=\frac{1}{2}\begin{pmatrix}
+1&0\\
+0&1
+\end{pmatrix}+\frac{a_x}{2}\begin{pmatrix}
+0&1\\
+1&0
+\end{pmatrix}+\frac{a_y}{2}\begin{pmatrix}
+0&-i\\
+i&0
+\end{pmatrix}+\frac{a_z}{2}\begin{pmatrix}
+1&0\\
+0&-1
+\end{pmatrix}
