@@ -203,7 +203,7 @@ Let $A,B\in\mathscr{F}$ be the set of all events in the classical probability se
 >
 > This can be found in linear algebra. [Orthogonal projection](https://notenextra.trance-0.com/Math429/Math429_L28#definition-655)
 
-Let $P,Q\in\mathscr{P}$ be the event in probability space. $R(\cdot)$ is the range of the operator. $P^\perp$ is the orthogonal complement of $P$.
+Let $P,Q\in\mathscr{P}$ be the event in non-commutative (_quantum_) probability space. $R(\cdot)$ is the range of the operator. $P^\perp$ is the orthogonal complement of $P$.
 
 | Classical | Classical interpretation | Non-commutative (_Quantum_) | Non-commutative (_Quantum_) interpretation |
 | --------- | ------- | -------- | -------- |
@@ -222,7 +222,7 @@ In quantum probability theory, $P\land(Q\lor R)\neq(P\land Q)\lor(P\land R)$ in 
 
 #### Definition of states (non-commutative (_quantum_) probability theory)
 
-A state on $(\mathscr{H},\mathscr{P})$ is a map $\mu:\mathscr{P}\to[0,1]$ such that:
+A state on $(\mathscr{B}(\mathscr{H}),\mathscr{P})$ is a map $\mu:\mathscr{P}\to[0,1]$ such that:
 
 1. $\mu(O)=0$, where $O$ is the zero projection.
 2. If $P_1,P_2,\cdots,P_n$ are pairwise disjoint orthogonal projections, then $\mu(P_1\lor P_2\lor\cdots\lor P_n)=\sum_{i=1}^n\mu(P_i)$.
@@ -247,6 +247,8 @@ $$
 
 (under basis $|\psi_j\rangle$, it is a diagonal matrix with $p_j$ on the diagonal)
 
+Every basis of $\mathscr{H}$ can be decomposed to these forms.
+
 #### Theorem: Born's rule
 
 Let $\rho$ be a density operator on $\mathscr{H}$. then
@@ -259,7 +261,7 @@ Defines a probability measure on the space $\mathscr{P}$.
 
 [Proof ignored here]
 
-#### Theorem: Gleason's theorem
+#### Theorem: Gleason's theorem (very important)
 
 Let $\mathscr{H}$ be a Hilbert space over $\mathbb{C}$ or $\mathbb{R}$ of dimension $n\geq 3$. Let $\mu$ be a state on the space $\mathscr{P}$ of projections on $\mathscr{H}$. Then there exists a unique density operator $\rho$ such that
 
