@@ -33,7 +33,7 @@ pipeline {
                     echo "Building docker image ${registry}:${version}.${env.BUILD_ID}"
                     def customImage = docker.build("${registry}:v${version}.${env.BUILD_ID}")
                     echo "Logging in to docker hub"
-                    docker.withRegistry('https://registry.hub.docker.com', 'dokcer-jenkins-cred') {
+                    docker.withRegistry('https://registry.hub.docker.com', 'docker-hub-creds') {
                         echo "Pushing docker image ${registry}:v${version}.${env.BUILD_ID}"
                         customImage.push()
                     }
