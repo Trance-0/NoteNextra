@@ -20,4 +20,5 @@ export default {
         type: 'separator'
     },
     Math401_P1: "Math 401, Paper 1: Concentration of measure effects in quantum information (Patrick Hayden)",
+    Math401_P1_1: "Math 401, Paper 1, Side note 1: Quantum information theory and Measure concentration",
 }
