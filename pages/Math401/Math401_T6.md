@@ -177,17 +177,19 @@ The observables in the quantum theory are self-adjoint operators on the Hilbert 
 
 In finite dimensional Hilbert space, $A$ can be written as $\sum_{\lambda\in \operatorname{sp}{(A)}}\lambda P_\lambda$, where $P_\lambda$ is the projection operator onto the eigenspace of $A$ corresponding to the eigenvalue $\lambda$. $P_\lambda=P_\lambda^2=P_\lambda^*$.
 
-
 ### Effects and Busch's theorem for effect operators
 
 Below is a section on Topic 4, about Gleason's theorem and definition of states, and Born's rule for describing the states using density operators.
 
 #### Definition of states (non-commutative (_quantum_) probability theory)
 
+> Do a double check on this section, this notation is slightly different from the one in Topic 4.
+
 A state on $(\mathscr{B}(\mathscr{H}),\mathscr{P})$ is a map $\mu:\mathscr{P}\to[0,1]$ such that:
 
-1. $\mu(O)=0$, where $O$ is the zero projection.
-2. If $P_1,P_2,\cdots,P_n$ are pairwise disjoint orthogonal projections, then $\mu(P_1\lor P_2\lor\cdots\lor P_n)=\sum_{i=1}^n\mu(P_i)$.
+1. $0\leq \mu(E)\leq 1$ for all $E\in \mathscr{P}(\mathscr{H})$.
+2. $\mu(I_{\mathscr{H}})=1$.
+3. If $E_1,E_2,\cdots,E_n$ are pairwise disjoint orthogonal projections, whose sum is also in $\mathscr{P}(\mathscr{H})$ then $\mu(E_1\lor E_2\lor\cdots\lor E_n)=\sum_{i=1}^n\mu(E_i)$.
 
 Where projections are disjoint if $P_iP_j=P_jP_i=O$.
 
@@ -247,17 +249,89 @@ An operator $E$ is said to be the **extreme point** of the convex set $\mathscr{
 
 That is, If $E$ is an extreme point, then $E=\lambda E_1+(1-\lambda)E_2$ for some $0\leq \lambda\leq 1$ and $E_1,E_2\in \mathscr{E}(\mathscr{H})$ implies $E=E_1=E_2$.
 
-#### Effect operator lemma
+#### Proposition: Effect operator lemma
 
 The set of orthogonal projections on $\mathscr{H}$, $\mathscr{P}(\mathscr{H})$, is the set of extreme points of $\mathscr{E}(\mathscr{H})$.
 
-#### Projection operator and effect operator
+#### Theorem: Generalized measures on effects
 
+Let $\mathscr{H}$ be a finite-dimensional Hilbert space. Then any generalized probability measure
 
+$$
+\mu:E\in \mathscr{E}(\mathscr{H})\to \mu(E)\in[0,1]
+$$
 
+with the properties (same as the definition of states):
 
+1. $0\leq \mu(E)\leq 1$ for all $E\in \mathscr{E}(\mathscr{H})$.
+2. $\mu(I_{\mathscr{H}})=1$.
+3. If $E_1,E_2,\cdots,E_n$ are pairwise disjoint orthogonal effects, whose sum is also in $\mathscr{E}(\mathscr{H})$ then $\mu(E_1\lor E_2\lor\cdots\lor E_n)=\sum_{i=1}^n\mu(E_i)$.
+
+is the form:
+
+$\mu(E)=\operatorname{Tr}(\rho E)$
+
+for some density operator $\rho$ on $\mathscr{H}$.
+
+[Proof ignored here]
+
+> If $\mu$ is a positive linear functional on the space of self-adjoint operators on the finite dimensional Hilbert space $\mathscr{H}$.
+>
+> Then, there exists a density operator $\rho$ on $\mathscr{H}$ such that $\mu(E)=\operatorname{Tr}(\rho E)$.
 
 ### Measurements
+
+A measurement (observation) of a system prepared in a given state produces an outcome $x$, $x$ is a physical event that is a subset of the set of all possible outcomes.
+
+To each $x\in X$, we associate a measurement operator $M_x$ on $\mathscr{H}$.
+
+Given the initial state (pure state, unit vector) $u$, the probability of measurement outcome $x$ is given by:
+
+$$
+p(x)=\|M_xu\|^2
+$$
+
+After the measurement, the state of the system is given by:
+
+$$
+v=\frac{M_xu}{\|M_xu\|}
+$$
+
+Note that to make sense of this definition, the collection of measurement operators $\{M_x\}$ must satisfy the **completeness** requirement:
+
+$$
+1=\sum_{x\in X} p(x)=\sum_{x\in X}\|M_xu\|^2=\sum_{x\in X}\langle M_xu,M_xu\rangle=\langle u,(\sum_{x\in X}M_x^*M_x)u\rangle
+$$
+
+So $\sum_{x\in X}M_x^*M_x=I$.
+
+An example of measurement is the projective measurements (von Neumann measurements).
+
+It is given by the set of orthogonal projections $M_x$ on $\mathscr{H}$ with the property:
+
+1. $M_x=M_x^*$
+2. $M_xM_y=\delta_{xy}M_x$ for all $x,y\in X$
+3. $\sum_{x\in X}M_x=I$
+
+#### Composition of measurements
+
+Given two complete collections of measurement operators $\{M_x\}$ and $\{N_y\}$ on $\mathscr{H}_1$ and $\mathscr{H}_2$ respectively, the composition of the two measurements is given by the collection of measurement operators $\{M_xN_y\}$ on $\mathscr{H}_1\otimes\mathscr{H}_2$.
+
+#### Proposition of indistinguishability
+
+Suppose that we have two system $u_1,u_2\in \mathscr{H}_1$, the two states are distinguishable if and only if they are orthogonal.
+
+Ways to distinguish the two states:
+
+1. set $X=\{0,1,2\}$ and $M_i=|u_i\rangle\langle u_i|$, $M_0=I-M_1-M_2$
+2. then $\{M_0,M_1,M_2\}$ is a complete collection of measurement operators on $\mathscr{H}$.
+3. suppose the prepared state is $u_1$, then $p(1)=\|M_1u_1\|^2=\|u_1\|^2=1$, $p(2)=\|M_2u_1\|^2=0$, $p(0)=\|M_0u_1\|^2=0$.
+
+If they are not orthogonal, then there are no choice of measurement operators to distinguish the two states.
+
+[Proof ignored here]
+
+_intuitively, if the two states are not orthogonal, then for any measurement there exists non-zero probability of getting the same outcome for both states._
 
 ### Quantum operations and CPTP maps
 
@@ -279,3 +353,4 @@ The set of orthogonal projections on $\mathscr{H}$, $\mathscr{P}(\mathscr{H})$, 
 
 ## Section 4: Quantum automorphisms and dynamics
 
+Section ignored.
