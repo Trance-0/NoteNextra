@@ -333,23 +333,254 @@ If they are not orthogonal, then there are no choice of measurement operators to
 
 _intuitively, if the two states are not orthogonal, then for any measurement there exists non-zero probability of getting the same outcome for both states._
 
+#### Effects and POVM measurements
+
+An effect on the finite dimension Hilbert space $\mathscr{H}$ is a positive operator $E$ on $\mathscr{H}$ such that $0\leq E\leq I$. A positive operator valued measure POVM consists of an index set $\mathscr{I}$ and a collection of effects $\{E_i,i\in \mathscr{I}\}$ satisfying the identity $\sum_{i\in \mathscr{I}}E_i=I$. 
+
+The probabilty of measurement outcome $i\in \mathscr{I}$ is given by $p(i)=\langle v,E_iv\rangle$ on a ysstem prepared in the state described by the unit vector $v$.
+
+For a mixed state $\rho$, the probability of measurement outcome $i\in \mathscr{I}$ is given by $p(i)=\operatorname{Tr}(\rho E_i)$.
+
+Example, suppose we have a system prepared in the following two states:
+
+$$
+u_1=|0\rangle, u_2=\frac{1}{\sqrt{2}}(|0\rangle+|1\rangle)
+$$
+
+Since they are not orthogonal, there is no measurement that can definitely distinguish the two states.
+
+Consider the following POVM:
+
+$$
+E_1=\frac{\sqrt{2}}{1+\sqrt{2}}|1\rangle \langle 1|, E_2=\frac{\sqrt{2}}{1+\sqrt{2}}\frac{(|0\rangle-|1\rangle)(\langle 0|-\langle 1|)}{2},E_3=I-E_1-E_2
+$$
+
+Then, suppose we have an unknown state $u$, the probability of given $u_1$, measurement outcome $1$ is:
+
+$$
+p(1)=\langle u_1,E_1u_1\rangle=0
+$$
+
+So if the measurement outcome is $1$, we can conclude that the state is $u_2$.
+
+The probability of given $u_2$, measurement outcome $2$ is:
+
+$$
+p(2)=\langle u_2,E_2u_2\rangle=0
+$$
+
+So if the measurement outcome is $2$, we can conclude that the state is $u_1$.
+
+If the measurement outcome is $3$, then we cannot conclude anything about the state.
+
+#### Proposition: Ancilla system
+
+A general measurement of a system having Hilbert space $\mathscr{H}$ is equivalent to a projective measurement composed with a unitary transformation on the Hilbert space $\mathscr{H}\otimes\mathscr{A}$ of a composite system. The system described by $\mathscr{A}$ is called the ancilla system. This equivalent measurement is not unique.
+
+[Further details ignored here]
+
 ### Quantum operations and CPTP maps
 
+$L^1(\Omega,\mathscr{F},\mu)$ is the space of intergrable functions on $\mathscr{H}$, that is $\int_{\Omega} |f(\omega)| d\mu(\omega)<\infty$ for some measure $\mu$ on $\Omega$.
+
+We define $\mathscr{L}_1(\mathscr{H})$, the space of trace class operators on $\mathscr{H}$, as the space of operators $A$ such that $\operatorname{Tr}(\sqrt{A^*A})<\infty$.
+
+$L_2(\Omega,\mathscr{F},\mu)$ is the space of square intergrable functions on $\mathscr{H}$, that is $\int_{\Omega} |f(\omega)|^2 d\mu(\omega)<\infty$ for some measure $\mu$ on $\Omega$.
+
+We define $\mathscr{L}_2(\mathscr{H})$, the space of Hilbert-Schmidt operators on $\mathscr{H}$, as the space of operators $A$ such that $\operatorname{Tr}(A^*A)<\infty$.
+
+The space of $\mathscr{L}_2(\mathscr{H})$ is a Hilbert space equipped with the inner product $\langle A,B\rangle=\operatorname{Tr}(B^*A)$.
+
+with Cauchy-Schwarz inequality:
+
+$$
+\operatorname{Tr}(A^*B)\leq \operatorname{Tr}(A^*A)^{1/2}\operatorname{Tr}(B^*B)^{1/2}
+$$
+
+The space of density operators $\mathscr{S}(\mathscr{H})$ is a convex subset (for $\rho_1,\rho_2\in \mathscr{S}(\mathscr{H})$, $\lambda\in[0,1]$, $\lambda\rho_1+(1-\lambda)\rho_2\in \mathscr{S}(\mathscr{H})$) of $\mathscr{L}_1(\mathscr{H})$ with trace $1$.
+
+#### Definition of CPTP map
+
+A completely positive trace preserving (CPTP) map is a linear map $\mathscr{E}:\mathscr{L}_1(\mathscr{H})\to \mathscr{L}_1(\mathscr{H})$ such that:
+
+1. $\mathscr{E}(\operatorname{Tr}(\rho))=\operatorname{Tr}(\rho)$ for all $\rho\in \mathscr{S}(\mathscr{H})$.
+2. $\mathscr{E}$ is completely positive, that is $\mathscr{E}\otimes I_{\mathscr{H}}:\mathscr{L}_1(\mathscr{H}_1\otimes\mathscr{K})\to\mathscr{L}_1(\mathscr{H}_2\otimes\mathscr{K})$ is positive for every finite-dimensional or separable Hilbert space $\mathscr{K}$.
+
+_note that the condition for completely positive is stronger than the condition for positive. Because if we only require the map to be positive, then the map may assign negative values to some entangled states._
+
+Example:
+
+A map $\mathscr{E}:\mathscr{L}_1(\mathscr{H})\to \mathscr{L}_1(\mathscr{H})$ is given by:
+
+$$
+\mathscr{E}(\rho):\sum_{i,j} \alpha_{ij}|i\rangle\langle j|\to \sum_{i,j} \overline{\alpha_{ij}}|i\rangle\langle j|
+$$
+
+This map is positive but will assign negative values to some entangled states given by:
+
+$$
+\rho=|\phi\rangle\langle\phi|
+$$
+
+where $|\phi\rangle=\frac{1}{\sqrt{2}}(|00\rangle+|11\rangle)$.
+
+#### Definition of quantum channel
+
+Let $\mathscr{H}$ and $\mathscr{K}$ be Hilbert spaces, $U$ be a unitary operator on $\mathscr{H}\otimes\mathscr{K}$, and $\omega$ be a density operator on $\mathscr{K}$. The CPTP map
+
+$$
+\mathscr{E}:T\in \mathscr{L}_1(\mathscr{H})\to \operatorname{Tr}_\mathscr{K}(U (T\otimes \omega)U^*)
+$$
+
+is a quantum channel.
+
+We skipped few exercises here and jump right into the definition.
+
+In short, the quantum channel describes the following process:
+
+Initialization: The ancilla $\mathscr{K}$ is prepared in a fixed state $\omega$ (density operator).
+
+Coupling: The input state $T$ (on $\mathscr{H}$) is combined with $\omega$ to form $T\otimes\omega$ on $\mathscr{H}\otimes\mathscr{K}$.
+
+Unitary evolution: The joint system evolves under $U$ (unitary on $\mathscr{H}\otimes\mathscr{K}$).
+
+Discarding ancilla: The ancilla $\mathscr{K}$ is traced out, leaving a state on $\mathscr{H}$.
+
+This is a Stinespring dilation, representing any CPTP map.
+
+#### Proposition: Stinespring dilation theorem (to be checked)
+
+Any CPTP map $\mathscr{E}:\mathscr{L}_1(\mathscr{H})\to \mathscr{L}_1(\mathscr{H})$ can be represented as:
+
+$$
+\mathscr{E}(T)=\operatorname{Tr}_\mathscr{K}(U (T\otimes \omega)U^*)
+$$
+
 ### Conditional operations
+
+#### Definition of controlled-unitary operations
+
+A controlled-unitary operation is 
+
+$$
+U\coloneqq\sum_{a=1}^{n_1}|a\rangle\langle a|\otimes U_a
+$$
+
+where $U_a$ is a unitary operator on $\mathscr{H}$ and $|a\rangle$ is a basis of $\mathscr{K}$.
+
+#### Principle of deferred measurement
+
+All measurements that may occur in the process of executing a quantum computation may be relegated to the end of the quantum circuit, prior to which all operations are unitary.
 
 ## Section 2: Quantum entanglement
 
 ### Bell states and the EPR phenomenon
 
+#### Definition of Bell states
+
+The Bell states are the following four states:
+
+$$
+|\Phi^+\rangle=\frac{1}{\sqrt{2}}(|00\rangle+|11\rangle), |\Phi^-\rangle=\frac{1}{\sqrt{2}}(|00\rangle-|11\rangle)
+$$
+
+$$
+|\Psi^+\rangle=\frac{1}{\sqrt{2}}(|01\rangle+|10\rangle), |\Psi^-\rangle=\frac{1}{\sqrt{2}}(|01\rangle-|10\rangle)
+$$
+
+These are the basis of the two-qubit Hilbert space.
+
+[The section discussing the EPR phenomenon is ignored here, the key to remember is that there exists no classical (local) explanation for the correlation between the two qubits.]
+
 ### Von Neumann entropy and maximally entangled states
+
+#### Definition of EPR state
+
+A vector $|\psi\rangle$ on tensor product space $\mathscr{H}_1\otimes\mathscr{H}_2$ is called an EPR state if it is of the form:
+
+$$
+|\psi\rangle=\frac{1}{\sqrt{n}}\sum_{i=1}^n |i\rangle_1|i\rangle_2
+$$
+
+where $|i\rangle_1$ and $|i\rangle_2$ are basis of $\mathscr{H}_1$ and $\mathscr{H}_2$ respectively.
+
+This describes a maximally entangled state.
+
+#### Weyl operators
+
+Let $\mathscr{H}$ be a Hilbert space with orthonormal basis $(|i\rangle)$.
+
+The shift operator $X$ is defined as:
+
+$$
+X|i\rangle=|i+1\rangle
+$$
+
+Note that $X$ permutes basis element cyclically. Let $\omega=e^{2\pi i/n}$, then $1,\omega,\omega^2,\cdots,\omega^{n-1}$ are the $n$-th roots of unity.
+
+The phase operator $Z$ is defined as:
+
+$$
+Z|i\rangle=\omega^i|i\rangle
+$$
+
+The Weyl operators are the following operators:
+
+$$
+W_{ab}=X^aZ^b
+$$
+
+where $a,b\in\{0,1,\cdots,n-1\}$.
+
+#### Definition of von Neumann entropy
+
+The von Neumann entropy of a density operator $\rho$ is defined as:
+
+$$
+S(\rho)=-\operatorname{Tr}(\rho\log\rho)=-\sum_{i}\mu_i\log\mu_i
+$$
+
+where $\mu_i$ are the eigenvalues of $\rho$.
 
 ## Section 3: Information transmission by quantum systems
 
 ### Transmission of classical information
 
+#### Transmission over information channels
+
+Let the measurement operation defined by POVM $\{E_y\}$, the conditional probability of obtaining signal $y$ at the output given the input is $x$ is given by:
+
+$$
+p_E(y|x)=\operatorname{Tr}(\rho_x E_y)
+$$
+
+where $\rho_x$ is the density operator of the input state, $E_y$ is the measurement operator for the output signal $y$.
+
+#### Holevo bound
+
+The maximal amount of classical information that can be transmitted by a quantum system is given by the Holevo bound. $\log_2(d)$ is the maximum amount of classical information that can be transmitted by a quantum system with $d$ levels.
+
+> The fact that Hilbert space contains infinitely many different state vectors does not aid us in transmitting an unlimited amount of information. The more states are used for transmission, the closer they are to each other and hence they become less and less distinguishable.
+
 ### Making use of entanglement and local operations
 
+No information can be gained by measuring a pair of entangled qubits.
+
 ### Superdense coding [very important]
+
+It is a procedure defined as follows:
+
+Suppose $A$ and $B$ share a Bell state $|\Phi^+\rangle=\frac{1}{\sqrt{2}}(|00\rangle+|11\rangle)$, where $A$ holds the first part and $B$ holds the second part.
+
+$A$ wish to send 2 classical bits to $B$.
+
+$A$ performs one of four Pauli unitaries on the combined state of entangled qubits $\otimes$ one qubit. Then $A$ sends the resulting one qubit to $B$.
+
+This operation extends the initial one entangled qubit to a system of one of four orthogonal Bell states.
+
+$B$ performs a measurement on the combined state of the one qubit and the entangled qubits he holds.
+
+$B$ decodes the result and obtains the 2 classical bits sent by $A$.
 
 ## Section 4: Quantum automorphisms and dynamics
 
