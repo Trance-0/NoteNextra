@@ -1,29 +1,33 @@
 import nextra from 'nextra'
+import withBundleAnalyzer from '@next/bundle-analyzer'
 
 const withNextra = nextra({
-  theme: 'nextra-theme-docs',
-  themeConfig: './theme.config.jsx',
   latex: {
     renderer: 'katex',
     options: {
       // suppress warnings from katex for `\\`
-      // strict: false,
-      // macros: {
-      //   '\\RR': '\\mathbb{R}'
-      // }
+      strict: false,
     }
-  }
+  },
+  mdxOptions: {
+    format: 'detect'
+  },
+  contentDirBasePath: '/',
 })
 
-export default withNextra({
+const bundleAnalyzer = withBundleAnalyzer({
+  enabled: process.env.ANALYZE === 'true'
+})
+
+export default bundleAnalyzer(withNextra({
   output: 'standalone',
-  // eslint: {
-  //   ignoreDuringBuilds: true,
-  // },
+  eslint: {
+    ignoreDuringBuilds: true,
+  },
   experimental: {
-    // optimize memory usage: https://nextjs.org/docs/app/building-your-application/optimizing/memory-usage
     webpackMemoryOptimizations: true,
-  },})
+  },
+}))
 
 // If you have other Next.js configurations, you can pass them as the parameter:
 // export default withNextra({ /* other next.js config */ })

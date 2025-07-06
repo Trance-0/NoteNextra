@@ -131,3 +131,12 @@ dist
 
 # vscode
 .vscode
+
+# analytics
+analyze/
+
+# heapsnapshot
+*.heapsnapshot
+
+# turbo
+.turbo/
