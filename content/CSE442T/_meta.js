@@ -1,5 +1,5 @@
 export default {
-   //index: "Course Description",
+    index: "Course Description",
     "---":{
         type: 'separator'
     },

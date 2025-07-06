@@ -1,5 +1,5 @@
 export default {
-    index: {type:"page",title:"Course Description",href:"/CSE332S/index.mdx"},
+    index: "Course Description",
     "---":{
         type: 'separator'
     },
