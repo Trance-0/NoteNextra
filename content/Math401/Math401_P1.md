@@ -92,11 +92,47 @@ Let $\epsilon>0$. Then for any subset $A\subset S^n$, given the area $\sigma_n(A
 
 The above two inequalities is not proved in the Book _High-dimensional probability_.
 
-To continue prove the theorem, we use sub-Gaussian concentration of sphere $\sqrt{n}S^n$. 
+To continue prove the theorem, we use sub-Gaussian concentration *(Chapter 3 of _High-dimensional probability_ by Roman Vershynin)* of sphere $\sqrt{n}S^n$. 
 
-This will leads to some constant $C>0$ such that
+This will leads to some constant $C>0$ such that the following lemma holds:
 
+#### The "Blow-up" lemma
 
+Let $A$ be a subset of sphere $\sqrt{n}S^n$, and $\sigma$ denotes the normalized area of $A$. Then if $\sigma\geq \frac{1}{2}$, then for every $t\geq 0$,
+
+$$
+\sigma(A_t)\geq 1-2\exp(-ct^2)
+$$
+
+where $A_t=\{x\in S^n: \operatorname{dist}(x,A)\leq t\}$ and $c$ is some positive constant.
+
+#### Proof of the Levy's concentration theorem
+
+Proof:
+
+Without loss of generality, we can assume that $\eta=1$. Let $M$ denotes the median of $f(X)$.
+
+So $\operatorname{Pr}[|f(X)\leq M|]\geq \frac{1}{2}$, and $\operatorname{Pr}[|f(X)\geq M|]\geq \frac{1}{2}$.
+
+Consider the sub-level set $A\coloneqq \{x\in \sqrt{n}S^n: |f(x)|\leq M\}$.
+
+Since $\operatorname{Pr}[X\in A]\geq \frac{1}{2}$, by the blow-up lemma, we have
+
+$$
+\operatorname{Pr}[X\in A_t]\geq 1-2\exp(-ct^2)
+$$
+
+And since
+
+$$
+\operatorname{Pr}[X\in A_t]\leq \operatorname{Pr}[f(X)\leq M+t]
+$$
+
+Combining the above two inequalities, we have
+
+$$
+\operatorname{Pr}[f(X)\leq M+t]\geq 1-2\exp(-ct^2)
+$$
 
 > The Levy's lemma can also be found in _Metric Structures for Riemannian and Non-Riemannian Spaces_ by M. Gromov. $3\frac{1}{2}.19$ The Levy concentration theory.
 
@@ -122,10 +158,10 @@ Hardcore computing may generates the bound but M. Gromov did not make the detail
 
 Choose a random pure state $\sigma=|\psi\rangle\langle\psi|$ from $A'\otimes A$.
 
-The expected value of the entropy of entanglement is kown and satisfies a concentration inequality.
+The expected value of the entropy of entanglement is known and satisfies a concentration inequality.
 
 $$
-\mathbb{E}[H(\psi_A)] \leq \log_2(d_A)-\frac{1}{2\ln(2)}\frac{d_A}{d_B}
+\mathbb{E}[H(\psi_A)] \geq \log_2(d_A)-\frac{1}{2\ln(2)}\frac{d_A}{d_B}
 $$
 
 From the Levy's lemma, we have
@@ -133,14 +169,28 @@ From the Levy's lemma, we have
 If we define $\beta=\frac{d_A}{\log_2(d_B)}$, then we have
 
 $$
-\operatorname{Pr}[H(\psi_A) \geq \log_2(d_A)-\alpha-\beta] \leq \exp\left(-\frac{(d_Ad_B-1)C\alpha^2}{(\log_2(d_A))^2}\right)
+\operatorname{Pr}[H(\psi_A) < \log_2(d_A)-\alpha-\beta] \leq \exp\left(-\frac{(d_Ad_B-1)C\alpha^2}{(\log_2(d_A))^2}\right)
 $$
-where $C$ is a small constatnt and $d_B\geq d_A\geq 3$.
-
+where $C$ is a small constant and $d_B\geq d_A\geq 3$.
 
 #### ebits and qbits
 
 ### Superdense coding of quantum states
+
+It is a procedure defined as follows:
+
+Suppose $A$ and $B$ share a Bell state $|\Phi^+\rangle=\frac{1}{\sqrt{2}}(|00\rangle+|11\rangle)$, where $A$ holds the first part and $B$ holds the second part.
+
+$A$ wish to send 2 classical bits to $B$.
+
+$A$ performs one of four Pauli unitaries on the combined state of entangled qubits $\otimes$ one qubit. Then $A$ sends the resulting one qubit to $B$.
+
+This operation extends the initial one entangled qubit to a system of one of four orthogonal Bell states.
+
+$B$ performs a measurement on the combined state of the one qubit and the entangled qubits he holds.
+
+$B$ decodes the result and obtains the 2 classical bits sent by $A$.
+
 
 ### Consequences for mixed state entanglement measures
 
