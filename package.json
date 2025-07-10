@@ -1,9 +1,10 @@
 {
   "scripts": {
     "dev": "next dev",
-    "build": "cross-env NODE_OPTIONS='--max-old-space-size=16384' next build",
+    "build": "cross-env NODE_OPTIONS='--max-old-space-size=16384' next build && npm run postbuild",
     "build:test": "cross-env ANALYZE=true NODE_OPTIONS='--inspect --max-old-space-size=4096' next build",
     "build:analyze": "cross-env ANALYZE=true NODE_OPTIONS='--max-old-space-size=16384' next build",
+    "postbuild": "pagefind --site .next/server/app --output-path public/_pagefind",
     "start": "next start"
   },
   "dependencies": {
@@ -12,8 +13,10 @@
     "@vercel/speed-insights": "^1.2.0",
     "cross-env": "^7.0.3",
     "next": "^15.3.5",
+    "next-sitemap": "^4.2.3",
     "nextra": "^4.2.17",
     "nextra-theme-docs": "^4.2.17",
+    "pagefind": "^1.3.0",
     "react": "^19.1.0",
     "react-dom": "^19.1.0"
   },

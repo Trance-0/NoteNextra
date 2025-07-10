@@ -140,3 +140,6 @@ analyze/
 
 # turbo
 .turbo/
+
+# pagefind postbuild
+public/_pagefind/

@@ -12,7 +12,7 @@ const withNextra = nextra({
   mdxOptions: {
     format: 'detect'
   },
-  contentDirBasePath: '/',
+  contentDirBasePath: '/'
 })
 
 const bundleAnalyzer = withBundleAnalyzer({
