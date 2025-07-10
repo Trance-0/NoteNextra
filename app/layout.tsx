@@ -11,6 +11,7 @@ export const metadata = {
   title: {
     template: '%s - NoteNextra'
   },
+  
   description: 'A static note sharing site for minimum care',
   applicationName: 'NoteNextra',
   generator: 'Next.js',
@@ -18,6 +19,7 @@ export const metadata = {
     title: 'NoteNextra'
   },
   other: {
+    'algolia-site-verification': '7303797A38EAD6FC',
     'msapplication-TileImage': '/ms-icon-144x144.png',
     'msapplication-TileColor': '#fff'
   },

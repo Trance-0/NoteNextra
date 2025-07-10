@@ -12,9 +12,6 @@ RUN apk add --no-cache libc6-compat git
 
 WORKDIR /app
 
-# Initialize git repository to prevent Nextra warnings
-RUN git init
-
 # Install dependencies based on the preferred package manager
 COPY package.json yarn.lock* package-lock.json* pnpm-lock.yaml* .npmrc* ./
 RUN \
@@ -30,8 +27,7 @@ FROM base AS builder
 WORKDIR /app
 COPY --from=deps /app/node_modules ./node_modules
 COPY . .
-# Initialize git repository in builder stage as well
-RUN git init
+
 # This will do the trick, use the corresponding env file for each environment.
 # COPY .env.production.sample .env.production
 RUN npm run build
@@ -51,11 +47,6 @@ COPY --from=builder /app/public ./public
 # https://nextjs.org/docs/advanced-features/output-file-tracing
 COPY --from=builder --chown=nextjs:nodejs /app/.next/standalone ./
 COPY --from=builder --chown=nextjs:nodejs /app/.next/static ./.next/static
-
-# Initialize git repository in production stage
-RUN apk add --no-cache git && \
-    git init && \
-    chown -R nextjs:nodejs .git
 
 USER nextjs
 
