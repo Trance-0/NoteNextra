@@ -49,12 +49,26 @@ A state $|\psi\rangle$ is entangled if it cannot be expressed as a product state
 Example: the Bell state $|\psi^+\rangle=\frac{1}{\sqrt{2}}(|00\rangle+|11\rangle)$ is entangled.
 
 Assume it can be written as $|\psi\rangle=|\psi_1\rangle\otimes|\psi_2\rangle$ where $|\psi_1\rangle=a|0\rangle+b|1\rangle$ and $|\psi_2\rangle=c|0\rangle+d|1\rangle$. Then:
-$$|\psi\rangle=a|00\rangle+b|01\rangle+c|10\rangle+d|11\rangle$$
+
+$$
+|\psi\rangle=a|00\rangle+b|01\rangle+c|10\rangle+d|11\rangle
+$$
+
 Setting this equal to $|\psi^+\rangle=\frac{1}{\sqrt{2}}(|00\rangle+|11\rangle)$ gives:
-$$ac|00\rangle+ad|01\rangle+bc|10\rangle+bd|11\rangle=\frac{1}{\sqrt{2}}(|00\rangle+|11\rangle)$$
+
+$$
+ac|00\rangle+ad|01\rangle+bc|10\rangle+bd|11\rangle=\frac{1}{\sqrt{2}}(|00\rangle+|11\rangle)
+$$
+
 This requires:
-$$ac=bd=\frac{1}{2}$$
-$$ad=bc=0$$
+
+$$
+ac=bd=\frac{1}{2}
+$$
+
+$$
+ad=bc=0
+$$
 
 This is a contradiction, so $|\psi^+\rangle$ is entangled.
 

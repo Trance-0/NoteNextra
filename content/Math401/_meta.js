@@ -21,4 +21,6 @@ export default {
     },
     Math401_P1: "Math 401, Paper 1: Concentration of measure effects in quantum information (Patrick Hayden)",
     Math401_P1_1: "Math 401, Paper 1, Side note 1: Quantum information theory and Measure concentration",
+    Math401_P1_2: "Math 401, Paper 1, Side note 2: Page's lemma",
+    Math401_P1_3: "Math 401, Paper 1, Side note 3: Levy's concentration theorem",
 }
