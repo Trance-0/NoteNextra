@@ -2,7 +2,13 @@ import nextra from 'nextra'
 import withBundleAnalyzer from '@next/bundle-analyzer'
 
 const withNextra = nextra({
-  latex: true,
+  latex: {
+    renderer: 'katex',
+    options: {
+      // suppress warnings from katex for `\\`
+      strict: false,
+    }
+  },
   mdxOptions: {
     format: 'detect'
   },

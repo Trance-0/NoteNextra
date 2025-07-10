@@ -5,6 +5,7 @@ import { getPageMap } from 'nextra/page-map'
 import 'nextra-theme-docs/style.css'
 import { SpeedInsights } from "@vercel/speed-insights/next"
 import { Analytics } from "@vercel/analytics/react"
+import 'katex/dist/katex.min.css'
 
 export const metadata = {
   metadataBase: new URL('https://notenextra.trance-0.com'),
