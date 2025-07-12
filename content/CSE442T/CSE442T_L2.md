@@ -1,4 +1,4 @@
-# Lecture 2
+# CSE442T Lecture 2
 
 ## Probability review
 

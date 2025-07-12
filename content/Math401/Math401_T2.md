@@ -387,13 +387,13 @@ $$
 
 This is equivalent to the sum of the diagonal elements of $T$.
 
-> Check the rest of the section defining the partial trace by viewing the tensor product section first.
+> Note, I changed the order of the definitions for the trace to pack similar concepts together. Check the rest of the section defining the partial trace by viewing the [tensor product section](https://notenextra.trance-0.com/Math401/Math401_T2#tensor-products-of-finite-dimensional-hilbert-spaces) first, and return to this section after reading the tensor product of linear operators.
 
 #### Definition of partial trace
 
 Let $T$ be a linear operator on $\mathscr{H}=\mathscr{A}\otimes \mathscr{B}$, where $\mathscr{A}$ and $\mathscr{B}$ are finite-dimensional Hilbert spaces.
 
-An operator $T$ on $\mathscr{H}=\mathscr{A}\otimes \mathscr{B}$ can be written as
+An operator $T$ on $\mathscr{H}=\mathscr{A}\otimes \mathscr{B}$ can be written as (by the definition of [tensor product of linear operators](https://notenextra.trance-0.com/Math401/Math401_T2#tensor-products-of-linear-operators))
 
 $$
 T=\sum_{i=1}^n a_i A_i\otimes B_i
@@ -401,7 +401,7 @@ $$
 
 where $A_i$ is a linear operator on $\mathscr{A}$ and $B_i$ is a linear operator on $\mathscr{B}$.
 
-The partial trace of $T$ is the linear operator on $\mathscr{B}$ defined by
+The $\mathscr{B}$-partial trace of $T$ ($\operatorname{Tr}_{\mathscr{B}}(T):\mathcal{L}(\mathscr{A}\otimes \mathscr{B})\to \mathcal{L}(\mathscr{A})$) is the linear operator on $\mathscr{A}$ defined by
 
 $$
 \operatorname{Tr}_{\mathscr{B}}(T)=\sum_{i=1}^n a_i \operatorname{Tr}(B_i) A_i
@@ -497,6 +497,20 @@ $$
 f(x_j)=\sum_{a\in X_j} f(a)\epsilon_{a}^{(j)}(x_j)
 $$
 
+<details>
+<summary>Proof</summary>
+
+Note that a function is a map for all elements in the domain.
+
+For each $a\in X_j$, $\epsilon_{a}^{(j)}(x_j)=1$ if $x_j=a$ and $0$ otherwise. So 
+
+$$
+f(x_j)=\sum_{a\in X_j} f(a)\epsilon_{a}^{(j)}(x_j)=f(x_j)
+$$
+
+QED.
+
+</details>
 
 Now, let $a=(a_1,a_2,\cdots,a_n)$ be a vector in $X$, and $x=(x_1,x_2,\cdots,x_n)$ be a vector in $X$. Note that $a_j,x_j\in X_j$ for $j=1,2,\cdots,n$.
 
@@ -517,11 +531,30 @@ $$
 f(x)=\sum_{a\in X} f(a)\epsilon_a(x)
 $$
 
+<details>
+<summary>Proof</summary>
+
+This basically follows the same rascal as the previous proof. This time, the epsilon function only returns $1$ when $x_j=a_j$ for all $j=1,2,\cdots,n$.
+
+$$
+f(x)=\sum_{a\in X} f(a)\epsilon_a(x)=f(x)
+$$
+
+QED.
+
+</details>
+
+#### Definition of tensor product of basis elements
+
 **The tensor product of basis elements** is defined by
 
 $$
-\epsilon_a=\epsilon_{a_1}^{(1)}\otimes \epsilon_{a_2}^{(2)}\otimes \cdots \otimes \epsilon_{a_n}^{(n)}
+\epsilon_a\coloneqq\epsilon_{a_1}^{(1)}\otimes \epsilon_{a_2}^{(2)}\otimes \cdots \otimes \epsilon_{a_n}^{(n)}
 $$
+
+This is a basis of $\mathscr{H}$, here $\mathscr{H}$ is the set of all functions from $X=X_1\times X_2\times \cdots \times X_n$ to $\mathbb{C}$.
+
+#### Definition of tensor product of two finite-dimensional Hilbert spaces
 
 **The tensor product of two finite-dimensional Hilbert spaces** (in $\mathscr{H}$) is defined by
 
@@ -531,7 +564,7 @@ $$
 u_1\otimes v_1
 $$
 
-is a bi-anti-linear map from $\mathscr{H}_1\otimes \mathscr{H}_2$ to $\mathbb{F}$ (in this case, $\mathbb{C}$). And $\forall u\in \mathscr{H}_1, v\in \mathscr{H}_2$,
+is a bi-anti-linear map from $\mathscr{H}_1\times \mathscr{H}_2$ (the Cartesian product of $\mathscr{H}_1$ and $\mathscr{H}_2$, a tuple of two elements where first element is in $\mathscr{H}_1$ and second element is in $\mathscr{H}_2$) to $\mathbb{F}$ (in this case, $\mathbb{C}$). And $\forall u\in \mathscr{H}_1, v\in \mathscr{H}_2$,
 
 $$
 (u_1\otimes v_1)(u, v)=\langle u,u_1\rangle \langle v,v_1\rangle
@@ -540,7 +573,7 @@ $$
 We call such forms **decomposable**. The tensor product of two finite-dimensional Hilbert spaces, denoted by $\mathscr{H}_1\otimes \mathscr{H}_2$, is the set of all linear combinations of decomposable forms. Represented by the following:
 
 $$
-(\sum_{i=1}^n a_i u_i\otimes v_i)(u, v)=\sum_{i=1}^n a_i \langle v,u_i\rangle \langle v_i,u\rangle
+\left(\sum_{i=1}^n a_i u_i\otimes v_i\right)(u, v) \coloneqq \sum_{i=1}^n a_j(u_j\otimes v_j)(u,v)=\sum_{i=1}^n a_i \langle v,u_i\rangle \langle v_i,u\rangle
 $$
 
 Note that $a_i\in \mathbb{C}$ for complex-vector spaces.
@@ -550,7 +583,7 @@ This is a linear space of dimension $\dim \mathscr{H}_1\times \dim \mathscr{H}_2
 We define the inner product of two elements of $\mathscr{H}_1\otimes \mathscr{H}_2$ ($u_1\otimes v_1:(\mathscr{H}_1\otimes \mathscr{H}_2)\to \mathbb{C}$, $u_2\otimes v_2:(\mathscr{H}_1\otimes \mathscr{H}_2)\to \mathbb{C}$ $\in \mathscr{H}_1\otimes \mathscr{H}_2$) by
 
 $$
-\langle u_1\otimes v_1, u_2\otimes v_2\rangle=\langle u_1,u_2\rangle \langle v_1,v_2\rangle=(u_1\otimes v_1)(u_2,v_2)
+\langle u_1\otimes v_1, u_2\otimes v_2\rangle\coloneqq\langle u_1,u_2\rangle \langle v_1,v_2\rangle=(u_1\otimes v_1)(u_2,v_2)
 $$
 
 ### Tensor products of linear operators

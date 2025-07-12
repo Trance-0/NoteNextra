@@ -1,4 +1,4 @@
-# Lecture 3
+# CSE442T Lecture 3
 
 All algorithms $C(x)\to y$, $x,y\in \{0,1\}^*$ 
 

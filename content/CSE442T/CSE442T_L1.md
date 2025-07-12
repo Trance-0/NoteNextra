@@ -1,4 +1,4 @@
-# Lecture 1
+# CSE442T Lecture 1
 
 ## Chapter 1: Introduction
 
