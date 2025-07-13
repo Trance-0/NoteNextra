@@ -1,4 +1,4 @@
-# Topic 1: Probability under language of measure theory
+# Math401 Topic 1: Probability under language of measure theory
 
 ## Section 1: Uniform Random Numbers
 

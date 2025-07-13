@@ -1,4 +1,4 @@
-# Math 401, Topic 6: Postulates of quantum theory and measurement operations
+# Math401 Topic 6: Postulates of quantum theory and measurement operations
 
 ## Section 1: Postulates of quantum theory
 
@@ -117,6 +117,42 @@ If $\rho$ is a density operator on $\mathscr{H}$ given by: $\sum_{i=1}^l |w_i\ra
 [Proof ignored here]
 
 ### Density operator of subsystems
+
+#### Partial trace for density operators
+
+Let $\rho$ be a density operator in $\mathscr{H}_1\otimes\mathscr{H}_2$, the partial trace of $\rho$ over $\mathscr{H}_2$ is the density operator in $\mathscr{H}_1$ (reduced density operator for the subsystem $\mathscr{H}_1$) given by:
+
+$$
+\rho_1\coloneqq\operatorname{Tr}_2(\rho)=\sum_{k=1}^r \lambda_k^2|v_k\rangle\langle v_k|
+$$
+
+<details>
+<summary>Examples</summary>
+
+Let $\rho=\frac{1}{\sqrt{2}}(|01\rangle+|10\rangle)$ be a density operator on $\mathscr{H}=\mathbb{C}^2\otimes \mathbb{C}^2$. 
+
+Expand the expression of $\rho$ in the basis of $\mathbb{C}^2\otimes\mathbb{C}^2$ using linear combination of basis vectors:
+
+$$
+\rho=\frac{1}{2}(|01\rangle\langle 01|+|01\rangle\langle 10|+|10\rangle\langle 01|+|10\rangle\langle 10|)
+$$
+
+Note $\operatorname{Tr}_2(|ab\rangle\langle cd|)=|a\rangle\langle c|\cdot \langle b|d\rangle$.
+
+Then the reduced density operator of the subsystem $\mathbb{C}^2$ in first qubit is, note the $\langle 0|0\rangle=\langle 1|1\rangle=1$ and $\langle 0|1\rangle=\langle 1|0\rangle=0$:
+
+$$
+\begin{aligned}
+\rho_1&=\operatorname{Tr}_2(\rho)\\
+&=\frac{1}{2}(\langle 1|1\rangle |0\rangle\langle 0|+\langle 0|1\rangle |0\rangle\langle 1|+\langle 1|0\rangle |1\rangle\langle 0|+\langle 0|0\rangle |1\rangle\langle 1|)\\
+&=\frac{1}{2}(|0\rangle\langle 0|+|1\rangle\langle 1|)\\
+&=\frac{1}{2}I
+\end{aligned}
+$$
+
+is a mixed state.
+
+</details>
 
 #### Schmidt Decomposition theorem
 

@@ -1,4 +1,4 @@
-# Math 401, Paper 1: Concentration of measure effects in quantum information (Patrick Hayden)
+# Math 401 Paper 1: Concentration of measure effects in quantum information (Patrick Hayden)
 
 [PDF](https://www.ams.org/books/psapm/068/2762144)
 

@@ -1,4 +1,4 @@
-# Topic 5: Introducing dynamics: classical and non-commutative
+# Math401 Topic 5: Introducing dynamics: classical and non-commutative
 
 ## Section 1: Dynamics in classical probability
 

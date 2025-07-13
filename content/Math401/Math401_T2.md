@@ -1,4 +1,4 @@
-# Topic 2: Finite-dimensional Hilbert spaces
+# Math401 Topic 2: Finite-dimensional Hilbert spaces
 
 Recall the complex number is a tuple of two real numbers, $z=(a,b)$ with addition and multiplication defined by
 
@@ -461,7 +461,7 @@ $$
 
 The inner product is the standard Hermitian inner product in $\mathbb{C}^{n\times n}$.
 
-#### Definition of Hilbert-Schmidt norm
+#### Definition of Hilbert-Schmidt norm (also called Frobenius norm)
 
 The Hilbert-Schmidt norm of a linear operator $T: \mathscr{H}\to \mathscr{H}$ is defined by
 

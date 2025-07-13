@@ -1,4 +1,4 @@
-# Topic 3: Separable Hilbert spaces
+# Math401 Topic 3: Separable Hilbert spaces
 
 ## Infinite-dimensional Hilbert spaces
 

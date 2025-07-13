@@ -1,4 +1,4 @@
-# Topic 4: The quantum version of probabilistic concepts
+# Math401 Topic 4: The quantum version of probabilistic concepts
 
 > In mathematics, on often speaks of non-commutative instead of quantum constructions.
 
@@ -130,7 +130,8 @@ $$
 \operatorname{Prob}(P_1=1,P_3=0)\leq \operatorname{Prob}(P_1=1,P_2=0)+\operatorname{Prob}(P_2=1,P_3=0)
 $$
 
-Proof:
+<details>
+<summary>Proof</summary>
 
 By the law of total probability, (The event that the photon passes through the first filter but not the third filter is the union of the event that the photon did not pass through the second filter and the event that the photon passed the second filter and did not pass through the third filter) we have
 
@@ -167,6 +168,11 @@ $$
 \frac{3}{8}&\leq\frac{1}{4}
 \end{aligned}
 $$
+
+This is a contradiction, so Bell's inequality is violated.
+
+QED
+</details>
 
 Other revised experiments (eg. Aspect's experiment, Calcium entangled photon experiment) are also conducted and the inequality is still violated.
 

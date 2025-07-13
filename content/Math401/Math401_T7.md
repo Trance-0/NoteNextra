@@ -1,1 +1,1 @@
-# Math 401, Topic 7: Basic of quantum circuits
+# Math401 Topic 7: Basic of quantum circuits
