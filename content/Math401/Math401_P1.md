@@ -101,3 +101,4 @@ $B$ decodes the result and obtains the 2 classical bits sent by $A$.
 
 ### Multipartite entanglement
 
+> The role of the paper in Physics can be found in (15.86) on book Geometry of Quantum states.

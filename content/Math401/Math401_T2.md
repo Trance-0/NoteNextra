@@ -257,7 +257,7 @@ $$
 \text{Range}(A)=\{w\in \mathscr{W}: \exists v\in \mathscr{V}, Av=w\}
 $$
 
-### Dual spaces and adjoints of linear maps\
+### Dual spaces and adjoints of linear maps
 
 #### Definition of linear map
 
@@ -321,7 +321,7 @@ $$
 \langle v|w\rangle
 $$
 
-is the inner product of $v$ and $w$.
+is the inner product of $v$ and $w$. That is, $\langle v|w\rangle: \mathscr{H}\to \mathbb{C}$ is a linear functional satisfying the property of inner product.
 
 $$
 |v\rangle
@@ -606,9 +606,17 @@ for all $u_i\in \mathscr{H}_1$ and $v_i\in \mathscr{H}_2$.
 
 Such tensor product of linear operators is well defined.
 
+<details>
+<summary>Proof</summary>
+
 If $\sum_{i=1}^n a_i u_i\otimes v_i=\sum_{j=1}^m b_j u_j\otimes v_j$, then $a_i=b_j$ for all $i=1,2,\cdots,n$ and $j=1,2,\cdots,m$.
 
 Then $\sum_{i=1}^n a_i T_1(u_i)\otimes T_2(v_i)=\sum_{j=1}^m b_j T_1(u_j)\otimes T_2(v_j)$.
+
+QED
+</details>
+
+An example of 
 
 #### Tensor product of linear operators on Hilbert spaces
 
