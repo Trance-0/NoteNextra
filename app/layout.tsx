@@ -6,6 +6,7 @@ import 'nextra-theme-docs/style.css'
 import { SpeedInsights } from "@vercel/speed-insights/next"
 import { Analytics } from "@vercel/analytics/react"
 import 'katex/dist/katex.min.css'
+import AlgoliaSearch from '../components/docsearch'
 
 export const metadata = {
   metadataBase: new URL('https://notenextra.trance-0.com'),
@@ -80,6 +81,8 @@ export default async function RootLayout({ children }) {
           docsRepositoryBase="https://github.com/Trance-0/NoteNextra/tree/main"
           sidebar={{ defaultMenuCollapseLevel: 1 }}
           pageMap={pageMap}
+          // TODO: fix algolia search
+          // search={<AlgoliaSearch />}
         >
           {children}
           {/* SpeedInsights in vercel */}

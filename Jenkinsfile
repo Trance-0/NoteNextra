@@ -3,6 +3,9 @@ pipeline {
         registry = "trance0/notenextra"
         version = "1.1"
         NODE_OPTIONS = "--max-old-space-size=8192"
+        // NEXT_SEARCH_ALGOLIA_APP_ID = "${NEXT_SEARCH_ALGOLIA_APP_ID}"
+        // NEXT_SEARCH_ALGOLIA_API_KEY = "${NEXT_SEARCH_ALGOLIA_API_KEY}"
+        // NEXT_SEARCH_ALGOLIA_INDEX_NAME = "${NEXT_SEARCH_ALGOLIA_INDEX_NAME}"
     }
     
     agent any
