@@ -62,7 +62,7 @@ export default async function RootLayout({ children }) {
       dark: 59,
       light: 35
     }
-  }} />
+  }}/>
       <body>
         <Layout
           navbar={navbar}
@@ -82,7 +82,7 @@ export default async function RootLayout({ children }) {
           sidebar={{ defaultMenuCollapseLevel: 1 }}
           pageMap={pageMap}
           // TODO: fix algolia search
-          // search={<AlgoliaSearch />}
+          search={<AlgoliaSearch />}
         >
           {children}
           {/* SpeedInsights in vercel */}

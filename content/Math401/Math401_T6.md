@@ -76,7 +76,7 @@ This is a contradiction, so $|\psi^+\rangle$ is entangled.
 
 #### Density operator
 
-A density operator is a Hermitian, positive semi-definite operator with trace 1.
+A density operator is a [Hermitian](https://notenextra.trance-0.com/Math401/Math401_T5#definition-of-hermitian-operator), positive semi-definite operator with trace 1.
 
 The density operator of a pure state $|\psi\rangle$ is $\rho=|\psi\rangle\langle\psi|$.
 
