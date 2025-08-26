@@ -80,8 +80,29 @@ export default {
         timestamp: true,
       }
     },
+    CSE5313: {
+      title: 'CSE5313',
+      type: 'page',
+      theme:{
+        timestamp: true,
+      }
+    },
+    CSE510: {
+      title: 'CSE510',
+      type: 'page',
+      theme:{
+        timestamp: true,
+      }
+    },
     CSE559A: {
       title: 'CSE559A',
+      type: 'page',
+      theme:{
+        timestamp: true,
+      }
+    },
+    CSE5519: {
+      title: 'CSE5519',
       type: 'page',
       theme:{
         timestamp: true,
