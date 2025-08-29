@@ -4,4 +4,5 @@ export default {
         type: 'separator'
     },
     Math4201_L1: "Topology I (Lecture 1)",
+    Math4201_L2: "Topology I (Lecture 2)",
 }

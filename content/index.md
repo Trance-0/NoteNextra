@@ -1,6 +1,7 @@
 # Welcome to NoteNextra
 
 > [!WARNING]
+> 
 > This site use [Algolia Search](https://www.algolia.com/) to search the content. However, due to some unknown reasons, when the index page is loaded, the search bar is calling default PageFind package from Nextra. If you find the search bar is not working, please try to redirect to another page and then back to the index page or search in another page.
  
 This was originated from another project [NoteChondria](https://github.com/Trance-0/Notechondria) that I've been working on for a long time but don't have a stable release yet.
