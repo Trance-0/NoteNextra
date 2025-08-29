@@ -41,7 +41,7 @@ export default {
         timestamp: true,
       }
     },
-    Math4211: {
+    Math4201: {
       type: 'page',
       theme:{
         timestamp: true,
