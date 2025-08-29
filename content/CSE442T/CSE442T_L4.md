@@ -88,7 +88,8 @@ $$
 
 is a strong one-way function.
 
-Proof:
+<details>
+<summary>Proof</summary>
 
 1. Since $\exist P.P.T.$ that computes $f(x),\forall x$ we use this $q(n)$ polynomial times to compute $g$.
 2. (Idea) $a$ has to succeed in inverting $f$ all $q(n)$ times.
@@ -98,7 +99,7 @@ Proof:
 
     Then $P[a$ inverting $g]\sim P[a$ inverts $f$ all $q(n)]$ times. $<(1-\frac{1}{p(n)})^{q(n)}=(1-\frac{1}{p(n)})^{np(n)}<(e^{-\frac{1}{p(n)}})^{np(n)}=e^{-n}$ which is negligible function.
 
-QED
+</details>
 
 _we can always force the adversary to invert the weak one-way function for polynomial time to reach the property of strong one-way function_
 
