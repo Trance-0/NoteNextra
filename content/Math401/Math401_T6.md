@@ -632,7 +632,7 @@ $B$ performs a measurement on the combined state of the one qubit and the entang
 
 $B$ decodes the result and obtains the 2 classical bits sent by $A$.
 
-![Superdense coding](https://notenextra.trance-0.com/Math401/Superdense_coding.png)
+Superdense coding](https://notenextra.trance-0.com/Math401/Superdense_coding.png)
 
 ## Section 4: Quantum automorphisms and dynamics
 
