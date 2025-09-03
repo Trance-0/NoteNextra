@@ -6,7 +6,8 @@ Here is a list of topics we will cover in this course:
 
 **CSE 5519 (Fall 2025)**
 
-> **Notes:**  
+> [!NOTE]
+>
 > Papers tagged with a 🌟 are the recommended main papers.  
 > You can suggest alternate papers (as long as they are important and aligned with the theme). You must email the instructor your rationale well in advance of your presentation date to obtain approval.
 
