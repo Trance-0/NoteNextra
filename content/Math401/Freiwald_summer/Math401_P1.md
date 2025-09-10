@@ -1,6 +1,8 @@
 # Math 401 Paper 1: Concentration of measure effects in quantum information (Patrick Hayden)
 
-[PDF](https://www.ams.org/books/psapm/068/2762144)
+[Concentration of measure effects in quantum information](https://www.ams.org/books/psapm/068/2762144)
+
+A more comprehensive version of this paper is in [Aspect of generic entanglement](https://arxiv.org/pdf/quant-ph/0407049).
 
 ## Quantum codes
 
@@ -42,7 +44,9 @@ $\phi_{AB}=(I_{A'}\otimes \eta)\circ\omega_{AB}$
 
 (above formula is from the presentation of Patrick Hayden.)
 
-For now we ignore this part if we don't consider the application of the following sections. The detailed explanation will be added later.
+For now we ignore this part if we don't consider the application of the following sections. The detailed explanation will be added later (hopefully very soon).
+
+---
 
 ### Surprise in high-dimensional quantum systems
 
@@ -54,7 +58,7 @@ $$
 \operatorname{Pr}[|f(x)-M|>\epsilon]\leq \exp(-\frac{C(n-1)\epsilon^2}{\eta^2})
 $$
 
-[Decomposing the statement in detail](Math401_P1_3.md)
+[Decomposing the statement in detail as side note 3](Math401_P1_3.md)
 
 ### Random states and random subspaces
 
@@ -66,7 +70,7 @@ $$
 \mathbb{E}[H(\psi_A)] \geq \log_2(d_A)-\frac{1}{2\ln(2)}\frac{d_A}{d_B}
 $$
 
-[Decomposing the statement in detail](Math401_P1_2.md)
+[Decomposing the statement in detail as side note 2](Math401_P1_2.md)
 
 From the Levy's lemma, we have
 
@@ -76,6 +80,8 @@ $$
 \operatorname{Pr}[H(\psi_A) < \log_2(d_A)-\alpha-\beta] \leq \exp\left(-\frac{(d_Ad_B-1)C\alpha^2}{(\log_2(d_A))^2}\right)
 $$
 where $C$ is a small constant and $d_B\geq d_A\geq 3$.
+
+> Noted in [Aspect of generic entanglement](https://arxiv.org/pdf/quant-ph/0407049) $C_3=(8\pi^2\ln(2))^{-1}$.
 
 #### ebits and qbits
 
