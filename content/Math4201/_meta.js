@@ -8,5 +8,7 @@ export default {
     Math4201_L3: "Topology I (Lecture 3)",
     Math4201_L4: "Topology I (Lecture 4)",
     Math4201_L5: "Topology I (Lecture 5) Bonus",
-    Math4201_L6: "Topology I (Lecture 6)"
+    Math4201_L6: "Topology I (Lecture 6)",
+    Math4201_L7: "Topology I (Lecture 7)",
+    Math4201_L8: "Topology I (Lecture 8)",
 }
