@@ -12,3 +12,9 @@ $$
 \mathbb{C}P^n=\frac{\mathbb{C}^{n+1}\setminus\{0\}}{\sim}
 $$
 
+By this nature of ray-like properties, we can also describe the complex projective space as follows (in the math of QT, lecture 5)
+
+$$
+\mathbb{C}P^n=\left\{z=(z_0,z_1,\cdots,z_n)\in\mathbb{C}^{n+1}:|z_1|^2+\cdots+|z_n|^2=1\right\}/\sim
+$$
+
