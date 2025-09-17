@@ -1,4 +1,4 @@
-# CSE442T Lecture 1
+# CSE442T Introduction to Cryptography (Lecture 1)
 
 ## Chapter 1: Introduction
 

@@ -1,4 +1,4 @@
-# System check for exam list
+# CSE442T Exam 1 Review
 
 **The exam will take place in class on Monday, October 21.**
 

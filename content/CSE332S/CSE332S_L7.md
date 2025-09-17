@@ -1,8 +1,8 @@
-# CSE332S Lecture 7
+# CSE332S Object-Oriented Programming in C++ (Lecture 7)
 
 ## Debugging
 
-Debugger let’s us:
+Debugger let's us:
 
 1. Execute code incrementally
    a. Line by line, function to function, breakpoint to breakpoint

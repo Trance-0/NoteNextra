@@ -1,4 +1,4 @@
-# Lecture 6
+# CSE442T Introduction to Cryptography (Lecture 6)
 
 ## Review
 

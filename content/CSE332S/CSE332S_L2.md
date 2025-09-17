@@ -1,4 +1,4 @@
-# CSE332S Lecture 2
+# CSE332S Object-Oriented Programming in C++ (Lecture 2)
 
 Today we'll talk generally about C++ development (plus a few platform specifics):
 

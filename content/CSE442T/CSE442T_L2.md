@@ -1,4 +1,4 @@
-# CSE442T Lecture 2
+# CSE442T Introduction to Cryptography (Lecture 2)
 
 ## Probability review
 

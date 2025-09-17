@@ -1,4 +1,4 @@
-# CSE332S Lecture 5
+# CSE332S Object-Oriented Programming in C++ (Lecture 5)
 
 ## Function and the Call Stack
 

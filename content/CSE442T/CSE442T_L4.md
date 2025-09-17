@@ -1,4 +1,4 @@
-# CSE442T Lecture 4
+# CSE442T Introduction to Cryptography (Lecture 4)
 
 ## Recap
 

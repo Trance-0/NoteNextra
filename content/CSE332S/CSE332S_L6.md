@@ -1,4 +1,4 @@
-# CSE332S Lecture 6
+# CSE332S Object-Oriented Programming in C++ (Lecture 6)
 
 ## Expressions
 

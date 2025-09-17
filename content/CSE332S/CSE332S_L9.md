@@ -1,4 +1,4 @@
-# CSE332S Lecture 9
+# CSE332S Object-Oriented Programming in C++ (Lecture 9)
 
 ## Sequential Containers
 

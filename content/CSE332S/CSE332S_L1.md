@@ -1,4 +1,4 @@
-# CSE332S Lecture 1
+# CSE332S Object-Oriented Programming in C++ (Lecture 1)
 
 ## Today:
 

@@ -1,4 +1,4 @@
-# CSE332S Lecture 8
+# CSE332S Object-Oriented Programming in C++ (Lecture 8)
 
 ## From procedural to object-oriented programming
 

@@ -1,4 +1,4 @@
-# Lecture 7
+# CSE442T Introduction to Cryptography (Lecture 7)
 
 ## Chapter 2: Computational Hardness
 

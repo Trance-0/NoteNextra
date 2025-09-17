@@ -1,4 +1,4 @@
-# Lecture 8
+# CSE442T Introduction to Cryptography (Lecture 8)
 
 ## Chapter 2: Computational Hardness
 

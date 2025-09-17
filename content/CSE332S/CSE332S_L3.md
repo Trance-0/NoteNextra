@@ -1,4 +1,4 @@
-# CSE332S Lecture 3
+# CSE332S Object-Oriented Programming in C++ (Lecture 3)
 
 ## C++ basic data types
 
