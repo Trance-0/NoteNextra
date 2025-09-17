@@ -252,19 +252,25 @@ $$
 
 Not very edible for undergraduates.
 
-## Crash course on Riemannian Geometry
+## Riemannian manifolds and geometry
 
 > This section is designed for stupids like me skipping too much essential materials in the book.
 
+> This part might be extended to a separate note, let's check how far we can go from this part.
+>
+> References:
+>
+> - [Riemannian Geometry by John M. Lee](https://www.amazon.com/Introduction-Riemannian-Manifolds-Graduate-Mathematics/dp/3319917544?dib=eyJ2IjoiMSJ9.88u0uIXulwPpi3IjFn9EdOviJvyuse9V5K5wZxQEd6Rto5sCIowzEJSstE0JtQDW.QeajvjQEbsDmnEMfPzaKrfVR9F5BtWE8wFscYjCAR24&dib_tag=se&keywords=riemannian+manifold+by+john+m+lee&qid=1753238983&sr=8-1)
+
 ### Manifold
 
-Unexpectedly, a good definition of the manifold is defined in the topology I.
-
-Check section 36. This topic extends to a wonderful chapter 8 in the book where you can hardly understand chapter 2.
+> Unexpectedly, a good definition of the manifold is defined in the topology I.
+>
+> Check section 36. This topic extends to a wonderful chapter 8 in the book where you can hardly understand chapter 2.
 
 #### Definition of m-manifold
 
-An $m$-manifold is a Hausdorff space $X$ with a countable basis such that each point of $x$ of $X$ has a neighborhood <text style="color: red;"> homeomorphic</text> to an open subset of $\mathbb{R}^m$.
+An $m$-manifold is a [Hausdorff space](../../Math4201/Math4201_L9#hausdorff-space) $X$ with a countable basis such that each point of $x$ of $X$ has a neighborhood [homeomorphic](../../Math4201/Math4201_L10#definition-of-homeomorphism) to an open subset of $\mathbb{R}^m$.
 
 Example is trivial that 1-manifold is a curve and 2-manifold is a surface.
 
@@ -274,17 +280,9 @@ If $X$ is a compact $m$-manifold, then $X$ can be imbedded in $\mathbb{R}^n$ for
 
 This theorem might save you from imagining abstract structures back to real dimension. Good news, at least you stay in some real numbers.
 
-### Riemannian manifold
+### Smooth manifold
 
-
-
-## Crash course on Riemannian manifolds
-
-> This part might be extended to a separate note, let's check how far we can go from this part.
->
-> References:
->
-> - [Riemannian Geometry by John M. Lee](https://www.amazon.com/Introduction-Riemannian-Manifolds-Graduate-Mathematics/dp/3319917544?dib=eyJ2IjoiMSJ9.88u0uIXulwPpi3IjFn9EdOviJvyuse9V5K5wZxQEd6Rto5sCIowzEJSstE0JtQDW.QeajvjQEbsDmnEMfPzaKrfVR9F5BtWE8wFscYjCAR24&dib_tag=se&keywords=riemannian+manifold+by+john+m+lee&qid=1753238983&sr=8-1)
+> This section is waiting for the completion of book Introduction to Smooth Manifolds by John M. Lee.
 
 ### Riemannian manifolds
 
@@ -296,7 +294,7 @@ An example of Riemannian manifold is the sphere $\mathbb{C}P^n$.
 
 A Riemannian metric is a smooth assignment of an inner product to each tangent space $T_pM$ of the manifold.
 
-An example of Riemannian metric is the Euclidean metric on $\mathbb{R}^n$.
+An example of Riemannian metric is the Euclidean metric, the bilinear form of $d(p,q)=\|p-q\|_2$ on $\mathbb{R}^n$.
 
 ### Notion of Connection
 
@@ -308,9 +306,12 @@ $$
 D_VX=\lim_{h\to 0}\frac{X(p+h)-X(p)}{h}
 $$
 
-### Nabla notation and Levi-Civita connection
+### Notion of Curvatures
 
+> [!NOTE]
+> 
+> Geometrically, the curvature of the manifold is radius of the tangent sphere of the manifold.
 
-### Ricci curvature
+#### Nabla notation and Levi-Civita connection
 
-
+#### Ricci curvature
