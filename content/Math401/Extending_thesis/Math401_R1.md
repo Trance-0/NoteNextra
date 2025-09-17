@@ -96,6 +96,14 @@ Note that the space of pure state in bipartite system
 
 ## Non-commutative probability theory
 
+### Pure state and mixed state
+
+A pure state is a state that is represented by a unit vector in $\mathscr{H}^{\otimes N}$.
+
+> As analogy, a pure state is the basis element of the vector space, a mixed state is a linear combination of basis elements.
+
+A mixed state is a state that is represented by a density operator (linear combination of pure states) in $\mathscr{H}^{\otimes N}$.
+
 ### Partial trace and purification
 
 #### Partial trace
