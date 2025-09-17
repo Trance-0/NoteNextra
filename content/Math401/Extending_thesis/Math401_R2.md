@@ -252,6 +252,32 @@ $$
 
 Not very edible for undergraduates.
 
+## Crash course on Riemannian Geometry
+
+> This section is designed for stupids like me skipping too much essential materials in the book.
+
+### Manifold
+
+Unexpectedly, a good definition of the manifold is defined in the topology I.
+
+Check section 36. This topic extends to a wonderful chapter 8 in the book where you can hardly understand chapter 2.
+
+#### Definition of m-manifold
+
+An $m$-manifold is a Hausdorff space $X$ with a countable basis such that each point of $x$ of $X$ has a neighborhood <text style="color: red;"> homeomorphic</text> to an open subset of $\mathbb{R}^m$.
+
+Example is trivial that 1-manifold is a curve and 2-manifold is a surface.
+
+#### Theorem of imbedded space
+
+If $X$ is a compact $m$-manifold, then $X$ can be imbedded in $\mathbb{R}^n$ for some $n$.
+
+This theorem might save you from imagining abstract structures back to real dimension. Good news, at least you stay in some real numbers.
+
+### Riemannian manifold
+
+
+
 ## Crash course on Riemannian manifolds
 
 > This part might be extended to a separate note, let's check how far we can go from this part.

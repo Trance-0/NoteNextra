@@ -1,6 +1,6 @@
 # Math 401, Fall 2025: Thesis notes, S2, Majorana stellar representation of quantum states.
 
-## Majorana representation of quantum states
+## Majorana stellar representation of quantum states
 
 > [!TIP]
 >
@@ -26,6 +26,6 @@ Using stereographic projection of each root we can get a unordered collection of
 
 > [!NOTE]
 >
-> TODO: Check more definition from different area of mathematics (algebraic geometry, complex analysis, etc.) of the Majorana representation of quantum states.
+> TODO: Check more definition from different area of mathematics (algebraic geometry, complex analysis, etc.) of the Majorana stellar representation of quantum states.
 >
 > Read Chapter 5 and 6 of [Geometry of Quantum states](https://www.cambridge.org/core/books/geometry-of-quantum-states/46B62FE3F9DA6E0B4EDDAE653F61ED8C) for more details.
