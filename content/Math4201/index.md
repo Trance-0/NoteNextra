@@ -1,4 +1,4 @@
-# Math4201
+# Math4201 Course Description
 
 E-mail: adaemi@wustl.edu
 
