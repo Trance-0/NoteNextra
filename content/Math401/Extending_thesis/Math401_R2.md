@@ -270,9 +270,26 @@ Not very edible for undergraduates.
 
 #### Definition of m-manifold
 
-An $m$-manifold is a [Hausdorff space](../../Math4201/Math4201_L9#hausdorff-space) $X$ with a countable basis such that each point of $x$ of $X$ has a neighborhood [homeomorphic](../../Math4201/Math4201_L10#definition-of-homeomorphism) to an open subset of $\mathbb{R}^m$.
+An $m$-manifold is a [Hausdorff space](../../Math4201/Math4201_L9#hausdorff-space) $X$ with a **countable basis** (second countable) such that each point of $x$ of $X$ has a neighborhood [homeomorphic](../../Math4201/Math4201_L10#definition-of-homeomorphism) to an open subset of $\mathbb{R}^m$.
 
-Example is trivial that 1-manifold is a curve and 2-manifold is a surface.
+<details>
+<summary>Example of second countable space</summary>
+
+Let $X=\mathbb{R}$ and $\mathcal{B}=\{(a,b)|a,b\in \mathbb{R},a<b\}$ (collection of all open intervals with rational endpoints).
+
+Since the rational numbers are countable, so $\mathcal{B}$ is countable.
+
+So $\mathbb{R}$ is second countable.
+
+Likewise, $\mathbb{R}^n$ is also second countable.
+</details>
+
+<details>
+<summary>Example of manifold</summary>
+
+1-manifold is a curve and 2-manifold is a surface.
+
+</details>
 
 #### Theorem of imbedded space
 
@@ -280,9 +297,50 @@ If $X$ is a compact $m$-manifold, then $X$ can be imbedded in $\mathbb{R}^n$ for
 
 This theorem might save you from imagining abstract structures back to real dimension. Good news, at least you stay in some real numbers.
 
-### Smooth manifold
+### Smooth manifolds and Lie groups
 
 > This section is waiting for the completion of book Introduction to Smooth Manifolds by John M. Lee.
+
+#### Partial derivatives
+
+Let $U\subseteq \mathbb{R}^n$ and $f:U\to \mathbb{R}^n$ be a map.
+
+For any $a=(a_1,\cdots,a_n)\in U$, $j\in \{1,\cdots,n\}$, the $j$-th partial derivative of $F$ at $a$ is defined as
+
+$$
+\begin{aligned}
+\frac{\partial f}{\partial x_j}(a)&=\lim_{h\to 0}\frac{f(a_1,\cdots,a_j+h,\cdots,a_n)-f(a_1,\cdots,a_j,\cdots,a_n)}{h} \\
+&=\lim_{h\to 0}\frac{f(a+he_j)-f(a)}{h}
+\end{aligned}
+$$
+
+#### Continuously differentiable maps
+
+Let $U\subseteq \mathbb{R}^n$ and $f:U\to \mathbb{R}^n$ be a map.
+
+If for any $j\in \{1,\cdots,n\}$, the $j$-th partial derivative of $f$ is continuous at $a$, then $f$ is continuously differentiable at $a$.
+
+If $\forall a\in U$, $\frac{\partial f}{\partial x_j}$ exists and is continuous at $a$, then $f$ is continuously differentiable on $U$. or $C^1$ map. (Note that $C^0$ map is just a continuous map.)
+
+#### Smooth maps
+
+A function $f:U\to \mathbb{R}^n$ is smooth if it is of class $C^k$ for every $k\geq 0$ on $U$. Such function is called a diffeomorphism if it is also a **bijection** and its **inverse is also smooth**.
+
+#### Charts
+
+Let $M$ be a smooth manifold. A **chart** is a pair $(U,\phi)$ where $U\subseteq M$ is an open subset and $\phi:U\to \hat{U}\subseteq \mathbb{R}^n$ is a homeomorphism (a continuous bijection map and its inverse is also continuous).
+
+If $p\in U$ and $\phi(p)=0$, then we say that $p$ is the origin of the chart $(U,\phi)$.
+
+#### Atlas
+
+Let $M$ be a smooth manifold. An **atlas** is a collection of charts $\mathcal{A}=\{(U_\alpha,\phi_\alpha)\}_{\alpha\in I}$ such that $M=\bigcup_{\alpha\in I} U_\alpha$.
+
+An atlas is said to be **smooth** if the transition maps $\phi_\alpha\circ \phi_\beta^{-1}:\phi_\beta(U_\alpha\cap U_\beta)\to \phi_\alpha(U_\alpha\cap U_\beta)$ are smooth for all $\alpha, \beta\in I$.
+
+#### Smooth manifold
+
+A smooth manifold is a pair $(M,\mathcal{A})$ where $M$ is a topological manifold and $\mathcal{A}$ is a smooth atlas.
 
 ### Riemannian manifolds
 
