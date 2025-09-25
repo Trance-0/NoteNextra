@@ -1,0 +1,1 @@
+# Math 401, Fall 2025: Thesis notes, S3, Special Barnard space
