@@ -17,4 +17,5 @@ export default {
     Math4201_L12: "Topology I (Lecture 12)",
     Math4201_L13: "Topology I (Lecture 13)",
     Math4201_L14: "Topology I (Lecture 14)",
+    Math4201_L15: "Topology I (Lecture 15)",
 }
