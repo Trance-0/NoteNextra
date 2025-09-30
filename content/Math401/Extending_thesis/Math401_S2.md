@@ -1,4 +1,4 @@
-# Math 401, Fall 2025: Thesis notes, S2, Majorana stellar representation of quantum states.
+# Math 401, Fall 2025: Thesis notes, S2, Majorana stellar representation of quantum states
 
 ## Majorana stellar representation of quantum states
 
