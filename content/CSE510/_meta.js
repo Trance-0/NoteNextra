@@ -13,4 +13,5 @@ export default {
     CSE510_L8: "CSE510 Deep Reinforcement Learning (Lecture 8)",
     CSE510_L9: "CSE510 Deep Reinforcement Learning (Lecture 9)",
     CSE510_L10: "CSE510 Deep Reinforcement Learning (Lecture 10)",
+    CSE510_L11: "CSE510 Deep Reinforcement Learning (Lecture 11)",
 }
