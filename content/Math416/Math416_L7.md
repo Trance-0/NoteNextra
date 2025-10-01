@@ -26,7 +26,8 @@ A branch of logarithm is a continuous function $f$ on a domain $D$ such that $e^
 
 $\log(z)$ is holomorphic on $\mathbb{C}\setminus\{0\}$.
 
-Proof:
+<details>
+<summary>Proof</summary>
 
 We proved that $\frac{\partial}{\partial\overline{z}}e^{z}=0$ on $\mathbb{C}\setminus\{0\}$.
 
@@ -36,7 +37,7 @@ Since $\frac{d}{dz}e^{z}=e^{z}$, we know that $e^{z}$ is conformal, so any branc
 
 Since $\exp(\log(z))=z$, we know that $\log(z)$ is the inverse of $\exp(z)$, so $\frac{d}{dz}\log(z)=\frac{1}{e^{\log(z)}}=\frac{1}{z}$.
 
-QED
+</details>
 
 We call $\frac{f'}{f}$ the logarithmic derivative of $f$.
 
@@ -78,7 +79,8 @@ If $|c|<1$, then $\lim_{N\to\infty}\sum_{n=0}^{N}c^n=\frac{1}{1-c}$.
 
 otherwise, the series diverges.
 
-Proof:
+<details>
+<summary>Proof</summary>
 
 The geometric series converges if $\frac{c^{N+1}}{1-c}$ converges.
 
@@ -90,7 +92,7 @@ If $|c|<1$, then $\lim_{N\to\infty}c^{N+1}=0$, so $\lim_{N\to\infty}(1-c)(1+c+c^
 
 If $|c|\geq 1$, then $c^{N+1}$ does not converge to 0, so the series diverges.
 
-QED
+</details>
 
 #### Theorem 5.4 (Triangle Inequality for Series)
 
@@ -146,7 +148,8 @@ For every power series, there exists a radius of convergence $r$ such that the s
 
 And it diverges pointwise outside $B_r(z_0)$.
 
-Proof:
+<details>
+<summary>Proof</summary>
 
 Without loss of generality, we can assume that $z_0=0$.
 
@@ -166,7 +169,7 @@ So the series converges absolutely and uniformly on $\overline{B_r(0)}$.
 
 If $|z| > r$, then $|c_n z^n|$ does not tend to zero, and the series diverges.
 
-QED
+</details>
 
 We denote this $r$ captialized by te radius of convergence
 

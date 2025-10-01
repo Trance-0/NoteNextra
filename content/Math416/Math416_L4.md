@@ -44,7 +44,8 @@ $$
 
 > Looks like the chain rule.
 
-Proof:
+<details>
+<summary>Proof</summary>
 
 We want to show that
 
@@ -87,7 +88,7 @@ $$
 \end{aligned}
 $$
 
-QED
+</details>
 
 #### Definition 2.12 (Conformal function)
 
@@ -111,7 +112,8 @@ Suppose $f$ is real differentiable, let $a=\frac{\partial f}{\partial z}(z_0)$, 
 
 Let $\gamma(t_0)=z_0$. Then $(f\circ \gamma)'(t_0)=a\gamma'(t_0)+b\overline{\gamma'(t_0)}$.
 
-Proof:
+<details>
+<summary>Proof</summary>
 
 $f=u+iv$, $u,v$ are real differentiable.
 
@@ -144,7 +146,7 @@ $$
 \end{aligned}
 $$
 
-QED
+</details>
 
 #### Theorem of differentiability
 
@@ -152,7 +154,8 @@ Let $f:G\to \mathbb{C}$ be a function defined on an open set $G\subset \mathbb{C
 
 Then, $f$ is conformal at every point $z_0\in G$ if and only if $f$ is holomorphic at $z_0$ and $f'(z_0)\neq 0$.
 
-Proof:
+<details>
+<summary>Proof</summary>
 
 We prove the equivalence in two parts.
 
@@ -193,7 +196,7 @@ $$
 $$
 for any differentiable curve $\gamma$ through $z_0$, then the effect of $f$ near $z_0$ is exactly given by multiplication by $f'(z_0)$. Since multiplication by a nonzero complex number is a similarity transformation, $f$ is conformal at $z_0$.
 
-QED
+</details>
 
 ### Harmonic function
 
@@ -211,7 +214,8 @@ $$
 
 Let $f=u+iv$ be holomorphic function on domain $\Omega\subset \mathbb{C}$. Then $u$ and $v$ are harmonic functions on $\Omega$.
 
-Proof:
+<details>
+<summary>Proof</summary>
 
 $$
 \Delta u=\frac{\partial^2 u}{\partial x^2}+\frac{\partial^2 u}{\partial y^2}=0.
@@ -229,7 +233,7 @@ $$
 \Delta u=\frac{\partial^2 u}{\partial x^2}+\frac{\partial^2 u}{\partial y^2}=\frac{\partial^2 v}{\partial x\partial y}-\frac{\partial^2 v}{\partial y\partial x}=0.
 $$
 
-QED
+</details>
 
 If $v$ is such that $f=u+iv$ is holomorphic on $\Omega$, then $v$ is called harmonic conjugate of $u$ on $\Omega$.
 

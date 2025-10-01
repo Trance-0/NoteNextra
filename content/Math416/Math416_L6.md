@@ -36,7 +36,8 @@ when $\alpha=0$, it is a line.
 
 when $\alpha\neq 0$, it is a circle.
 
-Proof:
+<details>
+<summary>Proof</summary>
 
 Let $w=u+iv=\frac{1}{z}$, so $\frac{1}{w}=\frac{u}{u^2+v^2}-i\frac{v}{u^2+v^2}$.
 
@@ -48,7 +49,7 @@ $$
 
 Which is in the form of circle equation.
 
-QED
+</details>
 
 ## Chapter 4 Elementary functions
 
@@ -83,7 +84,8 @@ $$
 
 $e^z$ is holomorphic on $\mathbb{C}$.
 
-Proof:
+<details>
+<summary>Proof</summary>
 
 $$
 \begin{aligned}
@@ -93,19 +95,20 @@ $$
 \end{aligned}
 $$
 
-QED
+</details>
 
 #### Theorem 4.4 $e^z$ is periodic
 
 $e^z$ is periodic with period $2\pi i$.
 
-Proof:
+<details>
+<summary>Proof</summary>
 
 $$
 e^{z+2\pi i}=e^z e^{2\pi i}=e^z\cdot 1=e^z
 $$
 
-QED
+</details>
 
 #### Theorem 4.5 $e^z$ as a map
 
@@ -185,13 +188,14 @@ A branch of $\log(z)$ in $G$ is a continuous function $\beta$, such that $e^{\be
 
 Note: $G$ has a branch of $\arg(z)$ if and only if it has a branch of $\log(z)$.
 
-Proof:
+<details>
+<summary>Proof</summary>
 
 Suppose there exists $\alpha(z)$ such that $\forall z\in G$, $\alpha(z)\in G$, then $l(z)=\ln|z|+i\alpha(z)$ is a branch of $\log(z)$.
 
 Suppose there exists $l(z)$ such that $\forall z\in G$, $l(z)\in G$, then $\alpha(z)=Im(z)$ is a branch of $\arg(z)$.
 
-QED
+</details>
 
 If $G=\mathbb{C}\setminus\{0\}$, then  not branch of $\arg(z)$ exists.
 
@@ -222,7 +226,8 @@ for some $k\in\mathbb{Z}$.
 
 $\log(z)$ is holomorphic on $\mathbb{C}\setminus\{0\}$.
 
-Proof:
+<details>
+<summary>Proof (continue on next lecture)</summary>
 
 Method 1: Use polar coordinates. (See in homework)
 
@@ -238,3 +243,4 @@ $$
 $$
 
 Continue next time.
+</details>

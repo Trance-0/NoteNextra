@@ -81,7 +81,8 @@ $$
 |z_1+z_2|\leq |z_1|+|z_2|
 $$
 
-Proof:
+<details>
+<summary>Proof</summary>
 
 Geometrically, the triangle inequality states that the sum of the lengths of any two sides of a triangle is greater than the length of the third side.
 
@@ -96,6 +97,8 @@ $$
 &\geq 0
 \end{aligned}
 $$
+
+</details>
 
 Suppose $2(|z_1||z_2|-|z_1z_2|)=0$, and $\overline{z_1}z_2$ is a non-negative real number $c$, then $|z_1||z_2|=|z_1z_2|$...
 
@@ -113,7 +116,8 @@ $$
 
 The sum of the squares of the lengths of the diagonals of a parallelogram equals the sum of the squares of the lengths of the sides.
 
-Proof:
+<details>
+<summary>Proof</summary>
 
 Let $z_1,z_2$ be two complex numbers representing the two sides of the parallelogram, then the sum of the squares of the lengths of the diagonals of the parallelogram is $|z_1-z_2|^2+|z_1+z_2|^2$, and the sum of the squares of the lengths of the sides is $2|z_1|^2+2|z_2|^2$.
 
@@ -125,7 +129,7 @@ $$
 \end{aligned}
 $$
 
-QED
+</details>
 
 #### Definition 1.9
 
@@ -143,11 +147,14 @@ $$
 z^n=r^n\text{cis}(n\theta)
 $$
 
-Proof:
+<details>
+<summary>Proof</summary>
 
 For $n=0$, $z^0=1=1\text{cis}(0)$.
 
 For $n=-1$, $z^{-1}=\frac{1}{z}=\frac{1}{r}\text{cis}(-\theta)=\frac{1}{r}(cos(-\theta)+i\sin(-\theta))$.
+
+</details>
 
 Application:
 

@@ -14,7 +14,7 @@ Df(x+iy)=\begin{pmatrix}
 \end{pmatrix}
 $$
 
-So 
+So,
 
 $$
 \begin{aligned}
@@ -52,7 +52,6 @@ $$
 > Less pain to represent a complex function using four real numbers.
 
 ## Chapter 3: Linear fractional Transformations
-
 
 Let $a,b,c,d$ be complex numbers. such that $ad-bc\neq 0$.
 
@@ -185,7 +184,8 @@ So the kernel of $F$ is the set of matrices that represent the identity transfor
 
 If $\phi$ is a non-constant linear fractional transformation, then $\phi$ is conformal.
 
-Proof:
+<details>
+<summary>Proof</summary>
 
 Know that $\phi_0\circ\phi(z)=z$,
 
@@ -197,13 +197,14 @@ $\phi:\mathbb{C}\cup\{\infty\}\to\mathbb{C}\cup\{\infty\}$ which gives $\phi(\in
 
 So, $\phi$ is conformal.
 
-QED
+</details>
 
 #### Proposition 3.4 of Fixed points
 
 Any non-constant linear fractional transformation except the identity transformation has 1 or 2 fixed points.
 
-Proof:
+<details>
+<summary>Proof</summary>
 
 Let $\phi(z)=\frac{az+b}{cz+d}$.
 
@@ -221,7 +222,7 @@ Such solutions are $z=\frac{-(d-a)\pm\sqrt{(d-a)^2+4bc}}{2c}$.
 
 So, $\phi$ has 1 or 2 fixed points.
 
-QED
+</details>
 
 #### Proposition 3.5 of triple transitivity
 

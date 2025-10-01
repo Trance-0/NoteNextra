@@ -87,7 +87,52 @@ $$
 P_s(z)=\{v\in \mathbb{C}^d: |v_k-z_k|<s, k=1,2,\cdots,d\}
 $$
 
-If $z\in U$, we cha choose $s$ small enough such that $P_s(z)\subset U$.
+If $z\in U$, we cha choose $s$ small enough such that $\overline{P_s(z)}\subset U$ so that we can claim that $F(z)=(\pi s^2)^{-d}\int_{P_s(z)}F(v)d\mu(v)$ is well-defined.
+
+If $d=1$. Then by Taylor series at $v=z$, since $F$ is analytic in $U$ we have
+
+$$
+F(v)=F(z)+\sum_{k=1}^{\infty}a_n(v-z)^n
+$$
+
+Since the series converges uniformly to $F$ on the compact set $\overline{P_s(z)}$, we can interchange the integral and the sum.
+
+Using polar coordinates with origin at $z$, $(v-z)^n=r^n e^{in\theta}$ where $r=|v-z|, \theta=\arg(v-z)$.
+
+For $n\geq 1$, the integral over $P_s(z)$ (open disk) is zero (by Cauchy's theorem).
+
+So,
+
+$$
+\begin{aligned}
+F(z)&=(\pi s^2)^{-1}\int_{P_s(z)}F(z)+\sum_{k=1}^{\infty}a_n(v-z)^n d\mu(v)\\
+&=(\pi s^2)^{-1}F(z)+(\pi s^2)^{-1}\sum_{k=1}^{\infty}a_n\int_{P_s(z)}r^n e^{in\theta} d\mu(v)\\
+&=(\pi s^2)^{-1}F(z)
+\end{aligned}
+$$
+
+For $d>1$, we can use the same argument to show that
+
+Let $\mathbb{I}_{P_s(z)}(v)=\begin{cases}1 & v\in P_s(z) \\0 & v\notin P_s(z)\end{cases}$ be the indicator function of $P_s(z)$.
+
+$$
+\begin{aligned}
+F(z)&=(\pi s^2)^{-d}\int_{U}\mathbb{I}_{P_s(z)}(v)\frac{1}{\alpha(v)}F(v)\alpha(v) d\mu(v)\\
+&=(\pi s^2)^{-d}\langle \mathbb{I}_{P_s(z)}\frac{1}{\alpha},F\rangle_{L^2(U,\alpha)}
+\end{aligned}
+$$
+
+By definition of inner product.
+
+So $\|F(z)\|^2\leq (\pi s^2)^{-2d}\|\mathbb{I}_{P_s(z)}\frac{1}{\alpha}\|^2_{L^2(U,\alpha)} \|F\|^2_{L^2(U,\alpha)}$.
+
+All the terms are bounded and finite.
+
+For part 2, we need to show that $\forall z\in U$, we can find a neighborhood $V$ of $z$ and a constant $d_z$ such that
+
+$$
+|F(z)|^2\leq d_z \|F\|^2_{L^2(U,\alpha)}
+$$
 
 </details>
 

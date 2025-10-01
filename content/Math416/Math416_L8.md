@@ -67,7 +67,8 @@ $$
 \frac{1}{R} = \limsup_{n\to\infty} |a_n|^{1/n}
 $$
 
-Proof:
+<details>
+<summary>Proof</summary>
 
 Suppose $(b_n)^{\infty}_{n=0}$ is a sequence of real numbers such that $\lim_{n\to\infty} b_n$ may nor may not exists by $(-1)^n(1-\frac{1}{n})$.
 
@@ -111,7 +112,7 @@ So $\sum_{n=0}^{\infty} a_n (z - z_0)^n$ does not converge at $z$ if $|z|> \frac
 
 So $R=\frac{1}{\rho}$.
 
-QED
+</details>
 
 _What if $|z-z_0|=R$?_
 
@@ -135,7 +136,8 @@ Suppose $\sum_{n=0}^{\infty} a_n (z - z_0)^n$ has a positive radius of convergen
 
 > Here below is the proof on book, which will be covered in next lecture.
 
-Proof:
+<details>
+<summary>Proof</summary>
 
 Without loss of generality, assume $z_0=0$. Let $R$ be the radius of convergence for the two power series: $\sum_{n=0}^{\infty} a_n z^n$ and $\sum_{n=1}^{\infty} n a_n z ^{n-1}$. The two power series have the same radius of convergence $|R|$.
 
@@ -179,4 +181,4 @@ So $\left|\frac{f(z)-f(z_1)}{z-z_1}-g(z_1)\right|\leq M|z-z_1|$ for $|z|<\rho$.
 
 So $\lim_{z\to z_1}\frac{f(z)-f(z_1)}{z-z_1}=g(z_1)$.
 
-QED
+</details>
