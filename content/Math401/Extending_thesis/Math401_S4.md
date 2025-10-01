@@ -134,6 +134,20 @@ $$
 |F(z)|^2\leq d_z \|F\|^2_{L^2(U,\alpha)}
 $$
 
+Suppose we have a sequence $F_n\in \mathcal{H}L^2(U,\alpha)$ such that $F_n\to F$, $F\in L^2(U,\alpha)$.
+
+Then $F_n$ is a cauchy sequence in $L^2(U,\alpha)$. So,
+
+$$
+\sup_{v\in V}|F_n(v)-F_m(v)|\leq \sqrt{d_z}\|F_n-F_m\|_{L^2(U,\alpha)}\to 0\text{ as }n,m\to \infty
+$$
+
+So the sequence $F_m$ converges locally uniformly to some limit function which must be $F$ ($\mathbb{C}^d$ is Hausdorff, unique limit point).
+
+Locally uniform limit of holomorphic functions is holomorphic. (Use Morera's Theorem to show that the limit is still holomorphic in each variable.) So the limit function $F$ is actually in $\mathcal{H}L^2(U,\alpha)$, which shows that $\mathcal{H}L^2(U,\alpha)$ is closed.
+
+which shows that $\mathcal{H}L^2(U,\alpha)$ is closed.
+
 </details>
 
 > [!TIP]
@@ -169,6 +183,45 @@ Let $\mathcal{H}L^2(U,\alpha)$ be a holomorphic space. The reproducing kernel of
    |F(z)|^2\leq K(z,z) \|F\|^2_{L^2(U,\alpha)}
    $$
 
+<details>
+<summary>Proof</summary>
+
+For part 1, By [Riesz Theorem](../../Math429/Math429_L27#theorem-642-riesz-representation-theorem), the linear functional evaluation at $z\in U$ on $\mathcal{H}L^2(U,\alpha)$ can be represented uniquely as inner product with some $\phi_z\in \mathcal{H}L^2(U,\alpha)$.
+
+$$
+F(z)=\langle F,\phi_z\rangle_{L^2(U,\alpha)}=\int_U F(w)\overline{\phi_z(w)} \alpha(w) dw
+$$
+
+And assume part 2 is true, then we have
+
+$K(z,w)=\overline{\phi_z(w)}$
+
+So part 1 is true.
+
+For part 2, we can use the same argument
+
+$$
+\phi_z(w)=\langle \phi_z,\phi_w\rangle_{L^2(U,\alpha)}=\overline{\langle \phi_w,\phi_z\rangle_{L^2(U,\alpha)}}=\overline{\phi_w(z)}
+$$
+
+... continue if needed.
+
+</details>
+
+#### Construction of reproducing kernel
+
+Let $\{e_j\}$ be any orthonormal basis of $\mathcal{H}L^2(U,\alpha)$. Then for all $z,w\in U$,
+
+$$
+\sum_{j=1}^{\infty} |e_j(z)\overline{e_j(w)}|<\infty
+$$
+
+and
+
+$$
+K(z,w)=\sum_{j=1}^{\infty} e_j(z)\overline{e_j(w)}
+$$
+
 ### Bargmann space
 
 The Bargmann spaces are the holomorphic spaces 
@@ -180,5 +233,38 @@ $$
 where
 
 $$
-\mu_t(z)=\text{ CONTINUE HERE }
+\mu_t(z)=(\pi t)^{-d}\exp(-|z|^2/t)
 $$
+
+> For this research, we can tentatively set $t=1$ and $d=2$ for simplicity so that you can continue to read the next section.
+
+#### Reproducing kernel for Bargmann space
+
+For all $d\geq 1$, the reproducing kernel of the space $\mathcal{H}L^2(\mathbb{C}^d,\mu_t)$ is given by
+
+$$
+K(z,w)=\exp(z\cdot \overline{w}/t)
+$$
+
+where $z\cdot \overline{w}=\sum_{k=1}^d z_k\overline{w_k}$.
+
+This gives the pointwise bounds
+
+$$
+|F(z)|^2\leq \exp(\|z\|^2/t) \|F\|^2_{L^2(\mathbb{C}^d,\mu_t)}
+$$
+
+For all $F\in \mathcal{H}L^2(\mathbb{C}^d,\mu_t)$, and $z\in \mathbb{C}^d$.
+
+> Proofs are intentionally skipped, you can refer to the lecture notes for details.
+
+#### Lie bracket of vector fields
+
+Let $X,Y$ be two vector fields on a smooth manifold $M$. The Lie bracket of $X$ and $Y$ is an operator $[X,Y]:C^\infty(M)\to C^\infty(M)$ defined by
+
+$$
+[X,Y](f)=X(Y(f))-Y(X(f))
+$$
+
+This operator is a vector field.
+

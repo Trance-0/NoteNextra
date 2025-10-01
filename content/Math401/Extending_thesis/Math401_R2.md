@@ -342,6 +342,93 @@ An atlas is said to be **smooth** if the transition maps $\phi_\alpha\circ \phi_
 
 A smooth manifold is a pair $(M,\mathcal{A})$ where $M$ is a topological manifold and $\mathcal{A}$ is a smooth atlas.
 
+#### Lie group
+
+Lie group is a group (satisfying group axioms: closure, associativity, identity, inverses) that is also a smooth manifold. with the operator $m:G\times G\to G$, and the inverse operation $i:G\to G$ that are both smooth.
+
+In short, a Lie group is a group that is also a smooth manifold with map $G\times G\to G$ given by $(g,h)\mapsto gh^-1$ that is smooth.
+
+<details>
+<summary>Example of Lie group</summary>
+
+The general linear group $GL(n,\mathbb{R})$ is the group of all $n\times n$ invertible matrices over $\mathbb{R}$.
+
+This is a Lie group since
+
+1. Multiplication is a smooth map $GL(n,\mathbb{R})\times GL(n,\mathbb{R})\to GL(n,\mathbb{R})$ since it is a polynomial map.
+2. Inverse is a smooth map $GL(n,\mathbb{R})\to GL(n,\mathbb{R})$ by cramer's rule.
+
+---
+
+If $G$ is a Lie group, then any open subgroup (with subgroup topology and open set in $G$) $H$ of $G$ is also a Lie group.  
+
+</details>
+
+#### Translation map on Lie group
+
+If $G$ is a Lie group, then the translation map $L_g:G\to G$ given by $L_g(h)=gh$ and $R_g:G\to G$ given by $R_g(h)=hg$ are both smooth and are diffeomorphisms on $G$.
+
+#### Derivation and tangent vectors
+
+The directional derivative of a geometric tangent vector $v_a\in \mathbb{R}^n_a$ yields a map $D_v\vert_a:C^\infty(\mathbb{R}^n)\to \mathbb{R}$ given by the formula
+
+$$
+D_v\vert_a(f)=D_v f(a)=\frac{d}{dt}\bigg\vert_{t=0}f(a+tv_a)
+$$
+
+Note that this is a linear over $\mathbb{R}$, and satisfies the product rule.
+
+$$
+D_v\vert_a(f\cdot g)=f(a)D_v\vert_a(g)+g(a)D_v\vert_a(f)
+$$
+
+We can generalize this representation to the following definition:
+
+If $a$ is a point of $\mathbb{R}^n$, then a **derivation at $a$** is a linear map $w:C^\infty(\mathbb{R}^n)\to \mathbb{R}$ such that it is linear over $\mathbb{R}$ and satisfies the product rule.
+
+$$
+w(f\cdot g)=w(f)\cdot g(a)+f(a)\cdot w(g)
+$$
+
+Let $T_a\mathbb{R}^n$ denote the set of all derivations of $C^\infty(\mathbb{R}^n)$ at $a$. So $T_a\mathbb{R}^n$ is a vector space over $\mathbb{R}$.
+
+$$
+(w_1+w_2)(f)=w_1(f)+w_2(f),\quad (cw)(f)=c(w(f))
+$$
+
+Some key properties are given below and check the proof in the book for details.
+
+1. If $f$ is a constant function, then $w(f)=0$.
+2. If $f(a)=g(a)=0$, then $w(f\cdot g)=0$.
+3. For each geometric tangent vector $v_a\in \mathbb{R}^n_a$, the map $D_v\vert_a:C^\infty(\mathbb{R}^n)\to \mathbb{R}$ is a derivation at $a$.
+4. The map $v_a\mapsto D_v\vert_a$ is an isomorphism of vector spaces from $\mathbb{R}^n_a$ to $T_a\mathbb{R}^n$.
+
+#### Tangent vector on Manifolds
+
+Let $M$ be a smooth manifold. Let $p\in M$. A **tangent vector to $M$ at $p$** is a derivation at $p$ if it satisfies:
+
+$$
+v(f\cdot g)=f(p)vg+g(p)vf\prod \text{ for all } f,g\in C^\infty(M)
+$$
+
+The set of all derivations of $C^\infty(M)$ at $p$ is denoted by $T_pM$ is called tangent space to $M$ at $p$. An element of $T_pM$ is called a tangent vector to $M$ at $p$.
+
+#### Tangent bundle
+
+We define the tangent bundle of $M$ as the disjoint union of all the tangent spaces:
+
+$$
+TM=\bigsqcup_{p\in M} T_pM
+$$
+
+We write the element in $TM$ as pair $(p,v)$ where $p\in M$ and $v\in T_pM$.
+
+The tangent bundle comes with a natural projection map $\pi:TM\to M$ given by $\pi(p,v)=p$.
+
+#### Vector field
+
+> CONTINUE HERE to study the importance of Lie algebra and Lie group for vector fields.
+
 ### Riemannian manifolds
 
 A Riemannian manifold is a smooth manifold equipped with a **Riemannian metric**, which is a smooth assignment of an inner product to each tangent space $T_pM$ of the manifold.
