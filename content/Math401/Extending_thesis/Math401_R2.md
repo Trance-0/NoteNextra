@@ -252,7 +252,7 @@ $$
 
 Not very edible for undergraduates.
 
-## Riemannian manifolds and geometry
+## Differential Geometry
 
 > This section is designed for stupids like me skipping too much essential materials in the book.
 
@@ -427,19 +427,45 @@ The tangent bundle comes with a natural projection map $\pi:TM\to M$ given by $\
 
 #### Vector field
 
-> CONTINUE HERE to study the importance of Lie algebra and Lie group for vector fields.
+A vector field on $M$ is a section of the map $\pi:TM\to M$.
 
-### Riemannian manifolds
+More concretely, a vector field is a continuous map $X:M\to TM$, usually written $p\mapsto X_p$, with property that
 
-A Riemannian manifold is a smooth manifold equipped with a **Riemannian metric**, which is a smooth assignment of an inner product to each tangent space $T_pM$ of the manifold.
+$$
+\pi\circ X=Id_M
+$$
 
-An example of Riemannian manifold is the sphere $\mathbb{C}P^n$.
+### Riemannian manifolds and geometry
 
-### Riemannian metric
+#### Riemannian metric
 
 A Riemannian metric is a smooth assignment of an inner product to each tangent space $T_pM$ of the manifold.
 
+More formally, let $M$ be a smooth manifold. A **Riemannian metric** on $M$ is a smooth covariant 2-tensor field $g\in \mathcal{T}^2(M)$ whose value $g_p$ at each $p\in M$ is an inner product on $T_p M$.
+
+Thus $g$ is a symmetric 2-tensor field that is positive definite in the sense that $g_p(v,v)\geq 0$ for each $p\in M$ and each $v\in T_p M$, with equality if and only if $v=0$.
+
+Riemannian metric exists in great abundance.
+
+A good news for smooth manifold is that every smooth manifold admits a Riemannian metric.
+
+<details>
+<summary> Example of Riemannian metrics</summary>
+
 An example of Riemannian metric is the Euclidean metric, the bilinear form of $d(p,q)=\|p-q\|_2$ on $\mathbb{R}^n$.
+
+More formally, the Riemannian metric $\overline{g}$ on $\mathbb{R}^n$ at each $x\in \mathbb{R}^n$ , for $v,w\in T_x \mathbb{R}^n$ with stardard coordinates $(x^1,\ldots,x^n)$ as $v=\sum_{i=1}^n v_i \partial_x^i$ and $w=\sum_{
+
+</details>
+
+#### Riemannian manifolds
+
+A Riemannian manifold is a smooth manifold equipped with a **Riemannian metric**, which is a smooth assignment of an inner product to each tangent space $T_pM$ of the manifold.
+
+More formally, a **Riemannian manifold** is a pair $(M,g)$, where $M$ is a smooth manifold and $g$ is a specific choice of Riemannian metric on $M$.
+
+
+An example of Riemannian manifold is the sphere $\mathbb{C}P^n$.
 
 ### Notion of Connection
 
@@ -458,5 +484,11 @@ $$
 > Geometrically, the curvature of the manifold is radius of the tangent sphere of the manifold.
 
 #### Nabla notation and Levi-Civita connection
+
+
+
+#### Fundamental theorem of Riemannian geometry
+
+Let $(M,g)$ be a Riemannian or pseudo-Riemannian manifold (with or without boundary). There exist sa unique connection $\nabla$ on $TM$ that is compatible with $g$ and symmetric. It is called the **Levi-Civita** connection of $g$ (or also, when $g$ is a positive definite, the Riemannian connection).
 
 #### Ricci curvature
