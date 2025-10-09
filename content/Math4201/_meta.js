@@ -3,6 +3,7 @@ export default {
     "---":{
         type: 'separator'
     },
+    Exam_reviews: "Exam reviews",
     Math4201_L1: "Topology I (Lecture 1)",
     Math4201_L2: "Topology I (Lecture 2)",
     Math4201_L3: "Topology I (Lecture 3)",
@@ -20,4 +21,5 @@ export default {
     Math4201_L15: "Topology I (Lecture 15)",
     Math4201_L16: "Topology I (Lecture 16)",
     Math4201_L17: "Topology I (Lecture 17)",
+    Math4201_L18: "Topology I (Lecture 18)"
 }
