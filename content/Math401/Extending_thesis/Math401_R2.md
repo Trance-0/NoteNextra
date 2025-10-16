@@ -260,6 +260,8 @@ Not very edible for undergraduates.
 >
 > References:
 >
+> - [Introduction to Smooth Manifolds by John M. Lee]
+>
 > - [Riemannian Geometry by John M. Lee](https://www.amazon.com/Introduction-Riemannian-Manifolds-Graduate-Mathematics/dp/3319917544?dib=eyJ2IjoiMSJ9.88u0uIXulwPpi3IjFn9EdOviJvyuse9V5K5wZxQEd6Rto5sCIowzEJSstE0JtQDW.QeajvjQEbsDmnEMfPzaKrfVR9F5BtWE8wFscYjCAR24&dib_tag=se&keywords=riemannian+manifold+by+john+m+lee&qid=1753238983&sr=8-1)
 
 ### Manifold
@@ -328,9 +330,11 @@ A function $f:U\to \mathbb{R}^n$ is smooth if it is of class $C^k$ for every $k\
 
 #### Charts
 
-Let $M$ be a smooth manifold. A **chart** is a pair $(U,\phi)$ where $U\subseteq M$ is an open subset and $\phi:U\to \hat{U}\subseteq \mathbb{R}^n$ is a homeomorphism (a continuous bijection map and its inverse is also continuous).
+Let $M$ be a smooth manifold. A **chart** is a pair $(U,\varphi)$ where $U\subseteq M$ is an open subset and $\varphi:U\to \hat{U}\subseteq \mathbb{R}^n$ is a homeomorphism (a continuous bijection map and its inverse is also continuous).
 
-If $p\in U$ and $\phi(p)=0$, then we say that $p$ is the origin of the chart $(U,\phi)$.
+If $p\in U$ and $\varphi(p)=0$, then we say that $p$ is the origin of the chart $(U,\varphi)$.
+
+For $p\in U$, we note that the continuous function $\varphi(p)=(x_1(p),\cdots,x_n(p))$ gives a vector in $\mathbb{R}^n$. The $(x_1(p),\cdots,x_n(p))$ is called the **local coordinates** of $p$ in the chart $(U,\varphi)$.
 
 #### Atlas
 
@@ -341,6 +345,18 @@ An atlas is said to be **smooth** if the transition maps $\phi_\alpha\circ \phi_
 #### Smooth manifold
 
 A smooth manifold is a pair $(M,\mathcal{A})$ where $M$ is a topological manifold and $\mathcal{A}$ is a smooth atlas.
+
+#### Fundamental group
+
+A **fundamental group** of a point $p$ in a topological space $X$ is the group of all paths (continuous map $f:I\to X$, $I=[0,1]\subseteq \mathbb{R}$) from $p$ to $p$.
+
+- Product defined as composition of paths.
+- Identity element is the constant path from $p$ to $p$.
+- Inverse is the reverse path.
+
+#### smooth local coordinate representations
+
+If $M$ is a smooth manifold, then any chart $(U,\varphi)$ contained in the given maximal smooth atlas is called a **smooth chart**, and the map $\varphi$ is called a **smooth coordinate map** because it gives a coordinate 
 
 #### Lie group
 
@@ -425,6 +441,10 @@ We write the element in $TM$ as pair $(p,v)$ where $p\in M$ and $v\in T_pM$.
 
 The tangent bundle comes with a natural projection map $\pi:TM\to M$ given by $\pi(p,v)=p$.
 
+#### Section of map
+
+If $\pi:M\to N$ is any continuous map, a **section of $\pi$** is a continuous right inverse of $\pi$. For example $\sigma:N\to M$ is a section of $\pi$ if $\sigma\circ \pi=Id_N$.
+
 #### Vector field
 
 A vector field on $M$ is a section of the map $\pi:TM\to M$.
@@ -434,6 +454,10 @@ More concretely, a vector field is a continuous map $X:M\to TM$, usually written
 $$
 \pi\circ X=Id_M
 $$
+
+> That is a map from element on the manifold to the tangent space of the manifold.
+
+
 
 ### Riemannian manifolds and geometry
 
