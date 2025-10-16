@@ -24,9 +24,6 @@ export default bundleAnalyzer(withNextra({
   eslint: {
     ignoreDuringBuilds: true,
   },
-  experimental: {
-    webpackMemoryOptimizations: true,
-  },
 }))
 
 // If you have other Next.js configurations, you can pass them as the parameter:
