@@ -47,12 +47,6 @@ export default {
         timestamp: true,
       }
     },
-    Math4501: {
-      type: 'page',
-      theme:{
-        timestamp: true,
-      }
-    },
     Math416: {
       type: 'page',
       theme:{
