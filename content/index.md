@@ -1,8 +1,7 @@
 # Welcome to NoteNextra
 
 > [!WARNING]
->
-> This site use [Algolia Search](https://www.algolia.com/) to search the content. However, due to some unknown reasons, when the index page is loaded, the search bar is calling default PageFind package from Nextra. **If you find the search bar is not working**, please try to redirect to another page and then back to the index page or search in another page.
+><!-- > This site use [Algolia Search](https://www.algolia.com/) to search the content. However, due to some unknown reasons, when the index page is loaded, the search bar is calling default PageFind package from Nextra. **If you find the search bar is not working**, please try to redirect to another page and then back to the index page or search in another page. -->
 >
 > This site updates in a daily basis. But the sidebar is not. **If you find some notes are not shown on sidebar but the class already ends more than 24 hours**, please try to access the page directly via the URL. (for example, change the URL to `.../Math4201/Math4201_L{number}` to access the note of the lecture `Math4201_L{number}`)
  
