@@ -17,4 +17,5 @@ export default {
     CSE5313_L12: "CSE5313 Coding and information theory for data science (Lecture 12)",
     CSE5313_L13: "CSE5313 Coding and information theory for data science (Lecture 13)",
     CSE5313_L14: "CSE5313 Coding and information theory for data science (Lecture 14)",
+    CSE5313_L15: "CSE5313 Coding and information theory for data science (Lecture 15)",
 }
