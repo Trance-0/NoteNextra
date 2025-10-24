@@ -268,3 +268,21 @@ $$
 
 This operator is a vector field.
 
+## Complex Manifolds
+
+> This section extends from our previous discussion of smooth manifolds in Math 401, R2.
+>
+> For this week [10/21/2025], our goal is to understand the Riemann-Roch theorem and its applications.
+>
+> References:
+>
+> - [Introduction to Complex Manifolds](https://bookstore.ams.org/gsm-244)
+
+### Riemann-Roch Theorem (Theorem 9.64)
+
+Suppose $M$ is a connected compact Riemann surface of genus $g$, and $L\to M$ is a holomorphic line bundle. Then
+
+$$
+\dim \mathcal{O}(M;L)=\deg L+1-g+\dim \mathcal{O}(M;K\otimes L^*)
+$$
+

@@ -488,7 +488,6 @@ A Riemannian manifold is a smooth manifold equipped with a **Riemannian metric**
 
 More formally, a **Riemannian manifold** is a pair $(M,g)$, where $M$ is a smooth manifold and $g$ is a specific choice of Riemannian metric on $M$.
 
-
 An example of Riemannian manifold is the sphere $\mathbb{C}P^n$.
 
 ### Notion of Connection
