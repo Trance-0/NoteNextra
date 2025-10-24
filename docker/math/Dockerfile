@@ -28,12 +28,21 @@ FROM base AS builder
 WORKDIR /app
 COPY --from=deps /app/node_modules ./node_modules
 COPY . .
+RUN ls -la
 
 # 2.1 Remove unnecessary files for build with title starting with CSE
-RUN cd /app/content
-RUN find . -maxdepth 1 -type d -name "CSE*" -delete
-RUN cd /app/public
-RUN find . -maxdepth 1 -type d -name "CSE*" -delete
+RUN cd ./content && find . -maxdepth 1 -type d -name "CSE*" -exec rm -rf {} +
+RUN cd ./public && find . -maxdepth 1 -type d -name "CSE*" -exec rm -rf {} +
+
+# 2.1.1 Check the updated folders
+RUN cd ./content && ls -la
+RUN cd ./public && ls -la
+
+# 2.2 Update the _meta.js files in the content folder
+RUN sed -i '/\/\* CSE Courses Start \*\//,/\/\* CSE Courses End \*\//d' ./content/_meta.js
+
+# 2.2.1 Check the updated _meta.js file
+RUN cat ./content/_meta.js
 
 # This will do the trick, use the corresponding env file for each environment.
 # COPY .env.production.sample .env.production

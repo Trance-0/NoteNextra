@@ -20,3 +20,11 @@ _Warning: This project is not suitable for free Vercel plan. There is insufficie
 ### Deploying to Cloudflare Pages
 
 [![Deploy to Cloudflare Workers](https://deploy.workers.cloudflare.com/button?paid=true)](https://deploy.workers.cloudflare.com/?url=https://github.com/Trance-0/Notechondria)
+
+### Deploying as separated docker services
+
+Considering the memory usage for this project, it is better to deploy it as separated docker services.
+
+```bash
+docker-compose up -d -f docker/docker-compose.yaml
+```

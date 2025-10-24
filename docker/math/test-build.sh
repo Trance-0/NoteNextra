@@ -1,0 +1,1 @@
+sudo docker build -t trance-0/notenextra-math:v1.2.0 -f ./docker/math/Dockerfile --no-cache --progress=plain .

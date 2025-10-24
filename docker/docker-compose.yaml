@@ -1,0 +1,30 @@
+services:
+  # you may need to update relative directories if you move this file
+  # default created directories is /docker/docker-compose.yaml
+  notenextra-math:
+    build:
+      context: ../
+      dockerfile: ./docker/math/Dockerfile
+      tags:
+        - trance0/notenextra-math:latest
+    restart: on-failure:5
+    ports:
+      - 13001:4201
+  notenextra-cse:
+    build:
+      context: ../
+      dockerfile: ./docker/cse/Dockerfile
+      tags:
+        - trance0/notenextra-cse:latest
+    restart: on-failure:5
+    ports:
+      - 13002:4202
+  nginx:
+    image: nginx:latest
+    ports:
+      - 13000:80
+    volumes:
+      - ./nginx.conf:/etc/nginx/nginx.conf
+    depends_on:
+      - notenextra-math
+      - notenextra-cse

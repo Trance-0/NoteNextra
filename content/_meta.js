@@ -1,4 +1,11 @@
 export default {
+  /**
+   * Do not remove the labels "Math Courses Start"
+   * and "Math Courses End" and "CSE Courses Start" and "CSE Courses End"
+   * or the separated builds will not work.
+   * 
+   * WE USE THESE LABELS TO BUILD THE SEPARATED WEBSITES FOR MATH AND CSE COURSES.
+   */
     menu: {
       title: 'Home',
       type: 'menu',
@@ -17,6 +24,7 @@ export default {
         }
       },
     },
+    /* Math Courses Start */
     Math3200: {
       type: 'page',
       theme:{
@@ -59,6 +67,8 @@ export default {
         timestamp: true,
       }
     },
+    /* Math Courses End */
+    /* CSE Courses Start */
     CSE332S: {
       title: 'CSE332S',
       type: 'page',
@@ -108,6 +118,7 @@ export default {
         timestamp: true,
       }
     },
+    /* CSE Courses End */
     Swap: {
       display: 'hidden',
       theme:{

@@ -26,8 +26,8 @@ export default bundleAnalyzer(withNextra({
   },
   experimental: {    
     webpackMemoryOptimizations: true,
-    staticGenerationMaxConcurrency: 2,   // try 1–3
-    staticGenerationMinPagesPerWorker: 1 // keep small
+    staticGenerationMaxConcurrency: 2,   // try 1–3, default is 8
+    staticGenerationMinPagesPerWorker: 1 // keep small, default is 25
   }
 }))
 

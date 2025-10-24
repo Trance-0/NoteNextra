@@ -1,0 +1,1 @@
+sudo docker build -t trance-0/notenextra-cse:v1.2.0 -f ./docker/cse/Dockerfile --no-cache --progress=plain .
