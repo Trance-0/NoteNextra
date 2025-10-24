@@ -1,4 +1,4 @@
-# Dockerfile for CSE folders
+# Dockerfile for Math folders
 
 # Source: https://github.com/vercel/next.js/blob/canary/examples/with-docker-multi-env/docker/production/Dockerfile
 # syntax=docker.io/docker/dockerfile:1
@@ -29,9 +29,11 @@ WORKDIR /app
 COPY --from=deps /app/node_modules ./node_modules
 COPY . .
 
-# 2.1 Remove unnecessary files for build with title not starting with CSE
-RUN find ./content -type d -not -name "CSE*" -exec rm -rf {} +
-RUN find ./public -type f -not -name "*.md" -exec rm -rf {} +
+# 2.1 Remove unnecessary files for build with title starting with CSE
+RUN cd /app/content
+RUN find . -maxdepth 1 -type d -name "CSE*" -delete
+RUN cd /app/public
+RUN find . -maxdepth 1 -type d -name "CSE*" -delete
 
 # This will do the trick, use the corresponding env file for each environment.
 # COPY .env.production.sample .env.production
@@ -55,8 +57,8 @@ COPY --from=builder --chown=nextjs:nodejs /app/.next/static ./.next/static
 
 USER nextjs
 
-EXPOSE 3000
+EXPOSE 4201
 
-ENV PORT=3000
+ENV PORT=4201
 
 CMD HOSTNAME="0.0.0.0" node server.js
