@@ -1,6 +1,6 @@
 {
   "scripts": {
-    "dev": "next --turbopack",
+    "dev": "next dev -p 4200 --turbopack",
     "build": "cross-env VERCEL_FORCE_NO_BUILD_CACHE=1 NODE_OPTIONS='--max-old-space-size=32768' next build",
     "build:test": "cross-env ANALYZE=true NODE_OPTIONS='--inspect --max-old-space-size=4096' next build",
     "build:analyze": "cross-env ANALYZE=true NODE_OPTIONS='--max-old-space-size=16384' next build",

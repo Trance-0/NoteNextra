@@ -1,5 +1,5 @@
 /* eslint-env node */
-import { Footer, Layout, Navbar } from 'nextra-theme-docs'
+import { Footer, Layout} from 'nextra-theme-docs'
 import { Banner, Head } from 'nextra/components'
 import { getPageMap } from 'nextra/page-map'
 import 'nextra-theme-docs/style.css'
@@ -7,6 +7,7 @@ import { SpeedInsights } from "@vercel/speed-insights/next"
 import { Analytics } from "@vercel/analytics/react"
 import 'katex/dist/katex.min.css'
 import AlgoliaSearch from '../components/docsearch'
+import { Navbar } from '../components/navbar'
 
 export const metadata = {
   metadataBase: new URL('https://notenextra.trance-0.com'),
@@ -31,8 +32,10 @@ export const metadata = {
 }
 
 export default async function RootLayout({ children }) {
+  const pageMap = await getPageMap()
   const navbar = (
     <Navbar
+      pageMap={pageMap}
       logo={
         <>
           <svg width="32" height="32" viewBox="0 0 16 16">
@@ -45,8 +48,8 @@ export default async function RootLayout({ children }) {
       }
       projectLink="https://github.com/Trance-0/NoteNextra"
     />
+    // <Navbar pageMap={pageMap}/>
   )
-  const pageMap = await getPageMap()
   return (
     <html lang="en" dir="ltr" suppressHydrationWarning>
       <Head color={{
