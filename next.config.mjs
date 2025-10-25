@@ -24,11 +24,11 @@ export default bundleAnalyzer(withNextra({
   eslint: {
     ignoreDuringBuilds: true,
   },
-  experimental: {    
-    webpackMemoryOptimizations: true,
-    staticGenerationMaxConcurrency: 2,   // try 1–3, default is 8
-    staticGenerationMinPagesPerWorker: 1 // keep small, default is 25
-  }
+  // experimental: {    
+  //   webpackMemoryOptimizations: true,
+  //   staticGenerationMaxConcurrency: 2,   // try 1–3, default is 8
+  //   staticGenerationMinPagesPerWorker: 1 // keep small, default is 25
+  // }
 }))
 
 // If you have other Next.js configurations, you can pass them as the parameter:
