@@ -60,41 +60,6 @@ export default {
       type: 'page',
       href: '/Math401'
     },
-    CSE332S_link: {
-      title: 'CSE332S',
-      type: 'page',
-      href: '/CSE332S'
-    },
-    CSE347_link: {
-      title: 'CSE347',
-      type: 'page',
-      href: '/CSE347'
-    },
-    CSE442T_link: {
-      title: 'CSE442T',
-      type: 'page',
-      href: '/CSE442T'
-    },
-    CSE5313_link: {
-      title: 'CSE5313',
-      type: 'page',
-      href: '/CSE5313'
-    },
-    CSE510_link: {
-      title: 'CSE510',
-      type: 'page',
-      href: '/CSE510'
-    },
-    CSE559A_link: {
-      title: 'CSE559A',
-      type: 'page',
-      href: '/CSE559A'
-    },
-    CSE5519_link: {
-      title: 'CSE5519',
-      type: 'page',
-      href: '/CSE5519'
-    },
     /* Math Courses Start */
     Math3200: {
       title: 'Math3200',
@@ -146,6 +111,41 @@ export default {
       }
     },
     /* Math Courses End */
+    CSE332S_link: {
+      title: 'CSE332S',
+      type: 'page',
+      href: '/CSE332S'
+    },
+    CSE347_link: {
+      title: 'CSE347',
+      type: 'page',
+      href: '/CSE347'
+    },
+    CSE442T_link: {
+      title: 'CSE442T',
+      type: 'page',
+      href: '/CSE442T'
+    },
+    CSE5313_link: {
+      title: 'CSE5313',
+      type: 'page',
+      href: '/CSE5313'
+    },
+    CSE510_link: {
+      title: 'CSE510',
+      type: 'page',
+      href: '/CSE510'
+    },
+    CSE559A_link: {
+      title: 'CSE559A',
+      type: 'page',
+      href: '/CSE559A'
+    },
+    CSE5519_link: {
+      title: 'CSE5519',
+      type: 'page',
+      href: '/CSE5519'
+    },
     /* CSE Courses Start */
     CSE332S: {
       title: 'CSE332S',
