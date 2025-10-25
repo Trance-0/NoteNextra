@@ -26,180 +26,173 @@ export default {
     },
     /* Load link with relative path */
     Math3200_link: {
-      title: 'Math 3200',
+      title: 'Math3200',
+      type: 'page',
       href: '/Math3200'
     },
     Math429_link: {
-      title: 'Math 429',
+      title: 'Math429',
+      type: 'page',
       href: '/Math429'
     },
     Math4111_link: {
-      title: 'Math 4111',
+      title: 'Math4111',
+      type: 'page',
       href: '/Math4111'
     },
     Math4121_link: {
-      title: 'Math 4121',
+      title: 'Math4121',
+      type: 'page',
       href: '/Math4121'
     },
     Math4201_link: {
-      title: 'Math 4201',
+      title: 'Math4201',
+      type: 'page',
       href: '/Math4201'
     },
     Math416_link: {
-      title: 'Math 416',
+      title: 'Math416',
+      type: 'page',
       href: '/Math416'
     },
     Math401_link: {
-      title: 'Math 401',
+      title: 'Math401',
+      type: 'page',
       href: '/Math401'
     },
     CSE332S_link: {
-      title: 'CSE 332S',
+      title: 'CSE332S',
+      type: 'page',
       href: '/CSE332S'
     },
     CSE347_link: {
-      title: 'CSE 347',
+      title: 'CSE347',
+      type: 'page',
       href: '/CSE347'
     },
     CSE442T_link: {
-      title: 'CSE 442T',
+      title: 'CSE442T',
+      type: 'page',
       href: '/CSE442T'
     },
     CSE5313_link: {
-      title: 'CSE 5313',
+      title: 'CSE5313',
+      type: 'page',
       href: '/CSE5313'
     },
     CSE510_link: {
-      title: 'CSE 510',
+      title: 'CSE510',
+      type: 'page',
       href: '/CSE510'
     },
     CSE559A_link: {
-      title: 'CSE 559A',
+      title: 'CSE559A',
+      type: 'page',
       href: '/CSE559A'
     },
     CSE5519_link: {
-      title: 'CSE 5519',
+      title: 'CSE5519',
+      type: 'page',
       href: '/CSE5519'
     },
     /* Math Courses Start */
     Math3200: {
-      display: 'hidden',
+      title: 'Math3200',
       type: 'page',
       theme:{
-        sidebar: false,
         timestamp: true,
       }
     },
     Math429:{
-      display: 'hidden',
+      title: 'Math429',
       type: 'page',
       theme:{
-        sidebar: false,
         timestamp: true,
       }
     },
     Math4111: {
-      display: 'hidden',
+      title: 'Math4111',
       type: 'page',
       theme:{
-        sidebar: false,
         timestamp: true,
       }
     },
     Math4121: {
-      display: 'hidden',
+      title: 'Math4121',
       type: 'page',
       theme:{
-        sidebar: false,
         timestamp: true,
       }
     },
     Math4201: {
-      display: 'hidden',
+      title: 'Math4201',
       type: 'page',
       theme:{
-        sidebar: false,
         timestamp: true,
       }
     },
     Math416: {
-      display: 'hidden',
+      title: 'Math416',
       type: 'page',
       theme:{
-        sidebar: false,
         timestamp: true,
       }
     },
     Math401: {
-      display: 'hidden',
+      title: 'Math401',
       type: 'page',
       theme:{
-        sidebar: false,
         timestamp: true,
       }
     },
     /* Math Courses End */
     /* CSE Courses Start */
     CSE332S: {
-      display: 'hidden',
       title: 'CSE332S',
       type: 'page',
       theme:{
-        sidebar: false,
         timestamp: true,
       }
     },
     CSE347: {
-      display: 'hidden',
       title: 'CSE347',
       type: 'page',
       theme:{
-        sidebar: false,
         timestamp: true,
       }
     },
     CSE442T: {
-      display: 'hidden',
       title: 'CSE442T',
       type: 'page',
       theme:{
-        sidebar: false,
         timestamp: true,
       }
     },
     CSE5313: {
-      display: 'hidden',
       title: 'CSE5313',
       type: 'page',
       theme:{
-        sidebar: false,
         timestamp: true,
       }
     },
     CSE510: {
-      display: 'hidden',
       title: 'CSE510',
       type: 'page',
       theme:{
-        sidebar: false,
         timestamp: true,
       }
     },
     CSE559A: {
-      display: 'hidden',
       title: 'CSE559A',
       type: 'page',
       theme:{
-        sidebar: false,
         timestamp: true,
       }
     },
     CSE5519: {
-      display: 'hidden',
       title: 'CSE5519',
       type: 'page',
       theme:{
-        sidebar: false,
         timestamp: true,
       }
     },
