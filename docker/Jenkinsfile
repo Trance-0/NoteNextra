@@ -1,0 +1,84 @@
+pipeline {
+    environment {
+        registry = "trance0/notenextra"
+        version = "1.2"
+        NODE_OPTIONS = "--max-old-space-size=8192"
+        // NEXT_SEARCH_ALGOLIA_APP_ID = "${NEXT_SEARCH_ALGOLIA_APP_ID}"
+        // NEXT_SEARCH_ALGOLIA_API_KEY = "${NEXT_SEARCH_ALGOLIA_API_KEY}"
+        // NEXT_SEARCH_ALGOLIA_INDEX_NAME = "${NEXT_SEARCH_ALGOLIA_INDEX_NAME}"
+    }
+    
+    agent any
+
+    stages {
+        stage('Cleanup Workspace') {
+            steps {
+                // Using Workspace Cleanup Plugin (if installed and configured)
+                cleanWs()
+            }
+        }
+        stage('Checkout') {
+            steps {
+                checkout([
+                    $class: 'GitSCM',
+                    branches: [[ name: '*/main' ]],
+                    userRemoteConfigs: [[
+                        url: 'https://github.com/Trance-0/NoteNextra',
+                    ]]
+                ])
+            }
+        }
+        stage('Build and test'){
+            parallel {
+                stage('Build Math') {
+                    steps {
+                        script {
+                            echo "Building docker image ${registry}-math:${version}.${env.BUILD_ID}"
+                            def customImage = docker.build("${registry}-math:v${version}.${env.BUILD_ID}",
+                                "-f ./docker/math/Dockerfile",
+                                "--no-cache --progress=plain",
+                                "-t notenextra-math:latest"
+                            )
+                            echo "Logging in to docker hub"
+                            // docker.withRegistry('https://registry.hub.docker.com', 'docker-hub-creds') {
+                            //     echo "Pushing docker image ${registry}:v${version}.${env.BUILD_ID}"
+                            //     customImage.push()
+                            // }
+                            echo "skipping push due to conflicted servers"
+                        }
+                    }
+                }
+                stage('Build CSE') {
+                    steps {
+                        script {
+                            echo "Building docker image ${registry}-cse:${version}.${env.BUILD_ID}"
+                            def customImage = docker.build("${registry}-cse:v${version}.${env.BUILD_ID}",
+                                "-f ./docker/cse/Dockerfile",
+                                "--no-cache --progress=plain",
+                                "-t notenextra-cse:latest"
+                            )
+                            echo "Logging in to docker hub"
+                            // docker.withRegistry('https://registry.hub.docker.com', 'docker-hub-creds') {
+                            //     echo "Pushing docker image ${registry}:v${version}.${env.BUILD_ID}"
+                            //     customImage.push()
+                            // }
+                            echo "skipping push due to conflicted servers"
+                        }
+                    }
+                }
+            }
+        }
+        stage('Deploy') {
+            steps {
+                script {
+                    echo "Stopping existing container"
+                    sh 'docker compose -f ./docker/docker-compose.yaml down'
+                    echo "Removing existing container"
+                    sh 'docker compose -f ./docker/docker-compose.yaml rm -f'
+                    echo "Deploying docker image ${registry}-math:${version}.${env.BUILD_ID} and ${registry}-cse:${version}.${env.BUILD_ID} with docker compose"
+                    sh 'docker compose -f ./docker/docker-compose.yaml up -d'
+                }
+            }
+        }
+    }
+}

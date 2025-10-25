@@ -105,9 +105,11 @@ export const ClientNavbar: FC<{
   // filter out titles for elements in topLevelNavbarItems with non empty route
   const existingCourseNames = new Set(
       topLevelNavbarItems.filter(
-          item => !('href' in item) && item.route !== ''
+          item => !('href' in item)
       ).map(item => item.title)
   )
+  console.log(existingCourseNames)
+
   // filter out elements in topLevelNavbarItems with url but have title in existingCourseNames
   const filteredTopLevelNavbarItems = topLevelNavbarItems.filter(item => !('href' in item && existingCourseNames.has(item.title)))
 
@@ -116,7 +118,7 @@ export const ClientNavbar: FC<{
   const items = filteredTopLevelNavbarItems
   
 
-  console.log(topLevelNavbarItems)
+  console.log(filteredTopLevelNavbarItems)
   const themeConfig = useThemeConfig()
 
   const pathname = useFSRoute()

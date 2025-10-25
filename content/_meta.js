@@ -34,6 +34,11 @@ export default {
       type: 'page',
       href: '/Math4111',
     },
+    CSE559A_link: {
+      title: 'CSE 559A',
+      type: 'page',
+      href: '/CSE559A',
+    },
     /* Math Courses End */
     Math4201: {
       title: 'Math 4201',
