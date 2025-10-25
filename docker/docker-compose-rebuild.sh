@@ -1,0 +1,1 @@
+docker compose -f docker/docker-compose.yaml up -d --build notenextra-math notenextra-cse
