@@ -108,20 +108,16 @@ export const ClientNavbar: FC<{
           item => !('href' in item)
       ).map(item => item.title)
   )
+  console.log(existingCourseNames)
 
-  console.log('existingCourseNames', existingCourseNames)
   // filter out elements in topLevelNavbarItems with url but have title in existingCourseNames
   const filteredTopLevelNavbarItems = topLevelNavbarItems.filter(item => !('href' in item && existingCourseNames.has(item.title)))
 
-  console.log('filteredTopLevelNavbarItems', filteredTopLevelNavbarItems)
-  // or even better, remove all old doc page generated links
-  // this don't make sense because it will destroy the navbar structure highlight for children pages
-  // const filteredTopLevelNavbarItems = topLevelNavbarItems.filter(item => !('firstChildRoute' in item))
-  
   // const items = topLevelNavbarItems
   // use filteredTopLevelNavbarItems to generate items
   const items = filteredTopLevelNavbarItems
-  
+
+  console.log(filteredTopLevelNavbarItems)
   const themeConfig = useThemeConfig()
 
   const pathname = useFSRoute()
