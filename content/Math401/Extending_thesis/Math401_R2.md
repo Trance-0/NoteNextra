@@ -202,8 +202,6 @@ $$
 \end{aligned}
 $$
 
-QED
-
 </details>
 
 #### Proof of the Levy's concentration theorem via the Maxwell-Boltzmann distribution law

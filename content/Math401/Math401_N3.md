@@ -187,7 +187,8 @@ $$
 
 where $L(\mu)$ is the minimum mean code word length of all uniquely decipherable codes for $(A,\mu)$.
 
-Proof:
+<details>
+<summary>Proof</summary>
 
 First, we show that
 
@@ -278,7 +279,7 @@ $$
 \end{aligned}
 $$
 
-QED
+</details>
 
 ### Entropy
 
@@ -387,13 +388,9 @@ n−1 symbols.
 By the inductive hypothesis, the code on $A'$ is optimal.
   is optimal.
 
-By Step 2 above, assigning the two merged symbols $a$ and $b$ codewords $w_0$ and $w_1$ (based on 
-1       
-$w_1$ (based on $c$'s codeword $w$) results in the optimal solution for $A$.
+By Step 2 above, assigning the two merged symbols $a$ and $b$ codewords $w_0$ and $w_1$ (based on 1.1.4) results in the optimal solution for $A$.
 
 Therefore, by induction, Huffman’s algorithm gives an optimal prefix code for any $n$.
-
-QED
-
+</details>
 
 
