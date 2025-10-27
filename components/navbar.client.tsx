@@ -108,7 +108,7 @@ export const ClientNavbar: FC<{
           item => !('href' in item)
       ).map(item => item.title)
   )
-  console.log(existingCourseNames)
+  // console.log(existingCourseNames)
 
   // filter out elements in topLevelNavbarItems with url but have title in existingCourseNames
   const filteredTopLevelNavbarItems = topLevelNavbarItems.filter(item => !('href' in item && existingCourseNames.has(item.title)))
@@ -117,7 +117,7 @@ export const ClientNavbar: FC<{
   // use filteredTopLevelNavbarItems to generate items
   const items = filteredTopLevelNavbarItems
 
-  console.log(filteredTopLevelNavbarItems)
+  // console.log(filteredTopLevelNavbarItems)
   const themeConfig = useThemeConfig()
 
   const pathname = useFSRoute()

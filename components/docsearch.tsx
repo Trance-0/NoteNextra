@@ -9,7 +9,7 @@ import '@docsearch/css';
 function AlgoliaSearch () {
   const {theme} = useTheme();
   const darkMode = theme === 'dark';
-  console.log("darkMode", darkMode);
+  // console.log("darkMode", darkMode);
   return (
     <DocSearch
       appId={process.env.NEXT_SEARCH_ALGOLIA_APP_ID || 'NKGLZZZUBC'}
