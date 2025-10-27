@@ -24,40 +24,128 @@ export default {
         }
       },
     },
-    Math4201_link: {
-      title: 'Math 4201',
+    /* Load link with relative path */
+    Math3200_link: {
+      title: 'Math3200',
       type: 'page',
-      href: '/Math4201',
+      href: '/Math3200'
+    },
+    Math429_link: {
+      title: 'Math429',
+      type: 'page',
+      href: '/Math429'
     },
     Math4111_link: {
-      title: 'Math 4111',
+      title: 'Math4111',
       type: 'page',
-      href: '/Math4111',
+      href: '/Math4111'
     },
-    CSE559A_link: {
-      title: 'CSE 559A',
+    Math4121_link: {
+      title: 'Math4121',
       type: 'page',
-      href: '/CSE559A',
+      href: '/Math4121'
+    },
+    Math4201_link: {
+      title: 'Math4201',
+      type: 'page',
+      href: '/Math4201'
+    },
+    Math416_link: {
+      title: 'Math416',
+      type: 'page',
+      href: '/Math416'
+    },
+    Math401_link: {
+      title: 'Math401',
+      type: 'page',
+      href: '/Math401'
+    },
+    /* Math Courses Start */
+    Math3200: {
+      title: 'Math3200',
+      type: 'page',
+      theme:{
+        timestamp: true,
+      }
+    },
+    Math429:{
+      title: 'Math429',
+      type: 'page',
+      theme:{
+        timestamp: true,
+      }
+    },
+    Math4111: {
+      title: 'Math4111',
+      type: 'page',
+      theme:{
+        timestamp: true,
+      }
+    },
+    Math4121: {
+      title: 'Math4121',
+      type: 'page',
+      theme:{
+        timestamp: true,
+      }
+    },
+    Math4201: {
+      title: 'Math4201',
+      type: 'page',
+      theme:{
+        timestamp: true,
+      }
+    },
+    Math416: {
+      title: 'Math416',
+      type: 'page',
+      theme:{
+        timestamp: true,
+      }
+    },
+    Math401: {
+      title: 'Math401',
+      type: 'page',
+      theme:{
+        timestamp: true,
+      }
     },
     /* Math Courses End */
-    Math4201: {
-      title: 'Math 4201',
+    CSE332S_link: {
+      title: 'CSE332S',
       type: 'page',
-      theme:{
-        // sidebar: false,
-        timestamp: true,
-      }
+      href: '/CSE332S'
     },
-    /* CSE Courses Start */
-    CSE559A: {
-      title: 'CSE 559A',
+    CSE347_link: {
+      title: 'CSE347',
       type: 'page',
-      theme:{
-        // sidebar: false,
-        timestamp: true,
-      }
+      href: '/CSE347'
     },
-    /* CSE Courses End */
+    CSE442T_link: {
+      title: 'CSE442T',
+      type: 'page',
+      href: '/CSE442T'
+    },
+    CSE5313_link: {
+      title: 'CSE5313',
+      type: 'page',
+      href: '/CSE5313'
+    },
+    CSE510_link: {
+      title: 'CSE510',
+      type: 'page',
+      href: '/CSE510'
+    },
+    CSE559A_link: {
+      title: 'CSE559A',
+      type: 'page',
+      href: '/CSE559A'
+    },
+    CSE5519_link: {
+      title: 'CSE5519',
+      type: 'page',
+      href: '/CSE5519'
+    },
     Swap: {
       display: 'hidden',
       theme:{

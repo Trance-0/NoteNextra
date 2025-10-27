@@ -116,7 +116,6 @@ export const ClientNavbar: FC<{
   // const items = topLevelNavbarItems
   // use filteredTopLevelNavbarItems to generate items
   const items = filteredTopLevelNavbarItems
-  
 
   console.log(filteredTopLevelNavbarItems)
   const themeConfig = useThemeConfig()
