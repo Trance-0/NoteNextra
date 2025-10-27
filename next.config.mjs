@@ -24,6 +24,10 @@ export default bundleAnalyzer(withNextra({
   eslint: {
     ignoreDuringBuilds: true,
   },
+  compiler: {
+    // enable console log in production
+    removeConsole: false,
+  },
   // experimental: {    
   //   webpackMemoryOptimizations: true,
   //   staticGenerationMaxConcurrency: 2,   // try 1–3, default is 8

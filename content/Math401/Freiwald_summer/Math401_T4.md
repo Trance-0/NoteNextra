@@ -171,7 +171,6 @@ $$
 
 This is a contradiction, so Bell's inequality is violated.
 
-QED
 </details>
 
 Other revised experiments (eg. Aspect's experiment, Calcium entangled photon experiment) are also conducted and the inequality is still violated.

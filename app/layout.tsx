@@ -1,5 +1,5 @@
 /* eslint-env node */
-import { Footer, Layout, Navbar } from 'nextra-theme-docs'
+import { Footer, Layout, Navbar, useThemeConfig } from 'nextra-theme-docs'
 import { Banner, Head } from 'nextra/components'
 import { getPageMap } from 'nextra/page-map'
 import 'nextra-theme-docs/style.css'
@@ -31,6 +31,7 @@ export const metadata = {
 }
 
 export default async function RootLayout({ children }) {
+  const { darkMode } = useThemeConfig()
   const navbar = (
     <Navbar
       logo={
@@ -82,7 +83,7 @@ export default async function RootLayout({ children }) {
           sidebar={{ defaultMenuCollapseLevel: 1 }}
           pageMap={pageMap}
           // TODO: fix algolia search
-          search={<AlgoliaSearch />}
+          search={<AlgoliaSearch darkMode={darkMode} />}
         >
           {children}
           {/* SpeedInsights in vercel */}
