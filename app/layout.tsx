@@ -84,7 +84,7 @@ export default async function RootLayout({ children }) {
           sidebar={{ defaultMenuCollapseLevel: 1 }}
           pageMap={pageMap}
           // TODO: fix algolia search
-          search={<AlgoliaSearch/>}
+          // search={<AlgoliaSearch/>}
         >
           {children}
           {/* SpeedInsights in vercel */}
