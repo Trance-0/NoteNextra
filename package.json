@@ -1,7 +1,7 @@
 {
   "scripts": {
     "dev": "next --turbopack",
-    "build": "cross-env VERCEL_FORCE_NO_BUILD_CACHE=1 NODE_OPTIONS='--max-old-space-size=32768' next build",
+    "build": "cross-env VERCEL_FORCE_NO_BUILD_CACHE=1 NODE_OPTIONS='--max-old-space-size=16384' next build",
     "build:test": "cross-env ANALYZE=true NODE_OPTIONS='--inspect --max-old-space-size=4096' next build",
     "build:analyze": "cross-env ANALYZE=true NODE_OPTIONS='--max-old-space-size=16384' next build",
     "postbuild": "next-sitemap && pagefind --site .next/server/app --output-path public/_pagefind && cp -r ./public/_pagefind ./out",
