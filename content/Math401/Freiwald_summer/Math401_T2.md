@@ -508,8 +508,6 @@ $$
 f(x_j)=\sum_{a\in X_j} f(a)\epsilon_{a}^{(j)}(x_j)=f(x_j)
 $$
 
-QED.
-
 </details>
 
 Now, let $a=(a_1,a_2,\cdots,a_n)$ be a vector in $X$, and $x=(x_1,x_2,\cdots,x_n)$ be a vector in $X$. Note that $a_j,x_j\in X_j$ for $j=1,2,\cdots,n$.
@@ -539,8 +537,6 @@ This basically follows the same rascal as the previous proof. This time, the eps
 $$
 f(x)=\sum_{a\in X} f(a)\epsilon_a(x)=f(x)
 $$
-
-QED.
 
 </details>
 
@@ -613,7 +609,6 @@ If $\sum_{i=1}^n a_i u_i\otimes v_i=\sum_{j=1}^m b_j u_j\otimes v_j$, then $a_i=
 
 Then $\sum_{i=1}^n a_i T_1(u_i)\otimes T_2(v_i)=\sum_{j=1}^m b_j T_1(u_j)\otimes T_2(v_j)$.
 
-QED
 </details>
 
 An example of 
