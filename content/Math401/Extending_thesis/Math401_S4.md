@@ -1,4 +1,4 @@
-# Math 401, Fall 2025: Thesis notes, S4, Bargmann space
+# Math 401, Fall 2025: Thesis notes, S4, Complex function spaces and complex manifold
 
 ## Bargmann space (original)
 

@@ -234,7 +234,7 @@ Then the measurable space $(\Omega, \mathscr{B}(\mathbb{C}), \lambda)$ is a meas
 
 If $\Omega=\mathbb{R}$, then we denote such measurable space as $L^2(\mathbb{R}, \lambda)$.
 
-<details>
+</details>
 
 #### Probability space
 
@@ -426,7 +426,7 @@ is a pure state.
 
 </details>
 
-## Drawing the connection between the space $S^{2n+1}$, $CP^n$, and $\mathbb{R}$
+## Drawing the connection between the space $S^{2n+1}$, $\mathbb{C}P^n$, and $\mathbb{R}$
 
 A pure quantum state of size $N$ can be identified with a **Hopf circle** on the sphere $S^{2N-1}$.
 
