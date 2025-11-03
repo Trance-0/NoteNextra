@@ -8,7 +8,8 @@
     "start": "next start"
   },
   "dependencies": {
-    "@docsearch/react": "^4.0.0-beta.2",
+    "@docsearch/css": "^4.2.0",
+    "@docsearch/react": "^4.2.0",
     "@napi-rs/simple-git": "^0.1.22",
     "@next/bundle-analyzer": "^15.3.5",
     "@vercel/analytics": "^1.5.0",
