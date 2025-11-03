@@ -1,5 +1,7 @@
 name: notenextra
-
+# variables:
+#   version: 1.1
+#   build_id: ${env.BUILD_ID}
 services:
   # you may need to update relative directories if you move this file
   # default created directories is /docker/docker-compose.yaml
@@ -8,7 +10,7 @@ services:
       context: ../
       dockerfile: ./docker/math/Dockerfile
       tags:
-        - trance0/notenextra-math:latest
+        - trance0/notenextra-math:${version}.${env.BUILD_ID}
     restart: on-failure:5
     ports:
       - 13001:4200
@@ -17,7 +19,7 @@ services:
       context: ../
       dockerfile: ./docker/cse/Dockerfile
       tags:
-        - trance0/notenextra-cse:latest
+        - trance0/notenextra-cse:${version}.${env.BUILD_ID}
     restart: on-failure:5
     ports:
       - 13002:4200
