@@ -74,7 +74,7 @@ $c\in \mathbb{C}$.
 The matrix transpose is defined by
 
 $$
-u^T=(a_1,a_2,\cdots,a_n)^T=\begin{pmatrix}
+u^\top=(a_1,a_2,\cdots,a_n)^\top=\begin{pmatrix}
 a_1 \\
 a_2 \\
 \vdots \\
@@ -694,7 +694,7 @@ $$
 
 The unitary group $U(n)$ is the group of all $n\times n$ unitary matrices.
 
-Such that $A^*=A$, where $A^*$ is the complex conjugate transpose of $A$. $A^*=(\overline{A})^T$.
+Such that $A^*=A$, where $A^*$ is the complex conjugate transpose of $A$. $A^*=(\overline{A})^\top$.
 
 #### Cyclic group $\mathbb{Z}_n$
 

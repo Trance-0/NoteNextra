@@ -262,10 +262,10 @@ Basic definitions
 
 The special orthogonal group $SO(n)$ is the set of all **distance preserving** linear transformations on $\mathbb{R}^n$.
 
-It is the group of all $n\times n$ orthogonal matrices ($A^T A=I_n$) on $\mathbb{R}^n$ with determinant $1$.
+It is the group of all $n\times n$ orthogonal matrices ($A^\top A=I_n$) on $\mathbb{R}^n$ with determinant $1$.
 
 $$
-SO(n)=\{A\in \mathbb{R}^{n\times n}: A^T A=I_n, \det(A)=1\}
+SO(n)=\{A\in \mathbb{R}^{n\times n}: A^\top A=I_n, \det(A)=1\}
 $$
 
 <details>
@@ -276,7 +276,7 @@ In [The random Matrix Theory of the Classical Compact groups](https://case.edu/a
 $O(n)$ (the group of all $n\times n$ **orthogonal matrices** over $\mathbb{R}$),
 
 $$
-O(n)=\{A\in \mathbb{R}^{n\times n}: AA^T=A^T A=I_n\}
+O(n)=\{A\in \mathbb{R}^{n\times n}: AA^\top=A^\top A=I_n\}
 $$
 
 $U(n)$ (the group of all $n\times n$ **unitary matrices** over $\mathbb{C}$), 
@@ -296,7 +296,7 @@ $$
 $Sp(2n)$ (the group of all $2n\times 2n$ symplectic matrices over $\mathbb{C}$),
 
 $$
-Sp(2n)=\{U\in U(2n): U^T J U=UJU^T=J\}
+Sp(2n)=\{U\in U(2n): U^\top J U=UJU^\top=J\}
 $$
 
 where $J=\begin{pmatrix}

@@ -74,7 +74,7 @@ x\\y
 \end{pmatrix}
 $$
 
-To undo the rotation, we need to rotate the image by $-\theta$. This is equivalent to apply $R^T$ to the image.
+To undo the rotation, we need to rotate the image by $-\theta$. This is equivalent to apply $R^\top$ to the image.
 
 #### Affine transformation
 

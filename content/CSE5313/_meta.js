@@ -22,4 +22,5 @@ export default {
     CSE5313_L16: "CSE5313 Coding and information theory for data science (Exam Review)",
     CSE5313_L17: "CSE5313 Coding and information theory for data science (Lecture 17)",
     CSE5313_L18: "CSE5313 Coding and information theory for data science (Lecture 18)",
+    CSE5313_L19: "CSE5313 Coding and information theory for data science (Exam Review)",
 }

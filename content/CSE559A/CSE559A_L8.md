@@ -59,7 +59,7 @@ Suppose $k=1$, $e=l(f_1(x,w_1),y)$
 
 Example: $e=(f_1(x,w_1)-y)^2$
 
-So $h_1=f_1(x,w_1)=w^T_1x$, $e=l(h_1,y)=(y-h_1)^2$
+So $h_1=f_1(x,w_1)=w^\top_1x$, $e=l(h_1,y)=(y-h_1)^2$
 
 $$
 \frac{\partial e}{\partial w_1}=\frac{\partial e}{\partial h_1}\frac{\partial h_1}{\partial w_1}
