@@ -278,6 +278,40 @@ This operator is a vector field.
 >
 > - [Introduction to Complex Manifolds](https://bookstore.ams.org/gsm-244)
 
+### Holomorphic vector bundles
+
+#### Definition of real vector bundle
+
+Let $M$ be a topological space, A **real vector bundle** over $M$ is a topological space $E$ together with a surjective continuous map $\pi:E\to M$ such that:
+
+1. For each $p\in M$, the fiber $E_p=\pi^{-1}(p)$ over $p$ is endowed with the structure of a $k$-dimensional real vector space.
+2. For each $p\in M$, there exists an open neighborhood $U$ of $p$ and a homeomorphism $\Phi: \pi^{-1}(U)\to U\times \mathbb{R}^k$ called a **local trivialization** such that:
+    - $\pi^{-1}(U)=\pi$(where $\pi_U:U\times \mathbb{R}^k\to \pi^{-1}(U)$ is the projection map)
+    - For each $q\in U$, the map $\Phi_q: E_q\to \mathbb{R}^k$ is isomorphism from $E_q$ to $\{q\}\times \mathbb{R}^k\cong \mathbb{R}^k$.
+
+#### Definition of complex vector bundle
+
+Let $M$ be a topological space, A **complex vector bundle** over $M$ is a real vector bundle $E$ together with a complex structure on each fiber $E_p$ that is compatible with the complex vector space structure.
+
+1. For each $p\in M$, the fiber $E_p=\pi^{-1}(p)$ over $p$ is endowed with the structure of a $k$-dimensional complex vector space.
+2. For each $p\in M$, there exists an open neighborhood $U$ of $p$ and a homeomorphism $\Phi: \pi^{-1}(U)\to U\times \mathbb{C}^k$ called a **local trivialization** such that:
+    - $\pi^{-1}(U)=\pi$(where $\pi_U:U\times \mathbb{C}^k\to \pi^{-1}(U)$ is the projection map)
+    - For each $q\in U$, the map $\Phi_q: E_q\to \mathbb{C}^k$ is isomorphism from $E_q$ to $\{q\}\times \mathbb{C}^k\cong \mathbb{C}^k$.
+
+#### Definition of smooth complex vector bundle
+
+If above $M$ and $E$ are smooth manifolds, $\pi$ is a smooth map, and the local trivializations can be chosen to be diffeomorphisms (smooth bijections with smooth inverses), then the vector bundle is called a **smooth complex vector bundle**.
+
+#### Definition of holomorphic vector bundle
+
+If above $M$ and $E$ are complex manifolds, $\pi$ is a holomorphic map, and the local trivializations can be chosen to be biholomorphic maps (holomorphic bijections with holomorphic inverses), then the vector bundle is called a **holomorphic vector bundle**.
+
+### Holomorphic line bundles
+
+A **holomorphic line bundle** is a holomorphic vector bundle with rank 1.
+
+> Intuitively, a holomorphic line bundle is a complex vector bundle with a complex structure on each fiber.
+
 ### Riemann-Roch Theorem (Theorem 9.64)
 
 Suppose $M$ is a connected compact Riemann surface of genus $g$, and $L\to M$ is a holomorphic line bundle. Then

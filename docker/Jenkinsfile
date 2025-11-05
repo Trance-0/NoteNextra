@@ -77,14 +77,18 @@ pipeline {
                                             script: 'docker images -qf reference=\${imageNameCSE}',
                                             returnStdout: true
                                         )
-                    echo "Image Name: " + "${imageName}"
-                    echo "Old Image: ${oldImageID}"
                     if ( "${oldImageIDMath}" != '' ) {
+                        echo "Removing old image ${oldImageIDMath}"
+                        echo "Image Name: " + "${imageNameMath}"
+                        echo "Old Image: ${oldImageIDMath}"
                         sh 'docker rmi ${oldImageIDMath}'
                     }else{
                         echo "Warning: ${imageNameMath} does not exist"
                     }
                     if ( "${oldImageIDCSE}" != '' ) {
+                        echo "Removing old image ${oldImageIDCSE}"
+                        echo "Image Name: " + "${imageNameCSE}"
+                        echo "Old Image: ${oldImageIDCSE}"
                         sh 'docker rmi ${oldImageIDCSE}'
                     }else{
                         echo "Warning: ${imageNameCSE} does not exist"
