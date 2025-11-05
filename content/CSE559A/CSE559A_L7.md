@@ -96,7 +96,7 @@ Example: Linear classification models
 Find a linear function that separates the data.
 
 $$
-f(x) = w^T x + b
+f(x) = w^\top x + b
 $$
 
 [Linear classification models](http://cs231n.github.io/linear-classify/)
@@ -144,13 +144,13 @@ This is a convex function, so we can find the global minimum.
 The gradient is:
 
 $$
-\nabla_w||Xw-Y||^2 = 2X^T(Xw-Y)
+\nabla_w||Xw-Y||^2 = 2X^\top(Xw-Y)
 $$
 
 Set the gradient to 0, we get:
 
 $$
-w = (X^T X)^{-1} X^T Y
+w = (X^\top X)^{-1} X^\top Y
 $$
 
 From the maximum likelihood perspective, we can also derive the same result.

@@ -34,7 +34,7 @@ pipeline {
                     steps {
                         script {
                             echo "Building docker image ${registry}-math:${version}.${env.BUILD_ID}"
-                            def customImage = docker.build("${registry}-math:v${version}.${env.BUILD_ID}","-f ./docker/math/Dockerfile --no-cache --progress=plain -t notenextra-math:latest .")
+                            def customImage = docker.build("${registry}-math:v${version}.${env.BUILD_ID}","-f ./docker/math/Dockerfile --no-cache --progress=plain .")
                             echo "Logging in to docker hub"
                             // docker.withRegistry('https://registry.hub.docker.com', 'docker-hub-creds') {
                             //     echo "Pushing docker image ${registry}:v${version}.${env.BUILD_ID}"
@@ -48,7 +48,7 @@ pipeline {
                     steps {
                         script {
                             echo "Building docker image ${registry}-cse:${version}.${env.BUILD_ID}"
-                            def customImage = docker.build("${registry}-cse:v${version}.${env.BUILD_ID}","-f ./docker/cse/Dockerfile --no-cache --progress=plain -t notenextra-cse:latest .")
+                            def customImage = docker.build("${registry}-cse:v${version}.${env.BUILD_ID}","-f ./docker/cse/Dockerfile --no-cache --progress=plain -t .")
                             echo "Logging in to docker hub"
                             // docker.withRegistry('https://registry.hub.docker.com', 'docker-hub-creds') {
                             //     echo "Pushing docker image ${registry}:v${version}.${env.BUILD_ID}"
