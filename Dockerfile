@@ -1,7 +1,7 @@
 # Source: https://github.com/vercel/next.js/blob/canary/examples/with-docker-multi-env/docker/production/Dockerfile
 # syntax=docker.io/docker/dockerfile:1
 
-FROM node:18-alpine AS base
+FROM node:20-alpine AS base
 
 ENV NODE_OPTIONS="--max-old-space-size=8192"
 

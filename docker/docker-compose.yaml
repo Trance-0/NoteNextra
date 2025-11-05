@@ -4,6 +4,7 @@ services:
   # you may need to update relative directories if you move this file
   # default created directories is /docker/docker-compose.yaml
   notenextra-math:
+    image: trance0/notenextra-math:latest
     build:
       context: ../
       dockerfile: ./docker/math/Dockerfile
@@ -13,6 +14,7 @@ services:
     ports:
       - 13001:4200
   notenextra-cse:
+    image: trance0/notenextra-cse:latest
     build:
       context: ../
       dockerfile: ./docker/cse/Dockerfile
