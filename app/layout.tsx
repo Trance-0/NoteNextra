@@ -83,7 +83,7 @@ export default async function RootLayout({ children }) {
           docsRepositoryBase="https://github.com/Trance-0/NoteNextra/tree/main"
           sidebar={{ defaultMenuCollapseLevel: 1 }}
           pageMap={pageMap}
-          // TODO: fix algolia search
+          // TODO: fix local search with distributed search index over containers
           search={<AlgoliaSearch/>}
         >
           {children}
