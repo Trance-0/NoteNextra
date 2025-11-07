@@ -28,3 +28,11 @@ Considering the memory usage for this project, it is better to deploy it as sepa
 ```bash
 docker-compose up -d -f docker/docker-compose.yaml
 ```
+
+### Snippets
+
+Update dependencies
+
+```bash
+npx npm-check-updates -u
+```
