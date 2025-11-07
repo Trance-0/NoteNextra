@@ -8,7 +8,7 @@ One-way functions, Pseudorandomness, Private-key cryptography, Public-key crypto
 
 ### Instructor
 
-[Brian Garnett](bcgarnett@wustl.edu)
+Brian Garnett (bcgarnett@wustl.edu)
 
 Math Phd… Great!
 
