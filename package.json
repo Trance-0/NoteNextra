@@ -8,23 +8,23 @@
     "start": "next start"
   },
   "dependencies": {
-    "@docsearch/react": "^4.0.0-beta.2",
+    "@docsearch/react": "^4.3.1",
     "@napi-rs/simple-git": "^0.1.22",
-    "@next/bundle-analyzer": "^15.3.5",
+    "@next/bundle-analyzer": "^16.0.1",
     "@vercel/analytics": "^1.5.0",
     "@vercel/speed-insights": "^1.2.0",
-    "cross-env": "^7.0.3",
-    "katex": "^0.16.22",
-    "next": "^15.5.2",
+    "cross-env": "^10.1.0",
+    "katex": "^0.16.25",
+    "next": "^16.0.1",
     "next-sitemap": "^4.2.3",
-    "nextra": "^4.2.17",
-    "nextra-theme-docs": "^4.2.17",
+    "nextra": "^4.6.0",
+    "nextra-theme-docs": "^4.6.0",
     "pagefind": "^1.4.0",
-    "react": "^19.1.0",
-    "react-dom": "^19.1.0"
+    "react": "^19.2.0",
+    "react-dom": "^19.2.0"
   },
   "devDependencies": {
-    "@types/node": "24.0.10",
-    "@types/react": "19.1.8"
+    "@types/node": "24.10.0",
+    "@types/react": "19.2.2"
   }
 }
