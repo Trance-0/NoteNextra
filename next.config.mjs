@@ -21,9 +21,17 @@ const bundleAnalyzer = withBundleAnalyzer({
 
 export default bundleAnalyzer(withNextra({
   output: 'standalone',
-  eslint: {
-    ignoreDuringBuilds: true,
-  },
+
+  // static export start
+  // output: 'export',
+  // images: {
+  //   unoptimized: true // mandatory, otherwise won't export
+  // },
+  // static export end
+  
+  // eslint: {
+  //   ignoreDuringBuilds: true,
+  // },
   // compiler: {
   //   // enable console log in production
   //   removeConsole: false,

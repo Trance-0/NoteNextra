@@ -143,6 +143,7 @@ analyze/
 
 # pagefind postbuild
 public/_pagefind/
+public/sitemap.xml
 
 # npm package lock file for different platforms
 package-lock.json
