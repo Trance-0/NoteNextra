@@ -36,5 +36,5 @@ export default {
     Math4201_L30: "Topology I (Lecture 30)",
     Math4201_L31: "Topology I (Lecture 31)",
     Math4201_L32: "Topology I (Lecture 32)",
-
+    Math4201_L33: "Topology I (Lecture 33)",
 }
