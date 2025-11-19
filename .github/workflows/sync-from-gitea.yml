@@ -1,4 +1,4 @@
-name: Sync from Gitea (master→main, keep workflow)
+name: Sync from Gitea (main→main, keep workflow)
 
 on:
   schedule:
@@ -31,7 +31,7 @@ jobs:
           git remote add gitea "$AUTH_URL"
           git fetch gitea --prune
 
-      - name: Update main from gitea/master, keep workflow, and force-push
+      - name: Update main from gitea/main, keep workflow, and force-push
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           GH_REPO: ${{ github.repository }}
@@ -51,11 +51,11 @@ jobs:
             cp "$WF_PATH" /tmp/gh-workflows/
           fi
 
-          # Reset local 'main' to exactly match gitea/master
-          if git show-ref --verify --quiet refs/remotes/gitea/master; then
-            git checkout -B main gitea/master
+          # Reset local 'main' to exactly match gitea/main
+          if git show-ref --verify --quiet refs/remotes/gitea/main; then
+            git checkout -B main gitea/main
           else
-            echo "No gitea/master found, nothing to sync."
+            echo "No gitea/main found, nothing to sync."
             exit 0
           fi
 
