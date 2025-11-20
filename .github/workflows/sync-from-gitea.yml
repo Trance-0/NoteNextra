@@ -3,7 +3,7 @@ name: Sync from Gitea (main→main, keep workflow)
 on:
   schedule:
     # 2 times per day (UTC): 7:00, 11:00
-    - cron: '0 7,11 * * *'
+    - cron: '0 19,23 * * *'
   workflow_dispatch: {}
 
 permissions:
