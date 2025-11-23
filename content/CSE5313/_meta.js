@@ -3,7 +3,7 @@ export default {
     "---":{
         type: 'separator'
     },
-    Exam_reviews: "Exam reviews",
+    Exam_reviews: "Exam reviews and finals",
     CSE5313_L1: "CSE5313 Coding and information theory for data science (Lecture 1)",
     CSE5313_L2: "CSE5313 Coding and information theory for data science (Lecture 2)",
     CSE5313_L3: "CSE5313 Coding and information theory for data science (Lecture 3)",

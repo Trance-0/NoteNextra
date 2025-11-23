@@ -98,7 +98,7 @@ We want to define a vector space with notation of multiplication of two vectors 
 That is
 
 $$
-(v_1+v_1)\otimes w=(v_1\otimes w)+(v_2\otimes w)\text{ and } v\otimes (w_1+w_2)=(v\otimes w_1)+(v\otimes w_2)
+(v_1+v_2)\otimes w=(v_1\otimes w)+(v_2\otimes w)\text{ and } v\otimes (w_1+w_2)=(v\otimes w_1)+(v\otimes w_2)
 $$
 
 and enables scalar multiplication by

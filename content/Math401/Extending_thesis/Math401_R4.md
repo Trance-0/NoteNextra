@@ -52,3 +52,5 @@ $$
 ## Quantum error correcting codes
 
 This part is intentionally left blank and may be filled near the end of the semester, by assignments given in CSE5313.
+
+[Link to self-contained report](../../CSE5313/Exam_reviews/CSE5313_F1.md)
