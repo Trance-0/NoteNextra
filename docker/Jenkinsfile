@@ -28,6 +28,14 @@ pipeline {
                 ])
             }
         }
+        stage('Pre-build script') {
+            steps{
+                script {
+                    echo "Running pre-build script"
+                    sh "./docker/prebuild.sh"
+                }
+            }
+        }
         stage("Build and test"){
             parallel {
                 stage("Build Math") {

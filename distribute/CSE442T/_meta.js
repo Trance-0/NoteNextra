@@ -17,103 +17,77 @@ export default {
         }
       },
     },
-    Math3200: {
+    Math3200_link: {
       title: 'Math3200',
       type: 'page',
-      theme:{
-        timestamp: true,
-      }
+      href: '/Math3200'
     },
-    Math429:{
+    Math429_link: {
       title: 'Math429',
       type: 'page',
-      theme:{
-        timestamp: true,
-      }
+      href: '/Math429'
     },
-    Math4111: {
+    Math4111_link: {
       title: 'Math4111',
       type: 'page',
-      theme:{
-        timestamp: true,
-      }
+      href: '/Math4111'
     },
-    Math4121: {
+    Math4121_link: {
       title: 'Math4121',
       type: 'page',
-      theme:{
-        timestamp: true,
-      }
+      href: '/Math4121'
     },
-    Math4201: {
+    Math4201_link: {
       title: 'Math4201',
       type: 'page',
-      theme:{
-        timestamp: true,
-      }
+      href: '/Math4201'
     },
-    Math416: {
+    Math416_link: {
       title: 'Math416',
       type: 'page',
-      theme:{
-        timestamp: true,
-      }
+      href: '/Math416'
     },
-    Math401: {
+    Math401_link: {
       title: 'Math401',
       type: 'page',
-      theme:{
-        timestamp: true,
-      }
+      href: '/Math401'
     },
-    CSE332S: {
+    CSE332S_link: {
       title: 'CSE332S',
       type: 'page',
-      theme:{
-        timestamp: true,
-      }
+      href: '/CSE332S'
     },
-    CSE347: {
+    CSE347_link: {
       title: 'CSE347',
       type: 'page',
-      theme:{
-        timestamp: true,
-      }
+      href: '/CSE347'
     },
-    CSE442T: {
+    CSE442T:{
       title: 'CSE442T',
       type: 'page',
       theme:{
         timestamp: true,
       }
     },
-    CSE5313: {
+    CSE5313_link: {
       title: 'CSE5313',
       type: 'page',
-      theme:{
-        timestamp: true,
-      }
+      href: '/CSE5313'
     },
-    CSE510: {
+    CSE510_link: {
       title: 'CSE510',
       type: 'page',
-      theme:{
-        timestamp: true,
-      }
+      href: '/CSE510'
     },
-    CSE559A: {
+    CSE559A_link: {
       title: 'CSE559A',
       type: 'page',
-      theme:{
-        timestamp: true,
-      }
+      href: '/CSE559A'
     },
-    CSE5519: {
+    CSE5519_link: {
       title: 'CSE5519',
       type: 'page',
-      theme:{
-        timestamp: true,
-      }
+      href: '/CSE5519'
     },
     Swap: {
       display: 'hidden',
