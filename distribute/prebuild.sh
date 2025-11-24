@@ -3,7 +3,8 @@
 
 # please run this script in project root directory
 
-export KEEP_PAGES="Math3200"
+# test environemnt variables, set this in your remote instead
+# export KEEP_PAGES="Math3200"
 
 # check if environment variable is set
 if [ -z "$KEEP_PAGES" ]; then
