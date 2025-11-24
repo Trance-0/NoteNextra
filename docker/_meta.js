@@ -24,7 +24,6 @@ export default {
         }
       },
     },
-    /* Load link with relative path */
     Math3200_link: {
       title: 'Math3200',
       type: 'page',

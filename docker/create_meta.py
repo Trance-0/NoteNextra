@@ -2,19 +2,22 @@
 """
 This code is generate by ChatGPT 5.1, as test automatic script to generate _meta.js file
 
-Generate _meta.js with Math/CSE link entries and labeled sections
-from the original _meta.js.
+Generate ./docker/_meta.js with Math/CSE link entries and labeled sections
+from ./content/_meta.js.
 
-Usage:
-    python generate_meta.py [path/to/_meta.js]
-
-If no path is given, it assumes _meta.js is next to this script.
+This script is intended to be run directly (no arguments) from anywhere.
 """
 
-import sys
 from pathlib import Path
 import re
 
+# --------------------------------------------------------------------
+# Configuration
+# --------------------------------------------------------------------
+
+SCRIPT_DIR = Path(__file__).resolve().parent
+SRC_META = SCRIPT_DIR.parent / "content" / "_meta.js"
+DST_META = SCRIPT_DIR / "_meta.js"
 
 COMMENT_BLOCK = [
     "  /**\n",
@@ -26,56 +29,62 @@ COMMENT_BLOCK = [
     "   */\n",
 ]
 
+PROP_RE = re.compile(r"^ {4}(\w+)\s*:")
+
 
 def parse_properties(lines):
     """
     Parse top-level properties (indented 4 spaces) of the export default object.
+
     Returns:
         header_lines: lines up to and including 'export default {'
         footer_lines: closing '}' (and anything after)
         props: dict name -> list of lines for that property
         order: order of property names as they appeared
     """
-    # find 'export default {' line
     export_idx = None
     for i, line in enumerate(lines):
         if "export default" in line:
             export_idx = i
             break
     if export_idx is None:
-        raise ValueError("No 'export default' found in file.")
+        raise ValueError("No 'export default' found in source meta file.")
+
+    # find closing brace of the object (typically last non-empty '}' line)
+    closing_idx = None
+    for i in range(len(lines) - 1, -1, -1):
+        if lines[i].strip().startswith("}"):
+            closing_idx = i
+            break
+    if closing_idx is None or closing_idx <= export_idx:
+        raise ValueError("Could not locate closing '}' of export default object.")
 
     header = lines[: export_idx + 1]
-    body = lines[export_idx + 1 :]
+    footer = lines[closing_idx:]
+    body = lines[export_idx + 1 : closing_idx]
 
-    # last non-empty line is closing brace of the object
-    last_non_empty = len(lines) - 1
-    while last_non_empty >= 0 and lines[last_non_empty].strip() == "":
-        last_non_empty -= 1
-    footer = lines[last_non_empty:]
-
-    body_until_footer = body[: len(body) - len(footer) + 1]  # include blank before footer if any
-
-    prop_re = re.compile(r"^ {4}(\w+)\s*:")
     props = {}
     order = []
 
     i = 0
-    n = len(body_until_footer)
+    n = len(body)
     while i < n:
-        line = body_until_footer[i]
-        m = prop_re.match(line)
+        line = body[i]
+        m = PROP_RE.match(line)
         if not m:
             i += 1
             continue
+
         key = m.group(1)
         start = i
+
         brace_count = line.count("{") - line.count("}")
         j = i + 1
         while j < n and brace_count > 0:
-            brace_count += body_until_footer[j].count("{") - body_until_footer[j].count("}")
+            brace_count += body[j].count("{") - body[j].count("}")
             j += 1
-        block = body_until_footer[start:j]
+
+        block = body[start:j]
         props[key] = block
         order.append(key)
         i = j
@@ -100,10 +109,13 @@ def generate_new_meta(lines):
 
     math_keys = [k for k in order if k.startswith("Math")]
     cse_keys = [k for k in order if k.startswith("CSE")]
-    other_keys = [k for k in order if k not in math_keys + cse_keys + ["menu"]]
+    other_keys = [
+        k for k in order
+        if k not in math_keys + cse_keys + ["menu"]
+    ]
 
     if "menu" not in props:
-        raise ValueError("Expected a top-level 'menu' property.")
+        raise ValueError("Expected a top-level 'menu' property in source meta.")
 
     out = []
 
@@ -111,7 +123,7 @@ def generate_new_meta(lines):
     out.extend(header)
     # comment block
     out.extend(COMMENT_BLOCK)
-    # menu
+    # original menu block
     out.extend(props["menu"])
 
     # Math links
@@ -142,20 +154,15 @@ def generate_new_meta(lines):
     return out
 
 
-def main():
-    if len(sys.argv) > 1:
-        meta_path = Path(sys.argv[1]).resolve()
-    else:
-        meta_path = Path(__file__).with_name("_meta.js")
+# --------------------------------------------------------------------
+# Script execution (no CLI args, no main())
+# --------------------------------------------------------------------
 
-    if not meta_path.exists():
-        raise SystemExit(f"Meta file not found: {meta_path}")
+if not SRC_META.exists():
+    raise SystemExit(f"Source meta file not found: {SRC_META}")
 
-    lines = meta_path.read_text(encoding="utf-8").splitlines(keepends=True)
-    new_lines = generate_new_meta(lines)
-    meta_path.write_text("".join(new_lines), encoding="utf-8")
-    print(f"Rewrote meta file at {meta_path}")
+src_lines = SRC_META.read_text(encoding="utf-8").splitlines(keepends=True)
+new_lines = generate_new_meta(src_lines)
+DST_META.write_text("".join(new_lines), encoding="utf-8")
 
-
-if __name__ == "__main__":
-    main()
+print(f"Generated meta file: {DST_META}")
