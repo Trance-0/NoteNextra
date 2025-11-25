@@ -2,7 +2,7 @@
   "scripts": {
     "dev": "next --turbopack",
     "build": "cross-env NODE_OPTIONS='--max-old-space-size=16384' next build",
-    "build:distribute": "sh ./distribute/prebuild.sh && cross-env NODE_OPTIONS='--max-old-space-size=16384' next build",
+    "build:distribute": "sh ./distribute/prebuild.sh && cross-env NODE_OPTIONS='--max-old-space-size=8192' next build && next export",
     "build:vercel": "cross-env VERCEL_FORCE_NO_BUILD_CACHE=1 NODE_OPTIONS='--max-old-space-size=16384' next build",
     "build:test": "cross-env ANALYZE=true NODE_OPTIONS='--inspect --max-old-space-size=4096' next build",
     "build:analyze": "cross-env ANALYZE=true NODE_OPTIONS='--max-old-space-size=16384' next build",

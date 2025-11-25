@@ -1,4 +1,4 @@
-pages_build_output_dir= ".next/"
+pages_build_output_dir= "out"
 
 name = "notenextra"
 compatibility_date = "2025-02-13"

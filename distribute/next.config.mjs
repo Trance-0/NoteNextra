@@ -20,8 +20,13 @@ const bundleAnalyzer = withBundleAnalyzer({
 })
 
 export default bundleAnalyzer(withNextra({
-  output: 'standalone',
   
+  output: 'export',
+  trailingSlash: true,
+  images: {
+    unoptimized: true,
+  },
+
   // eslint: {
   //   ignoreDuringBuilds: true,
   // },
