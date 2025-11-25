@@ -24,6 +24,12 @@ for dir in ./content/*/; do
     # strip the leading path and trailing slash
     base_dir="$(basename "${dir%/}")"
 
+    # explicitly ignore Swap
+    if [ "$base_dir" = "Swap" ]; then
+        echo "Ignoring Swap dir: $dir"
+        continue
+    fi
+
     # check if base_dir is in KEEP_PAGES (space-separated list)
     case " $KEEP_PAGES " in
         *" $base_dir "*) 
@@ -40,6 +46,12 @@ done
 for dir in ./public/*/; do
     base_dir="$(basename "${dir%/}")"
 
+    # explicitly ignore Swap
+    if [ "$base_dir" = "Swap" ]; then
+        echo "Ignoring Swap dir: $dir"
+        continue
+    fi
+    
     case " $KEEP_PAGES " in
         *" $base_dir "*) 
             echo "Keeping public dir: $dir"
