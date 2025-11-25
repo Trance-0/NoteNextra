@@ -1,4 +1,4 @@
-pages_build_output_dir= ".vercel/output/static"
+pages_build_output_dir= ".next/static"
 
 name = "notenextra"
 compatibility_date = "2025-02-13"
