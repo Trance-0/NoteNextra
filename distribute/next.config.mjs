@@ -20,13 +20,7 @@ const bundleAnalyzer = withBundleAnalyzer({
 })
 
 export default bundleAnalyzer(withNextra({
-
-  // static export start
-  output: 'export',
-  images: {
-    unoptimized: true // mandatory, otherwise won't export
-  },
-  // static export end
+  output: 'standalone',
   
   // eslint: {
   //   ignoreDuringBuilds: true,
@@ -41,3 +35,6 @@ export default bundleAnalyzer(withNextra({
   //   staticGenerationMinPagesPerWorker: 1 // keep small, default is 25
   // }
 }))
+
+// If you have other Next.js configurations, you can pass them as the parameter:
+// export default withNextra({ /* other next.js config */ })
