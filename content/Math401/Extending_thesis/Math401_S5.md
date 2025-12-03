@@ -1,4 +1,4 @@
-# Math 401, Fall 2025: Thesis notes, S4, Differential Forms
+# Math 401, Fall 2025: Thesis notes, S5, Differential Forms
 
 This note aim to investigate  What is homology and cohomology?
 
@@ -235,3 +235,7 @@ $$
 $$
 
 A tangent vector at $p\in M$ is the 
+
+[2025.12.03]
+
+Goal: Finish the remaining parts of this book
