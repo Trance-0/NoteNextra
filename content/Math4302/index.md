@@ -1,63 +1,34 @@
-# Math4202
+# MatH4302 Modern Algebra
 
-## Instructor
+Prerequisites: Math 429 or permission of instructor
 
-Xiang Tang, Cupples I, 112B, xtang@math.wustl.edu
-Classroom and Time
+Textbook: First course in abstract algebra, 8th edition by Fraleigh and Brand
 
-Wrighton Rm 250, MWF, 11:-11:50. 
+Office hour:  Monday 10-11:20 or by appointment
 
-## Office Hour
+Exams: There will be two in-class midterm exams during the semester. There will also be a final exam. The first midterm exam is scheduled for Wednesday February 18th, and the second midterm exam is scheduled for Wednesday April 1st. If you are unable to take one of the midterm exams for legitimate reasons, you will not be given a make up exam.
 
-I will hold Zoom Office hour on Tuesday at 4-5 p.m. for both 5222 and 4202. My zoom personal meeting id is 327 569 4749 with access code XiangTang.  
-I will hold in person office hour on Monday at 1-2 p.m. , Friday 3-4 p.m. (open for both 5222 and 4202). 
-Write to me to make an appointment if the above time does not work with your schedule or prefer to meet in person. 
+Grading Information: The midterm exams will each count for 21 percent of your course grade. The final exam will count for 32 percent, and your homework grade will count for 26 percent of your course grade.
 
-## Text
 
-Topology (2nd Edition), by James Munkres, 537 pages Publication Date: May 2000 Publisher: Prentice Hall.
-Prerequisite
+Your letter grade will be based on the following scale:
 
-Math 4201 or equivalent
+|A+|	A	|A-|	B+|	B	|B-|	C+|	C	|C-	|D|	F|
+|---|--|--|--|--|--|--|--|--|--|--|
+|TBA|	[90,100)|	[85,90)|	[80,85)|	[75,80)	|[70,75)	|[65,70)	|[60,65)|[55,60)	|[50,55)|[0,50)|
 
-## Preview
+## Homework
 
-This is a course about general topology.  We will attempt to cover most of Chapters 4, 9, 11, 12, 13. 
+There will be weekly homework. The homework is due on Friday (starting from January 23 ) via Gradescope. The Homework questions will be chosen from the textbook.
 
-## Lectures
+Late homework will not be accepted.
 
-You are strongly recommended to attend the lectures. No talk, food and drinking is allowed in class. Please close your cell phone or change it to ``silent".  Information about materials covered and homework assigned every week will be updated on the course website.
+You are encouraged to discuss the problems with other students, but the write-up must be your own. Adherence to the university's academic integrity policy Links to an external site.is expected and required.
 
-## Exams
+I expect there will be 11 problem sets. The lowest homework grade will be dropped and the remaining 10 will be counted towards your final course grade.
+Any regrade requests must be made within a week of the assignment being returned.
 
-There will be one midterm and one final exam. The following is the schedule
+Class Discussion Piazza: We will use Piazza for class discussion. You can find our page at https://piazza.com/wustl/spring2026/math4302Links to an external site.
 
-Midterm Exam	March 4th, 11-11:50. 	Wrighton 250
 
-Final Exam (may be presentation)	May 6th, 10:30-12:30 	Wrighton 250
-Homework
-
-You will have graded homework turned in every Tuesday by 18:00, (6:00 p.m).  Late homework will not be accepted! The homework collected is to be considered a bare minimum of homework that you should do. **"A" students will generally do nearly every problem in the exercise sections.**
-
-We will use an online system called Gradescope to collect and distribute homework, which you can sign in with your Canvas account. Only PDF and JPEG format files will be accepted by Gradescope. You will need to upload your work for each problem separately. Simply drag and drop your files to the upload areas under the questions or browse to locate them. You can drag between questions, and add or delete pages under each question. Please make sure your pictures are sharp enough to be graded. And please ensure the uploaded pages are in order and rotated correctly if  your solution is written on several pages.
-
-Homework is graded according to the following distribution. Each homework set consists of 5 problems. Each problem counts for 10 points and the total score of a homework  is 50 points. 
-Grading scale
-
-Homework: 50%, Midterm: 25%, Final: 25%. The grades are assigned according the percentage you are in the class.
-
-You are expected to take the exams at their scheduled times. If you are away because of a  university sporting event or field trip, then you may arrange for your coach or professor to administer the exam. Excused absences may be granted in the case of illness or bereavement. All excused absences must be granted before the exam is taken. The final exam date cannot be changed for reasons of traveling convenience.
-
-In total, we will collect 10 homework sets. You are allowed to drop the two lowest homework scores.
-
-You are allowed to discuss with your classmates, friends, and artificial intelligence applications to work on your homework problems. Please make sure that you are writing the final solutions independently. Proper acknowledgements of your discussion with various resources should be stated in your homework solutions. 
-
-Letter grades will be given based on your overall score. The cutoffs for the various letter grades will be no higher than the following:
-
-| Letter | Score |
-|:------:|:-----:|
-| A-| 85|
-| B-| 75|
-| C-|60|
-|D|50|
-
+Academic Integrity: Students must comply with Washington University regulations regarding academic integrity. For more information, see: https://wustl.edu/about/compliance-policies/academic- policies/undergraduate-student-academic-integrity-policy/. Plagiarism is a form of cheating or fraud; it occurs when a student misrepresents the work of another as their own.
