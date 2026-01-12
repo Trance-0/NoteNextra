@@ -52,6 +52,13 @@ export default {
         timestamp: true,
       }
     },
+    Math4202: {
+      title: 'Math4202',
+      type: 'page',
+      theme:{
+        timestamp: true,
+      }
+    },
     Math416: {
       title: 'Math416',
       type: 'page',
