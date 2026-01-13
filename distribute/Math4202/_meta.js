@@ -22,12 +22,10 @@ export default {
       type: 'page',
       href: '/Math3200'
     },
-    Math429:{
+    Math429_link: {
       title: 'Math429',
       type: 'page',
-      theme:{
-        timestamp: true,
-      }
+      href: '/Math429'
     },
     Math4111_link: {
       title: 'Math4111',
@@ -44,10 +42,12 @@ export default {
       type: 'page',
       href: '/Math4201'
     },
-    Math4202_link: {
+    Math4202:{
       title: 'Math4202',
       type: 'page',
-      href: '/Math4202'
+      theme:{
+        timestamp: true,
+      }
     },
     Math416_link: {
       title: 'Math416',

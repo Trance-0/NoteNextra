@@ -1,4 +1,4 @@
-# MatH4302 Modern Algebra
+# Math4302 Modern Algebra
 
 Prerequisites: Math 429 or permission of instructor
 

@@ -44,6 +44,11 @@ export default {
         timestamp: true,
       }
     },
+    Math4202_link: {
+      title: 'Math4202',
+      type: 'page',
+      href: '/Math4202'
+    },
     Math416_link: {
       title: 'Math416',
       type: 'page',
