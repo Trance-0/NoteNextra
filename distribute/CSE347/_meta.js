@@ -47,6 +47,11 @@ export default {
       type: 'page',
       href: '/Math4202'
     },
+    Math4302_link: {
+      title: 'Math4302',
+      type: 'page',
+      href: '/Math4302'
+    },
     Math416_link: {
       title: 'Math416',
       type: 'page',
@@ -68,6 +73,11 @@ export default {
       theme:{
         timestamp: true,
       }
+    },
+    CSE4303_link: {
+      title: 'CSE4303',
+      type: 'page',
+      href: '/CSE4303'
     },
     CSE442T_link: {
       title: 'CSE442T',

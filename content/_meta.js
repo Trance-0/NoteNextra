@@ -59,6 +59,13 @@ export default {
         timestamp: true,
       }
     },
+    Math4302: {
+      title: 'Math4302',
+      type: 'page',
+      theme:{
+        timestamp: true,
+      }
+    },
     Math416: {
       title: 'Math416',
       type: 'page',
@@ -82,6 +89,13 @@ export default {
     },
     CSE347: {
       title: 'CSE347',
+      type: 'page',
+      theme:{
+        timestamp: true,
+      }
+    },
+    CSE4303: {
+      title: 'CSE4303',
       type: 'page',
       theme:{
         timestamp: true,
