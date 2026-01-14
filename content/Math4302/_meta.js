@@ -4,4 +4,5 @@ export default {
         type: 'separator'
     },
     Math4302_L1: "Modern Algebra (Lecture 1)",
+    Math4302_L2: "Modern Algebra (Lecture 2)",
 }
