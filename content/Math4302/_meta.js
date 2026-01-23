@@ -7,4 +7,5 @@ export default {
     Math4302_L2: "Modern Algebra (Lecture 2)",
     Math4302_L3: "Modern Algebra (Lecture 3)",
     Math4302_L4: "Modern Algebra (Lecture 4)",
+    Math4302_L5: "Modern Algebra (Lecture 5)",
 }
