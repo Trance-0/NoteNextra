@@ -15,4 +15,5 @@ export default {
     Math4302_L10: "Modern Algebra (Lecture 10)",
     Math4302_L11: "Modern Algebra (Lecture 11)",
     Math4302_L12: "Modern Algebra (Lecture 12)",
+    Math4302_L13: "Modern Algebra (Lecture 13)",
 }
