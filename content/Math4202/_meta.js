@@ -18,4 +18,5 @@ export default {
     Math4202_L13: "Topology II (Lecture 13)",
     Math4202_L14: "Topology II (Lecture 14)",
     Math4202_L15: "Topology II (Lecture 15)",
+    Math4202_L16: "Topology II (Lecture 16)",
 }
