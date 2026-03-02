@@ -3,6 +3,7 @@ export default {
     "---":{
         type: 'separator'
     },
+    Exam_reviews: "Exam reviews",
     Math4202_L1: "Topology II (Lecture 1)",
     Math4202_L2: "Topology II (Lecture 2)",
     Math4202_L3: "Topology II (Lecture 3)",
