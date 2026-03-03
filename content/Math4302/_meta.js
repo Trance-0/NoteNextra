@@ -22,4 +22,5 @@ export default {
     Math4302_L17: "Modern Algebra (Lecture 17)",
     Math4302_L18: "Modern Algebra (Lecture 18)",
     Math4302_L19: "Modern Algebra (Lecture 19)",
+    Math4302_L20: "Modern Algebra (Lecture 20)",
 }
