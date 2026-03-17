@@ -18,4 +18,5 @@ export default {
     CSE4303_L11: "Introduction to Computer Security (Lecture 11)",
     CSE4303_L12: "Introduction to Computer Security (Lecture 12)",
     CSE4303_L13: "Introduction to Computer Security (Lecture 13)",
+    CSE4303_L14: "Introduction to Computer Security (Lecture 14)",
 }
