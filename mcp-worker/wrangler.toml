@@ -1,0 +1,4 @@
+name = "notenextra-mcp"
+main = "src/index.mjs"
+compatibility_date = "2025-02-13"
+compatibility_flags = ["nodejs_compat"]

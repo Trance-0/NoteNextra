@@ -9,7 +9,11 @@
     "postbuild": "next-sitemap && pagefind --site .next/server/app --output-path out/_pagefind",
     "start": "next start",
     "mcp:notes": "node ./mcp-server.mjs",
-    "test:mcp": "node ./test/test-mcp-server.mjs"
+    "mcp:worker:build-data": "node ./scripts/generate-mcp-worker-data.mjs",
+    "mcp:worker:deploy": "npm run mcp:worker:build-data && npx wrangler deploy --config mcp-worker/wrangler.toml",
+    "mcp:worker:deploy:dry-run": "npm run mcp:worker:build-data && npx wrangler deploy --dry-run --config mcp-worker/wrangler.toml",
+    "test:mcp": "node ./test/test-mcp-server.mjs",
+    "test:mcp:worker": "node ./test/test-mcp-worker.mjs"
   },
   "dependencies": {
     "@modelcontextprotocol/sdk": "^1.18.1",

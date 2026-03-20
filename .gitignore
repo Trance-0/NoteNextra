@@ -147,3 +147,6 @@ public/sitemap.xml
 
 # npm package lock file for different platforms
 package-lock.json
+
+# generated
+mcp-worker/generated
