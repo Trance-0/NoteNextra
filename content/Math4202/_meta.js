@@ -1,3 +1,5 @@
+import { MathJax } from "nextra/components";
+
 export default {
     index: "Course Description",
     "---":{
@@ -27,4 +29,5 @@ export default {
     Math4202_L21: "Topology II (Lecture 21)",
     Math4202_L22: "Topology II (Lecture 22)",
     Math4202_L23: "Topology II (Lecture 23)",
+    Math4202_L24: "Topology II (Lecture 24)",
 }
