@@ -7,9 +7,12 @@
     "build:test": "cross-env ANALYZE=true NODE_OPTIONS='--inspect --max-old-space-size=4096' next build",
     "build:analyze": "cross-env ANALYZE=true NODE_OPTIONS='--max-old-space-size=16384' next build",
     "postbuild": "next-sitemap && pagefind --site .next/server/app --output-path out/_pagefind",
-    "start": "next start"
+    "start": "next start",
+    "mcp:notes": "node ./mcp-server.mjs",
+    "test:mcp": "node ./test/test-mcp-server.mjs"
   },
   "dependencies": {
+    "@modelcontextprotocol/sdk": "^1.18.1",
     "@docsearch/css": "^4.3.1",
     "@docsearch/react": "^4.3.1",
     "@napi-rs/simple-git": "^0.1.22",

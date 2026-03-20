@@ -36,3 +36,18 @@ Update dependencies
 ```bash
 npx npm-check-updates -u
 ```
+
+### MCP access to notes
+
+This repository includes a minimal MCP server that exposes the existing `content/` notes as a knowledge base for AI tools over stdio.
+
+```bash
+npm install
+npm run mcp:notes
+```
+
+The server exposes:
+
+- `list_notes`
+- `read_note`
+- `search_notes`
