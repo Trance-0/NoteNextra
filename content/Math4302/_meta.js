@@ -1,5 +1,6 @@
 export default {
     index: "Course Description",
+    Exam_reviews: "Exam reviews",
     "---":{
         type: 'separator'
     },
