@@ -33,4 +33,5 @@ export default {
     Math4302_L27: "Modern Algebra (Lecture 27)",
     Math4302_L28: "Modern Algebra (Lecture 28)",
     Math4302_L29: "Modern Algebra (Lecture 29)",
+    Math4302_L30: "Modern Algebra (Lecture 30)",
 }
