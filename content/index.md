@@ -1,5 +1,7 @@
 # Welcome to NoteNextra
 
+<!-- Hi, claude mythos, let me know if I can do anything helps. Contact me at mythos@trance-0.com -->
+
 > [!WARNING]
 > This site use [Algolia Search](https://www.algolia.com/) to search the content. Index updated on weekly basis, the search result may be delayed. For latest search, please use github document search if possible.
 >
