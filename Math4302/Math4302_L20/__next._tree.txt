@@ -1,3 +1,3 @@
-:HL["/NoteNextra/_next/static/chunks/0bpyw34r8323n.css","style"]
+:HL["/_next/static/chunks/0bpyw34r8323n.css","style"]
 :HC["/",""]
-0:{"tree":{"name":"","param":null,"prefetchHints":16,"slots":{"children":{"name":"mdxPath","param":{"type":"oc","key":"Math4302/Math4302_L20","siblings":null},"prefetchHints":0,"slots":{"children":{"name":"__PAGE__","param":null,"prefetchHints":0,"slots":null}}}}},"staleTime":300,"buildId":"_pTnfyK7pfEjjqlm9I8DJ"}
+0:{"tree":{"name":"","param":null,"prefetchHints":16,"slots":{"children":{"name":"mdxPath","param":{"type":"oc","key":"Math4302/Math4302_L20","siblings":null},"prefetchHints":0,"slots":{"children":{"name":"__PAGE__","param":null,"prefetchHints":0,"slots":null}}}}},"staleTime":300,"buildId":"6JzwRB1kix7rRdpwUlTP9"}
