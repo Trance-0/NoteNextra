@@ -1,4 +1,4 @@
-name: Sync from Gitea (main→main, keep workflow)
+name: Sync from Gitea (main→main, keep GitHub workflows)
 
 on:
   schedule:
@@ -43,12 +43,12 @@ jobs:
           # Authenticated push URL for GitHub
           git remote set-url origin "https://x-access-token:${GH_TOKEN}@github.com/${GH_REPO}.git"
 
-          WF_PATH=".github/workflows/sync-from-gitea.yml"
+          WF_DIR=".github/workflows"
 
-          # If the workflow exists in the current checkout, save a copy
-          if [ -f "$WF_PATH" ]; then
+          # If GitHub-specific workflows exist in the current checkout, save copies
+          if [ -d "$WF_DIR" ]; then
             mkdir -p /tmp/gh-workflows
-            cp "$WF_PATH" /tmp/gh-workflows/
+            cp -R "$WF_DIR"/. /tmp/gh-workflows/
           fi
 
           # Reset local 'main' to exactly match gitea/main
@@ -59,13 +59,13 @@ jobs:
             exit 0
           fi
 
-          # Restore the workflow into the new HEAD and commit if needed
-          if [ -f "/tmp/gh-workflows/sync-from-gitea.yml" ]; then
+          # Restore preserved GitHub workflows into the new HEAD and commit if needed
+          if [ -d "/tmp/gh-workflows" ]; then
             mkdir -p .github/workflows
-            cp /tmp/gh-workflows/sync-from-gitea.yml "$WF_PATH"
-            git add "$WF_PATH"
+            cp -R /tmp/gh-workflows/. .github/workflows/
+            git add .github/workflows
             if ! git diff --cached --quiet; then
-              git commit -m "Inject GitHub sync workflow"
+              git commit -m "Preserve GitHub workflows"
             fi
           fi
 
