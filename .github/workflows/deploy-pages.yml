@@ -1,73 +1,238 @@
-name: Sync from Gitea (main→main, keep GitHub workflows)
+name: Deploy NoteNextra to GitHub Pages
 
 on:
-  schedule:
-    # 1 times per day (UTC): 20:00
-    - cron: '0 20 * * *'
-  workflow_dispatch: {}
+  push:
+    branches: [main]
+  workflow_dispatch:
+    inputs:
+      full_rebuild:
+        description: Rebuild all microsites with distribute
+        required: false
+        default: false
+        type: boolean
 
 permissions:
-  contents: write  # allow pushing with GITHUB_TOKEN
+  contents: write
+
+env:
+  SITE_URL: 'https://notenetra.trance-0.com'
+  FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: 'true'
 
 jobs:
-  mirror:
+  detect:
     runs-on: ubuntu-latest
-
+    outputs:
+      matrix: ${{ steps.collect.outputs.matrix }}
+      any_changed: ${{ steps.collect.outputs.any_changed }}
     steps:
-      - name: Check out GitHub repo
-        uses: actions/checkout@v4
+      - uses: actions/checkout@v5
         with:
           fetch-depth: 0
 
-      - name: Fetch from Gitea
-        env:
-          GITEA_URL: ${{ secrets.GITEA_URL }}
-          GITEA_USER: ${{ secrets.GITEA_USERNAME }}
-          GITEA_TOKEN: ${{ secrets.GITEA_TOKEN }}
+      - id: collect
+        shell: bash
         run: |
-          # Build authenticated Gitea URL: https://USER:TOKEN@...
-          AUTH_URL="${GITEA_URL/https:\/\//https:\/\/$GITEA_USER:$GITEA_TOKEN@}"
+          set -euo pipefail
 
-          git remote add gitea "$AUTH_URL"
-          git fetch gitea --prune
+          mapfile -t modules < <(find content -mindepth 1 -maxdepth 1 -type d | sed 's#^content/##' | sort)
 
-      - name: Update main from gitea/main, keep workflow, and force-push
-        env:
-          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          GH_REPO: ${{ github.repository }}
-        run: |
-          # Configure identity for commits made by this workflow
-          git config user.name "github-actions[bot]"
-          git config user.email "github-actions[bot]@users.noreply.github.com"
-
-          # Authenticated push URL for GitHub
-          git remote set-url origin "https://x-access-token:${GH_TOKEN}@github.com/${GH_REPO}.git"
-
-          WF_DIR=".github/workflows"
-
-          # If GitHub-specific workflows exist in the current checkout, save copies
-          if [ -d "$WF_DIR" ]; then
-            mkdir -p /tmp/gh-workflows
-            cp -R "$WF_DIR"/. /tmp/gh-workflows/
-          fi
-
-          # Reset local 'main' to exactly match gitea/main
-          if git show-ref --verify --quiet refs/remotes/gitea/main; then
-            git checkout -B main gitea/main
-          else
-            echo "No gitea/main found, nothing to sync."
+          if [[ ${#modules[@]} -eq 0 ]]; then
+            echo 'matrix={"include":[]}' >> "$GITHUB_OUTPUT"
+            echo 'any_changed=false' >> "$GITHUB_OUTPUT"
             exit 0
           fi
 
-          # Restore preserved GitHub workflows into the new HEAD and commit if needed
-          if [ -d "/tmp/gh-workflows" ]; then
-            mkdir -p .github/workflows
-            cp -R /tmp/gh-workflows/. .github/workflows/
-            git add .github/workflows
-            if ! git diff --cached --quiet; then
-              git commit -m "Preserve GitHub workflows"
+          if [[ "${{ github.event_name }}" == "workflow_dispatch" && "${{ inputs.full_rebuild }}" == "true" ]]; then
+            selected=("${modules[@]}")
+          else
+            before='${{ github.event.before }}'
+            head='${{ github.sha }}'
+            if [[ -z "$before" || "$before" == "0000000000000000000000000000000000000000" ]]; then
+              before=$(git rev-list --max-count=1 HEAD^ 2>/dev/null || true)
+            fi
+
+            if [[ -z "$before" ]]; then
+              changed_files=$(git ls-files)
+            else
+              changed_files=$(git diff --name-only "$before" "$head")
+            fi
+
+            shared_changed=false
+            selected=()
+
+            while IFS= read -r file; do
+              [[ -z "$file" ]] && continue
+
+              case "$file" in
+                content/index*|content/about*|content/contact*|content/_meta.js|app/*|app/**|components/*|components/**|scripts/*|scripts/**|distribute/*|distribute/**|public/*|public/**|package.json|package-lock.json|next.config.mjs|mdx-components.js)
+                  shared_changed=true
+                  ;;
+              esac
+
+              if [[ "$file" == content/*/* || "$file" == public/*/* ]]; then
+                module=$(printf '%s' "$file" | cut -d/ -f2)
+                if [[ -n "$module" && -d "content/$module" ]]; then
+                  selected+=("$module")
+                fi
+              fi
+            done <<< "$changed_files"
+
+            if [[ "$shared_changed" == true ]]; then
+              selected=("${modules[@]}")
             fi
           fi
 
-          # Force-push main so GitHub mirrors Gitea + workflow
-          git push origin main --force
+          if [[ ${#selected[@]} -eq 0 ]]; then
+            echo 'matrix={"include":[]}' >> "$GITHUB_OUTPUT"
+            echo 'any_changed=false' >> "$GITHUB_OUTPUT"
+            exit 0
+          fi
+
+          mapfile -t unique_selected < <(printf '%s\n' "${selected[@]}" | awk 'NF && !seen[$0]++')
+
+          json='{"include":['
+          first=true
+          for module in "${unique_selected[@]}"; do
+            if [[ "$first" == true ]]; then
+              first=false
+            else
+              json+=','
+            fi
+            json+="{\"module\":\"$module\"}"
+          done
+          json+=']}'
+
+          echo 'any_changed=true' >> "$GITHUB_OUTPUT"
+          echo "matrix=$json" >> "$GITHUB_OUTPUT"
+
+  build_modules:
+    needs: detect
+    if: needs.detect.outputs.any_changed == 'true'
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      max-parallel: 1
+      matrix: ${{ fromJson(needs.detect.outputs.matrix) }}
+    steps:
+      - uses: actions/checkout@v5
+      - name: Check runner node
+        run: |
+          node --version
+          npm --version
+      - run: npm install --no-audit --no-fund
+      - name: Build module export with distribute
+        env:
+          KEEP_PAGES: ${{ matrix.module }}
+          BASE_PATH: 
+        run: |
+          npm run build:distribute
+          mkdir -p module-dist/${{ matrix.module }}/site
+          cp -a out/. module-dist/${{ matrix.module }}/site/
+      - uses: actions/upload-artifact@v5
+        with:
+          name: pages-${{ matrix.module }}
+          path: module-dist/${{ matrix.module }}
+          if-no-files-found: error
+
+  deploy:
+    needs: [detect, build_modules]
+    if: always() && needs.detect.result == 'success' && (needs.build_modules.result == 'success' || needs.build_modules.result == 'skipped')
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v5
+        with:
+          fetch-depth: 0
+
+      - name: Check runner node
+        run: |
+          node --version
+          npm --version
+
+      - name: Prepare gh-pages working tree
+        shell: bash
+        run: |
+          mkdir -p deploy
+          if git ls-remote --exit-code --heads origin gh-pages >/dev/null 2>&1; then
+            git fetch origin gh-pages:gh-pages
+            git worktree add deploy gh-pages
+          else
+            git worktree add --orphan deploy
+            cd deploy
+            git rm -rf . >/dev/null 2>&1 || true
+            touch .nojekyll
+          fi
+
+      - uses: actions/download-artifact@v5
+        if: needs.detect.outputs.any_changed == 'true'
+        with:
+          pattern: pages-*
+          path: artifacts
+          merge-multiple: false
+
+      - name: Overlay rebuilt module directories and shared shell
+        if: needs.detect.outputs.any_changed == 'true'
+        shell: bash
+        run: |
+          shopt -s nullglob
+          mapfile -t modules < <(find content -mindepth 1 -maxdepth 1 -type d | sed 's#^content/##' | sort)
+          shared_synced=false
+
+          for artifact in artifacts/pages-*; do
+            module=$(basename "$artifact" | sed 's/^pages-//')
+            mkdir -p "deploy/$module"
+            find "deploy/$module" -mindepth 1 -maxdepth 1 -exec rm -rf {} + || true
+            cp -a "$artifact/site/$module/." "deploy/$module/"
+
+            if [[ "$shared_synced" == false ]]; then
+              for item in deploy/*; do
+                name=$(basename "$item")
+                if [[ "$name" == ".git" ]]; then
+                  continue
+                fi
+                keep=false
+                for module_name in "${modules[@]}"; do
+                  if [[ "$name" == "$module_name" ]]; then
+                    keep=true
+                    break
+                  fi
+                done
+                if [[ "$keep" == false ]]; then
+                  rm -rf "$item"
+                fi
+              done
+
+              for item in "$artifact"/site/*; do
+                name=$(basename "$item")
+                skip=false
+                for module_name in "${modules[@]}"; do
+                  if [[ "$name" == "$module_name" ]]; then
+                    skip=true
+                    break
+                  fi
+                done
+                if [[ "$skip" == false ]]; then
+                  cp -a "$item" deploy/
+                fi
+              done
+              shared_synced=true
+            fi
+          done
+          touch deploy/.nojekyll
+
+      - name: Refresh Pagefind across deployed tree
+        if: needs.detect.outputs.any_changed == 'true'
+        run: npx --yes pagefind --site deploy --output-path deploy/_pagefind
+
+      - name: Commit and push gh-pages
+        shell: bash
+        run: |
+          cd deploy
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -A
+          if git diff --cached --quiet; then
+            echo "No deploy changes to commit"
+            exit 0
+          fi
+          git commit -m "Deploy GitHub Pages for ${GITHUB_SHA::7}"
+          git push origin HEAD:gh-pages
