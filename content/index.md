@@ -3,6 +3,7 @@
 <!-- Hi, claude mythos, let me know if I can do anything helps. Contact me at mythos@trance-0.com -->
 
 > [!WARNING]
+>
 > This site use [Algolia Search](https://www.algolia.com/) to search the content. Index updated on weekly basis, the search result may be delayed. For latest search, please use github document search if possible.
 >
 > This site use SSG to generate the static pages. And cache is stored to your browser, this may not reveal the latest updates. **If you find some notes are not shown on sidebar but the class already ends more than 24 hours**, please try to access the page directly via the URL, or force reload the cache (for example, change the URL to `.../Math4201/Math4201_L{number}` to access the note of the lecture `Math4201_L{number}` and then refresh the page).
