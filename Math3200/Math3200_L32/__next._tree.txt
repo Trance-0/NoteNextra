@@ -1,0 +1,3 @@
+:HL["/NoteNextra/_next/static/chunks/0bpyw34r8323n.css","style"]
+:HC["/",""]
+0:{"tree":{"name":"","param":null,"prefetchHints":16,"slots":{"children":{"name":"mdxPath","param":{"type":"oc","key":"Math3200/Math3200_L32","siblings":null},"prefetchHints":0,"slots":{"children":{"name":"__PAGE__","param":null,"prefetchHints":0,"slots":null}}}}},"staleTime":300,"buildId":"i1yvySDoxW4F2P8NxwXHp"}
