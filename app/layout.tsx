@@ -1,12 +1,19 @@
 /* eslint-env node */
 import { Footer, Layout} from 'nextra-theme-docs'
-import { Head } from 'nextra/components'
+import { Head, Search } from 'nextra/components'
 import { getPageMap } from 'nextra/page-map'
 import 'nextra-theme-docs/style.css'
+
+if (typeof globalThis !== 'undefined' && typeof (globalThis as { Element?: unknown }).Element === 'undefined') {
+  ;(globalThis as unknown as { Element: unknown }).Element = class Element {}
+}
 import { SpeedInsights } from "@vercel/speed-insights/next"
 import { Analytics } from "@vercel/analytics/react"
 import 'katex/dist/katex.min.css'
-import AlgoliaSearch from '../components/docsearch'
+
+// comment out to enable algolia search
+// import AlgoliaSearch from '../components/docsearch'
+
 import { Navbar } from '../components/navbar'
 
 export const metadata = {
@@ -22,7 +29,8 @@ export const metadata = {
     title: 'NoteNextra'
   },
   other: {
-    'algolia-site-verification': '7303797A38EAD6FC',
+    // comment out to enable algolia search
+    // 'algolia-site-verification': '7303797A38EAD6FC',
     'msapplication-TileImage': '/ms-icon-144x144.png',
     'msapplication-TileColor': '#fff'
   },
@@ -82,9 +90,10 @@ export default async function RootLayout({ children }) {
           editLink="Edit this page on GitHub"
           docsRepositoryBase="https://github.com/Trance-0/NoteNextra/tree/main"
           sidebar={{ defaultMenuCollapseLevel: 1 }}
-          pageMap={pageMap}
-          // TODO: fix local search with distributed search index over containers
-          search={<AlgoliaSearch/>}
+          pageMap={pageMap} 
+          // comment out to enable algolia search
+          // search={<AlgoliaSearch/>}
+          search={<Search placeholder="Search local notes..." />}
         >
           {children}
           {/* SpeedInsights in vercel */}

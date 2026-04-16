@@ -1,0 +1,73 @@
+name: Sync from Gitea (main→main, keep GitHub workflows)
+
+on:
+  schedule:
+    # 1 times per day (UTC): 20:00
+    - cron: '0 20 * * *'
+  workflow_dispatch: {}
+
+permissions:
+  contents: write  # allow pushing with GITHUB_TOKEN
+
+jobs:
+  mirror:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Check out GitHub repo
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Fetch from Gitea
+        env:
+          GITEA_URL: ${{ secrets.GITEA_URL }}
+          GITEA_USER: ${{ secrets.GITEA_USERNAME }}
+          GITEA_TOKEN: ${{ secrets.GITEA_TOKEN }}
+        run: |
+          # Build authenticated Gitea URL: https://USER:TOKEN@...
+          AUTH_URL="${GITEA_URL/https:\/\//https:\/\/$GITEA_USER:$GITEA_TOKEN@}"
+
+          git remote add gitea "$AUTH_URL"
+          git fetch gitea --prune
+
+      - name: Update main from gitea/main, keep workflow, and force-push
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GH_REPO: ${{ github.repository }}
+        run: |
+          # Configure identity for commits made by this workflow
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+
+          # Authenticated push URL for GitHub
+          git remote set-url origin "https://x-access-token:${GH_TOKEN}@github.com/${GH_REPO}.git"
+
+          WF_DIR=".github/workflows"
+
+          # If GitHub-specific workflows exist in the current checkout, save copies
+          if [ -d "$WF_DIR" ]; then
+            mkdir -p /tmp/gh-workflows
+            cp -R "$WF_DIR"/. /tmp/gh-workflows/
+          fi
+
+          # Reset local 'main' to exactly match gitea/main
+          if git show-ref --verify --quiet refs/remotes/gitea/main; then
+            git checkout -B main gitea/main
+          else
+            echo "No gitea/main found, nothing to sync."
+            exit 0
+          fi
+
+          # Restore preserved GitHub workflows into the new HEAD and commit if needed
+          if [ -d "/tmp/gh-workflows" ]; then
+            mkdir -p .github/workflows
+            cp -R /tmp/gh-workflows/. .github/workflows/
+            git add .github/workflows
+            if ! git diff --cached --quiet; then
+              git commit -m "Preserve GitHub workflows"
+            fi
+          fi
+
+          # Force-push main so GitHub mirrors Gitea + workflow
+          git push origin main --force

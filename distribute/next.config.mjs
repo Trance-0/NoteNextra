@@ -19,10 +19,14 @@ const bundleAnalyzer = withBundleAnalyzer({
   enabled: process.env.ANALYZE === 'true'
 })
 
+const basePath = process.env.BASE_PATH || ''
+
 export default bundleAnalyzer(withNextra({
   
   output: 'export',
   trailingSlash: true,
+  basePath,
+  assetPrefix: basePath || undefined,
   images: {
     unoptimized: true,
   },

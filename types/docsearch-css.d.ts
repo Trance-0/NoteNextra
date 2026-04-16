@@ -1,0 +1,1 @@
+types/docsearch-css.d.ts
