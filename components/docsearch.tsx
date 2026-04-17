@@ -4,7 +4,7 @@
 import { DocSearch } from '@docsearch/react';
 import {useTheme} from 'next-themes';
 
-import '@docsearch/css';
+import '@docsearch/css/dist/style.css';
 
 function AlgoliaSearch () {
   const {theme, systemTheme} = useTheme();
