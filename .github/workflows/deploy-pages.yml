@@ -123,7 +123,7 @@ jobs:
       - name: Build module export with distribute
         env:
           KEEP_PAGES: ${{ matrix.module }}
-          BASE_PATH: 
+          BASE_PATH: ''
         run: |
           npm run build:distribute
           mkdir -p module-dist/${{ matrix.module }}/site
