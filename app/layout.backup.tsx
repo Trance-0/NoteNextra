@@ -12,7 +12,7 @@ import { Analytics } from "@vercel/analytics/react"
 import 'katex/dist/katex.min.css'
 
 // comment out to enable algolia search
-import AlgoliaSearch from '../components/docsearch'
+// import AlgoliaSearch from '../components/docsearch'
 
 import { Navbar } from '../components/navbar'
 
@@ -30,7 +30,7 @@ export const metadata = {
   },
   other: {
     // comment out to enable algolia search
-    'algolia-site-verification': '7303797A38EAD6FC',
+    // 'algolia-site-verification': '7303797A38EAD6FC',
     'msapplication-TileImage': '/ms-icon-144x144.png',
     'msapplication-TileColor': '#fff'
   },
@@ -92,8 +92,8 @@ export default async function RootLayout({ children }) {
           sidebar={{ defaultMenuCollapseLevel: 1 }}
           pageMap={pageMap} 
           // comment out to enable algolia search
-          search={<AlgoliaSearch/>}
-          // search={<Search placeholder="Search local notes..." />}
+          // search={<AlgoliaSearch/>}
+          search={<Search placeholder="Search local notes..." />}
         >
           {children}
           {/* SpeedInsights in vercel */}
