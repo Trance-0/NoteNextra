@@ -2,8 +2,8 @@ name: Sync from Gitea (main→main, keep GitHub workflows)
 
 on:
   schedule:
-    # 1 times per day (UTC): 20:00
-    - cron: '0 20 * * *'
+    # 1 times per day (UTC): 20:00, only on Sunday
+    - cron: '0 20 * * 0'
   workflow_dispatch: {}
 
 permissions:
